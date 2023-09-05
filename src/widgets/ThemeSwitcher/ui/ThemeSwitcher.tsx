@@ -4,23 +4,22 @@ import { Theme, useTheme } from 'app/providers/ThemeProvider';
 import LightIcon from 'shared/assets/icons/theme-light.svg';
 import DarkIcon from 'shared/assets/icons/theme-dark.svg';
 import { Button } from 'shared/ui/Button';
-import cls from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
   additionalClasses?: string[],
 }
 
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
-    const { additionalClasses = [] } = props;
+   const { additionalClasses = [] } = props;
 
-    const { theme, toggleTheme } = useTheme();
+   const { theme, toggleTheme } = useTheme();
 
-    return (
-        <Button
-            additionalClasses={[classNames(cls.ThemeSwitcher, {}, [...additionalClasses])]}
-            onClick={toggleTheme}
-        >
-            { theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
-        </Button>
-    );
+   return (
+      <Button
+         additionalClasses={[classNames('', {}, [...additionalClasses])]}
+         onClick={toggleTheme}
+      >
+         { theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
+      </Button>
+   );
 };
