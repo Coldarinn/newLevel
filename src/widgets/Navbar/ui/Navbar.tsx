@@ -8,12 +8,12 @@ interface NavbarProps {
 }
 
 export const Navbar: FC<NavbarProps> = (props) => {
-  const { additionalClasses = [] } = props;
-  
-  return (
-    <div className={classNames(cls.Navbar, {}, [...additionalClasses])}>
-      <AppLink to={'/'} theme={AppLinkTheme.PRIMARY}>Главная</AppLink>
-      <AppLink to={'/about'} theme={AppLinkTheme.SECONDARY}>О сайте</AppLink>
-    </div>
-  )
+    const { additionalClasses = [] } = props;
+
+    return (
+        <div className={classNames(cls.Navbar, {}, [...additionalClasses])}>
+            <AppLink to="/" theme={AppLinkTheme.PRIMARY}>Главная</AppLink>
+            <AppLink to="/about" theme={AppLinkTheme.SECONDARY}>О сайте</AppLink>
+        </div>
+    );
 };
