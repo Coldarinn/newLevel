@@ -15,3 +15,5 @@ declare module '*.svg' {
     const SVG: VFC<SVGProps<SVGSVGElement>>;
     export default SVG;
 }
+
+declare const __IS_DEV__: boolean;
