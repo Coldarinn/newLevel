@@ -5,10 +5,10 @@ module.exports = {
       jest: true,
    },
    extends: [
-      "plugin:react/recommended",
-      "airbnb",
-      "plugin:i18next/recommended",
-      "plugin:storybook/recommended"
+      'plugin:react/recommended',
+      'airbnb',
+      'plugin:i18next/recommended',
+      'plugin:storybook/recommended',
    ],
    parser: '@typescript-eslint/parser',
    parserOptions: {
@@ -41,6 +41,7 @@ module.exports = {
       'no-underscore-dangle': 'off',
       'max-len': ['warn', { code: 120, ignoreComments: true }],
       'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
+      'linebreak-style': 'off',
    },
    globals: {
       __IS_DEV__: true,
