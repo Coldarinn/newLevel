@@ -22,6 +22,7 @@ module.exports = {
       'react',
       '@typescript-eslint',
       'i18next',
+      'react-hooks',
    ],
    rules: {
       'react/jsx-indent': [2, 3],
@@ -41,6 +42,9 @@ module.exports = {
       'no-underscore-dangle': 'off',
       'max-len': ['warn', { code: 120, ignoreComments: true }],
       'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
+      'jsx-a11y/no-static-element-interactions': 'off',
+      'react-hooks/rules-of-hooks': 'error', // Проверяем правила хуков
+      'react-hooks/exhaustive-deps': 'error', // Проверяем зависимости эффекта
    },
    globals: {
       __IS_DEV__: true,
