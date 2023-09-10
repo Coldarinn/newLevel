@@ -7,12 +7,12 @@ import './app/styles/index.scss';
 import 'shared/config/i18n/i18n';
 
 render(
-   <StoreProvider>
-      <BrowserRouter>
-         <ThemeProvider>
-            <App />
-         </ThemeProvider>
-      </BrowserRouter>
-   </StoreProvider>,
-   document.getElementById('root'),
+  <StoreProvider>
+    <BrowserRouter>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </BrowserRouter>
+  </StoreProvider>,
+  document.getElementById('root'),
 );

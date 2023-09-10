@@ -17,6 +17,7 @@ export const Clear: StoryObj = {
       theme: ButtonTheme.CLEAR,
       size: ButtonSize.M,
       children: 'Button text',
+      disabled: false,
       additionalClasses: [],
    },
 };
@@ -26,6 +27,7 @@ export const Outline: StoryObj = {
       theme: ButtonTheme.OUTLINE,
       size: ButtonSize.M,
       children: 'Button text',
+      disabled: false,
       additionalClasses: [],
    },
 };
@@ -35,6 +37,7 @@ export const Background: StoryObj = {
       theme: ButtonTheme.BACKGROUND,
       size: ButtonSize.M,
       children: 'Button text',
+      disabled: false,
       additionalClasses: [],
    },
 };
@@ -44,6 +47,17 @@ export const BackgroundInverted: StoryObj = {
       theme: ButtonTheme.BACKGROUND_INVERTED,
       size: ButtonSize.M,
       children: 'Button text',
+      disabled: false,
+      additionalClasses: [],
+   },
+};
+
+export const Disabled: StoryObj = {
+   args: {
+      theme: ButtonTheme.OUTLINE,
+      size: ButtonSize.M,
+      children: 'Button text',
+      disabled: true,
       additionalClasses: [],
    },
 };

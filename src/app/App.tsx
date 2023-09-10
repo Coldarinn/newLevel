@@ -1,19 +1,29 @@
-import { type FC, Suspense } from 'react';
+import { type FC, Suspense, useEffect } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
+import { userActions } from 'entities/User';
 import { AppRouter } from './providers/router';
+import { useAppDispatch } from './hooks/redux';
 
-const App: FC = () => (
-   <div className={classNames('app', {}, [])}>
+const App: FC = () => {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(userActions.initAuthData());
+  }, [dispatch]);
+
+  return (
+    <div className={classNames('app', {}, [])}>
       <Suspense fallback>
-         <Navbar />
-         <div className="content-page">
-            <Sidebar />
-            <AppRouter />
-         </div>
+        <Navbar />
+        <div className="content-page">
+          <Sidebar />
+          <AppRouter />
+        </div>
       </Suspense>
-   </div>
-);
+    </div>
+  );
+};
 
 export default App;

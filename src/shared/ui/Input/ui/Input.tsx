@@ -1,5 +1,5 @@
 import {
-   ChangeEvent, FC, InputHTMLAttributes, memo, useRef,
+  ChangeEvent, FC, InputHTMLAttributes, memo, useRef,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
@@ -13,35 +13,35 @@ export interface InputProps extends HTMLInputProps {
 }
 
 export const Input: FC<InputProps> = (props) => {
-   const {
-      additionalClasses = [], value = '', onChange, placeholder = '', type = 'text', ...otherProps
-   } = props;
+  const {
+    additionalClasses = [], value = '', onChange, placeholder = '', type = 'text', ...otherProps
+  } = props;
 
-   const ref = useRef<HTMLInputElement>(null);
+  const ref = useRef<HTMLInputElement>(null);
 
-   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-      onChange?.(e.target.value);
-   };
+  const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    onChange?.(e.target.value);
+  };
 
-   return (
-      <div className={classNames(cls.input, {}, [...additionalClasses])}>
-         {placeholder && (
-            <div className={cls.placeholder}>
-               { placeholder }
-            </div>
-         )}
-         <div className={classNames(cls.inputWrapper, {}, [])}>
-            <input
-               ref={ref}
-               type={type}
-               value={value}
-               onChange={onChangeHandler}
-               className={cls.input}
-               {...otherProps}
-            />
-         </div>
+  return (
+    <div className={classNames(cls.input, {}, [...additionalClasses])}>
+      {placeholder && (
+        <div className={cls.placeholder}>
+          { placeholder }
+        </div>
+      )}
+      <div className={classNames(cls.inputWrapper, {}, [])}>
+        <input
+          ref={ref}
+          type={type}
+          value={value}
+          onChange={onChangeHandler}
+          className={cls.input}
+          {...otherProps}
+        />
       </div>
-   );
+    </div>
+  );
 };
 
 memo(Input);

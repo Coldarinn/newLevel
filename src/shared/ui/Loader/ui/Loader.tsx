@@ -7,9 +7,9 @@ interface LoaderProps {
 }
 
 export const Loader: FC<LoaderProps> = (props) => {
-   const { additionalClasses = [] } = props;
+  const { additionalClasses = [] } = props;
 
-   return (
-      <div className={classNames(cls.Loader, {}, [...additionalClasses])} />
-   );
+  return (
+    <div className={classNames(cls.Loader, {}, [...additionalClasses])} />
+  );
 };
