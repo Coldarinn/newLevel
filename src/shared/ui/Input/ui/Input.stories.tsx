@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DecoratedComponent } from 'shared/config/storybook/Decorator';
-import { Input as InputComponent } from './Input';
+import { Input as InputComponent, InputProps } from './Input';
 
-const Template = (args) => (
+const Template = (args: InputProps) => (
    <div style={{ margin: '0 auto', maxWidth: '300px' }}>
       <InputComponent {...args} />
    </div>
