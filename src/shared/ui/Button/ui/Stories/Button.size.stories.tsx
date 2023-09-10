@@ -3,40 +3,40 @@ import { DecoratedComponent } from 'shared/config/storybook/Decorator';
 import { Button as ButtonComponent, ButtonSize, ButtonTheme } from '../Button';
 
 const meta = {
-   title: 'shared/Button/Size',
-   decorators: [DecoratedComponent],
-   parameters: {
-      layout: 'fullscreen',
-   },
-   component: ButtonComponent,
-   render: (args) => <ButtonComponent {...args} />,
+  title: 'shared/Button/Size',
+  decorators: [DecoratedComponent],
+  parameters: {
+    layout: 'fullscreen',
+  },
+  component: ButtonComponent,
+  render: (args) => <ButtonComponent {...args} />,
 } satisfies Meta<typeof ButtonComponent>;
 
 export const M: StoryObj = {
-   args: {
-      theme: ButtonTheme.OUTLINE,
-      size: ButtonSize.M,
-      children: 'Button text',
-      additionalClasses: [],
-   },
+  args: {
+    theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.M,
+    children: 'Button text',
+    additionalClasses: [],
+  },
 };
 
 export const L: StoryObj = {
-   args: {
-      theme: ButtonTheme.OUTLINE,
-      size: ButtonSize.L,
-      children: 'Button text',
-      additionalClasses: [],
-   },
+  args: {
+    theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.L,
+    children: 'Button text',
+    additionalClasses: [],
+  },
 };
 
 export const XL: StoryObj = {
-   args: {
-      theme: ButtonTheme.OUTLINE,
-      size: ButtonSize.XL,
-      children: 'Button text',
-      additionalClasses: [],
-   },
+  args: {
+    theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.XL,
+    children: 'Button text',
+    additionalClasses: [],
+  },
 };
 
 export default meta;

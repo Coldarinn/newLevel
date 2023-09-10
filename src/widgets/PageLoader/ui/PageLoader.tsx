@@ -8,11 +8,11 @@ interface PageLoaderProps {
 }
 
 export const PageLoader: FC<PageLoaderProps> = (props) => {
-   const { additionalClasses = [] } = props;
+  const { additionalClasses = [] } = props;
 
-   return (
-      <div className={classNames(cls.PageLoader, {}, [...additionalClasses])}>
-         <Loader />
-      </div>
-   );
+  return (
+    <div className={classNames(cls.PageLoader, {}, [...additionalClasses])}>
+      <Loader />
+    </div>
+  );
 };

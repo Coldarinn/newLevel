@@ -5,13 +5,13 @@ import { loginReducer } from 'features/AuthByUsername';
 import { StateSchema } from './StateSchema';
 
 export function createReduxStore(initialState?: StateSchema) {
-   return configureStore<StateSchema>({
-      reducer: {
-         counter: counterReducer,
-         user: userReducer,
-         loginForm: loginReducer,
-      },
-      devTools: __IS_DEV__,
-      preloadedState: initialState,
-   });
+  return configureStore<StateSchema>({
+    reducer: {
+      counter: counterReducer,
+      user: userReducer,
+      loginForm: loginReducer,
+    },
+    devTools: __IS_DEV__,
+    preloadedState: initialState,
+  });
 }

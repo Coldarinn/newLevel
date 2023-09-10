@@ -3,11 +3,11 @@ import { DecoratedComponent } from 'shared/config/storybook/Decorator';
 import { Navbar as NavbarComponent } from './Navbar';
 
 const meta = {
-   title: 'widget/Navbar',
-   decorators: [DecoratedComponent],
-   parameters: {
-      layout: 'fullscreen',
-   },
+  title: 'widget/Navbar',
+  decorators: [DecoratedComponent],
+  parameters: {
+    layout: 'fullscreen',
+  },
 } satisfies Meta<typeof NavbarComponent>;
 
 export default meta;

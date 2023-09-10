@@ -8,6 +8,6 @@ type AppStore = ReturnType<typeof createReduxStore>
 type TypedDispatch<T> = ThunkDispatch<T, any, AnyAction>
 
 export const useAppDispatch = (): TypedDispatch<ToolkitStore<StateSchema, AnyAction>> => (
-   useDispatch<TypedDispatch<AppStore>>()
+  useDispatch<TypedDispatch<AppStore>>()
 );
 export const useAppSelector: TypedUseSelectorHook<StateSchema> = useSelector;

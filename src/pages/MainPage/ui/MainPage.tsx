@@ -8,16 +8,16 @@ interface MainPageProps {
 }
 
 const MainPage: FC<MainPageProps> = (props) => {
-   const { additionalClasses = [] } = props;
+  const { additionalClasses = [] } = props;
 
-   const { t } = useTranslation();
+  const { t } = useTranslation();
 
-   return (
-      <div className={classNames('', {}, [...additionalClasses])}>
-         {t('Главная страница')}
-         <Counter />
-      </div>
-   );
+  return (
+    <div className={classNames('', {}, [...additionalClasses])}>
+      {t('Главная страница')}
+      <Counter />
+    </div>
+  );
 };
 
 export default MainPage;

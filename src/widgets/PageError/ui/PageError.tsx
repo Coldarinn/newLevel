@@ -9,20 +9,20 @@ interface PageErrorProps {
 }
 
 export const PageError: FC<PageErrorProps> = (props) => {
-   const { additionalClasses = [] } = props;
+  const { additionalClasses = [] } = props;
 
-   const { t } = useTranslation();
+  const { t } = useTranslation();
 
-   const reloadPage = () => {
-      window.location.reload();
-   };
+  const reloadPage = () => {
+    window.location.reload();
+  };
 
-   return (
-      <div className={classNames(cls.PageError, {}, [...additionalClasses])}>
-         <p>{t('Произошла непредвиденная ошибка')}</p>
-         <Button onClick={reloadPage}>
-            {t('Обновить страницу')}
-         </Button>
-      </div>
-   );
+  return (
+    <div className={classNames(cls.PageError, {}, [...additionalClasses])}>
+      <p>{t('Произошла непредвиденная ошибка')}</p>
+      <Button onClick={reloadPage}>
+        {t('Обновить страницу')}
+      </Button>
+    </div>
+  );
 };

@@ -3,63 +3,63 @@ import { DecoratedComponent } from 'shared/config/storybook/Decorator';
 import { Button as ButtonComponent, ButtonSize, ButtonTheme } from '../Button';
 
 const meta = {
-   title: 'shared/Button/Theme',
-   decorators: [DecoratedComponent],
-   parameters: {
-      layout: 'fullscreen',
-   },
-   component: ButtonComponent,
-   render: (args) => <ButtonComponent {...args} />,
+  title: 'shared/Button/Theme',
+  decorators: [DecoratedComponent],
+  parameters: {
+    layout: 'fullscreen',
+  },
+  component: ButtonComponent,
+  render: (args) => <ButtonComponent {...args} />,
 } satisfies Meta<typeof ButtonComponent>;
 
 export const Clear: StoryObj = {
-   args: {
-      theme: ButtonTheme.CLEAR,
-      size: ButtonSize.M,
-      children: 'Button text',
-      disabled: false,
-      additionalClasses: [],
-   },
+  args: {
+    theme: ButtonTheme.CLEAR,
+    size: ButtonSize.M,
+    children: 'Button text',
+    disabled: false,
+    additionalClasses: [],
+  },
 };
 
 export const Outline: StoryObj = {
-   args: {
-      theme: ButtonTheme.OUTLINE,
-      size: ButtonSize.M,
-      children: 'Button text',
-      disabled: false,
-      additionalClasses: [],
-   },
+  args: {
+    theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.M,
+    children: 'Button text',
+    disabled: false,
+    additionalClasses: [],
+  },
 };
 
 export const Background: StoryObj = {
-   args: {
-      theme: ButtonTheme.BACKGROUND,
-      size: ButtonSize.M,
-      children: 'Button text',
-      disabled: false,
-      additionalClasses: [],
-   },
+  args: {
+    theme: ButtonTheme.BACKGROUND,
+    size: ButtonSize.M,
+    children: 'Button text',
+    disabled: false,
+    additionalClasses: [],
+  },
 };
 
 export const BackgroundInverted: StoryObj = {
-   args: {
-      theme: ButtonTheme.BACKGROUND_INVERTED,
-      size: ButtonSize.M,
-      children: 'Button text',
-      disabled: false,
-      additionalClasses: [],
-   },
+  args: {
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+    size: ButtonSize.M,
+    children: 'Button text',
+    disabled: false,
+    additionalClasses: [],
+  },
 };
 
 export const Disabled: StoryObj = {
-   args: {
-      theme: ButtonTheme.OUTLINE,
-      size: ButtonSize.M,
-      children: 'Button text',
-      disabled: true,
-      additionalClasses: [],
-   },
+  args: {
+    theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.M,
+    children: 'Button text',
+    disabled: true,
+    additionalClasses: [],
+  },
 };
 
 export default meta;

@@ -7,15 +7,15 @@ interface AboutPageProps {
 }
 
 const AboutPage: FC<AboutPageProps> = (props) => {
-   const { additionalClasses = [] } = props;
+  const { additionalClasses = [] } = props;
 
-   const { t } = useTranslation('about');
+  const { t } = useTranslation('about');
 
-   return (
-      <div className={classNames('', {}, [...additionalClasses])}>
-         {t('О странице')}
-      </div>
-   );
+  return (
+    <div className={classNames('', {}, [...additionalClasses])}>
+      {t('О странице')}
+    </div>
+  );
 };
 
 export default AboutPage;

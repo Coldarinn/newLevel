@@ -3,11 +3,11 @@ import { DecoratedComponent } from 'shared/config/storybook/Decorator';
 import { Sidebar as SidebarComponent } from './Sidebar';
 
 const meta = {
-   title: 'widget/Sidebar',
-   decorators: [DecoratedComponent],
-   parameters: {
-      layout: 'fullscreen',
-   },
+  title: 'widget/Sidebar',
+  decorators: [DecoratedComponent],
+  parameters: {
+    layout: 'fullscreen',
+  },
 } satisfies Meta<typeof SidebarComponent>;
 
 export default meta;
