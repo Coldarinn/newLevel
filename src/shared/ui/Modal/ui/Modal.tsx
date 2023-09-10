@@ -1,5 +1,5 @@
 import {
-   FC, ReactNode, useCallback, useEffect, MouseEventHandler,
+   FC, ReactNode, useCallback, useEffect, MouseEventHandler, useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
@@ -8,16 +8,30 @@ import cls from './Modal.module.scss';
 interface ModalProps {
   additionalClasses?: string[],
   children: ReactNode;
-  isOpen: boolean;
+  isOpening: boolean;
   onClose: () => void;
+  lazy?: boolean;
 }
 
 export const Modal: FC<ModalProps> = (props) => {
    const {
-      additionalClasses = [], children, isOpen, onClose,
+      additionalClasses = [], children, isOpening, onClose, lazy = false,
    } = props;
 
+   const [isMounted, setIsMounted] = useState<boolean>(false);
+   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+   useEffect(() => {
+      if (isOpening) {
+         setIsMounted(true);
+         setTimeout(() => {
+            setIsOpen(true);
+         }, 0);
+      }
+   }, [isOpen, isOpening]);
+
    const closeHandler = useCallback(() => {
+      setIsOpen(false);
       onClose();
    }, [onClose]);
 
@@ -41,6 +55,10 @@ export const Modal: FC<ModalProps> = (props) => {
       };
    }, [isOpen, onKeyDown]);
 
+   if (lazy && !isMounted) {
+      return null;
+   }
+
    return (
       <Portal>
          <div className={classNames(cls.modal, { [cls.isOpen]: isOpen }, [...additionalClasses])}>
@@ -48,7 +66,7 @@ export const Modal: FC<ModalProps> = (props) => {
                className={cls.container}
                role="button"
                tabIndex={0}
-               onMouseDown={onClose}
+               onMouseDown={closeHandler}
             >
                <div className={cls.body}>
                   <div

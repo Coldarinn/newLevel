@@ -5,6 +5,9 @@ import { AppLink as AppLinkComponent, AppLinkTheme } from './AppLink';
 const meta = {
    title: 'shared/AppLink',
    decorators: [DecoratedComponent],
+   parameters: {
+      layout: 'fullscreen',
+   },
    component: AppLinkComponent,
    render: (args) => <AppLinkComponent {...args} />,
 } satisfies Meta<typeof AppLinkComponent>;

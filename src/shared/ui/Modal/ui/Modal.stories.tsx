@@ -6,6 +6,9 @@ import { Modal as ModalComponent } from './Modal';
 const meta = {
    title: 'shared/Modal',
    decorators: [DecoratedComponent],
+   parameters: {
+      layout: 'fullscreen',
+   },
    component: ModalComponent,
    render: (args) => <ModalComponent {...args} />,
 } satisfies Meta<typeof ModalComponent>;
@@ -22,7 +25,7 @@ const ModalChildren = () => {
 export const Modal: StoryObj = {
    args: {
       children: <ModalChildren />,
-      isOpen: true,
+      isOpening: true,
       additionalClasses: [],
    },
 };

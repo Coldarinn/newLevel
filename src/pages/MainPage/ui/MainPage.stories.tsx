@@ -5,6 +5,9 @@ import MainPageComponent from './MainPage';
 const meta = {
    title: 'pages/MainPage',
    decorators: [DecoratedComponent],
+   parameters: {
+      layout: 'fullscreen',
+   },
 } satisfies Meta<typeof MainPageComponent>;
 
 export default meta;

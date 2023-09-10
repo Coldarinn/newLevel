@@ -1,8 +1,8 @@
 import { FC, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Modal } from 'shared/ui/Modal';
 import { Button } from 'shared/ui/Button';
+import { LoginModal } from 'features/AuthByUsername';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -16,18 +16,22 @@ export const Navbar: FC<NavbarProps> = (props) => {
 
    const { t } = useTranslation();
 
-   const toggle = () => {
+   const onShowModal = () => {
       setIsOpen(true);
+   };
+
+   const onCloseModal = () => {
+      setIsOpen(false);
    };
 
    return (
       <div className={classNames(cls.Navbar, {}, [...additionalClasses])}>
-         <Button additionalClasses={[cls.button]} onClick={toggle}>
+         <Button additionalClasses={[cls.button]} onClick={onShowModal}>
             {t('Войти')}
          </Button>
-         <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+         <LoginModal isOpen={isOpen} onClose={onCloseModal}>
             {t('Войти')}
-         </Modal>
+         </LoginModal>
       </div>
    );
 };

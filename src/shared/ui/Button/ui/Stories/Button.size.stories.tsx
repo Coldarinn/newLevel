@@ -5,6 +5,9 @@ import { Button as ButtonComponent, ButtonSize, ButtonTheme } from '../Button';
 const meta = {
    title: 'shared/Button/Size',
    decorators: [DecoratedComponent],
+   parameters: {
+      layout: 'fullscreen',
+   },
    component: ButtonComponent,
    render: (args) => <ButtonComponent {...args} />,
 } satisfies Meta<typeof ButtonComponent>;

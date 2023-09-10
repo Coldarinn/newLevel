@@ -5,6 +5,9 @@ import { Loader as LoaderComponent } from './Loader';
 const meta = {
    title: 'shared/Loader',
    decorators: [DecoratedComponent],
+   parameters: {
+      layout: 'fullscreen',
+   },
    component: LoaderComponent,
    render: (args) => <LoaderComponent {...args} />,
 } satisfies Meta<typeof LoaderComponent>;

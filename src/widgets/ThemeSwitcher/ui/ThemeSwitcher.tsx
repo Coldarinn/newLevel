@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Theme, useTheme } from 'app/providers/ThemeProvider';
+import { useTheme } from 'app/providers/ThemeProvider';
+import { Theme } from 'shared/const/theme';
 import LightIcon from 'shared/assets/icons/theme-light.svg';
 import DarkIcon from 'shared/assets/icons/theme-dark.svg';
 import { Button } from 'shared/ui/Button';
