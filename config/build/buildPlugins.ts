@@ -18,7 +18,7 @@ export function buildPlugins({ paths, isDev, analyze }: BuildOptions): webpack.W
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    ...(isDev ? [new ReactRefreshWebpackPlugin(), new webpack.HotModuleReplacementPlugin()] : []),
+    ...(isDev ? [new ReactRefreshWebpackPlugin({ overlay: false }), new webpack.HotModuleReplacementPlugin()] : []),
     ...(analyze ? [new BundleAnalyzerPlugin({ openAnalyzer: false })] : []),
   ];
 }

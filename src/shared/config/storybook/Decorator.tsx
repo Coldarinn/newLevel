@@ -5,7 +5,12 @@ import { ThemeProvider } from 'app/providers/ThemeProvider';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { Suspense, useEffect } from 'react';
 import { I18nextProvider } from 'react-i18next';
+import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import i18n from '../i18n/i18nForTests';
+
+const initialAsyncReducers = {
+  loginForm: loginReducer,
+};
 
 export const DecoratedComponent = (Story: StoryFn, { globals, args }: StoryContext) => {
   const { theme } = globals;
@@ -15,7 +20,7 @@ export const DecoratedComponent = (Story: StoryFn, { globals, args }: StoryConte
   }, [theme, args]);
 
   return (
-    <StoreProvider initialState={args?.initialState ?? {}}>
+    <StoreProvider initialState={args?.initialState ?? {}} asyncReducers={initialAsyncReducers}>
       <BrowserRouter>
         <ThemeProvider>
           <I18nextProvider i18n={i18n}>

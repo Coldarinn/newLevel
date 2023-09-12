@@ -1,6 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DecoratedComponent } from 'shared/config/storybook/Decorator';
-import { LoginForm as LoginFormComponent } from './LoginForm';
+import LoginFormComponent, { LoginFormProps } from './LoginForm';
+
+const RenderComponent = (args: LoginFormProps) => (
+  <div style={{
+    width: '500px',
+    background: 'var(--bg-color)',
+    padding: '20px 50px',
+    borderRadius: '8px',
+  }}
+  >
+    <LoginFormComponent {...args} />
+  </div>
+);
 
 const meta = {
   title: 'features/LoginForm',
@@ -9,7 +21,7 @@ const meta = {
     layout: 'fullscreen',
   },
   component: LoginFormComponent,
-  render: (args) => <LoginFormComponent {...args} />,
+  render: (args) => <RenderComponent {...args} />,
 } satisfies Meta<typeof LoginFormComponent>;
 
 export const Default: StoryObj = {
