@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { memo, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button';
@@ -12,7 +12,7 @@ interface NavbarProps {
   additionalClasses?: string[],
 }
 
-export const Navbar: FC<NavbarProps> = (props) => {
+export const Navbar = memo((props: NavbarProps) => {
   const { additionalClasses = [] } = props;
 
   const dispatch = useAppDispatch();
@@ -55,4 +55,4 @@ export const Navbar: FC<NavbarProps> = (props) => {
       </LoginModal>
     </div>
   );
-};
+});

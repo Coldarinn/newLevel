@@ -1,5 +1,5 @@
 import {
-  ChangeEvent, FC, InputHTMLAttributes, memo, useRef,
+  ChangeEvent, InputHTMLAttributes, memo, useRef,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
@@ -12,7 +12,7 @@ export interface InputProps extends HTMLInputProps {
    onChange?: (value: string) => void;
 }
 
-export const Input: FC<InputProps> = (props) => {
+export const Input = memo((props: InputProps) => {
   const {
     additionalClasses = [], value = '', onChange, placeholder = '', type = 'text', ...otherProps
   } = props;
@@ -42,6 +42,6 @@ export const Input: FC<InputProps> = (props) => {
       </div>
     </div>
   );
-};
+});
 
 memo(Input);

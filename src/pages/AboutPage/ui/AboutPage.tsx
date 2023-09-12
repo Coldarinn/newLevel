@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 
@@ -6,7 +6,7 @@ interface AboutPageProps {
   additionalClasses?: string[],
 }
 
-const AboutPage: FC<AboutPageProps> = (props) => {
+const AboutPage = memo((props: AboutPageProps) => {
   const { additionalClasses = [] } = props;
 
   const { t } = useTranslation('about');
@@ -16,6 +16,6 @@ const AboutPage: FC<AboutPageProps> = (props) => {
       {t('О странице')}
     </div>
   );
-};
+});
 
 export default AboutPage;

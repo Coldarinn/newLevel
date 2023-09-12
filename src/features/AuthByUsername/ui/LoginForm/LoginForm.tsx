@@ -1,5 +1,5 @@
 import {
-  FC, memo, useCallback, useEffect,
+  memo, useCallback, useEffect,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
@@ -8,7 +8,7 @@ import { Input } from 'shared/ui/Input';
 import { useAppDispatch, useAppSelector } from 'app/hooks/redux';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useStore } from 'react-redux';
-import { ReduxStoreWithManager, StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema';
+import { ReduxStoreWithManager } from 'app/providers/StoreProvider/config/StateSchema';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
@@ -20,14 +20,15 @@ import { getLoginError } from '../../model/selectors/getLoginError/getLoginError
 
 export interface LoginFormProps {
   additionalClasses?: string[],
+  onSuccess?: () => void,
 }
 
 const initialReducers: ReducersList = {
   loginForm: loginReducer,
 };
 
-const LoginForm: FC<LoginFormProps> = (props) => {
-  const { additionalClasses = [] } = props;
+const LoginForm = (props: LoginFormProps) => {
+  const { additionalClasses = [], onSuccess } = props;
 
   const username = useAppSelector(getLoginUsername);
   const password = useAppSelector(getLoginPassword);
@@ -57,9 +58,12 @@ const LoginForm: FC<LoginFormProps> = (props) => {
     dispatch(loginActions.setPassword(value));
   };
 
-  const onClick = useCallback(() => {
-    dispatch(loginByUsername({ username, password }));
-  }, [dispatch, username, password]);
+  const onClick = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }));
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess();
+    }
+  }, [dispatch, username, password, onSuccess]);
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
@@ -76,4 +80,4 @@ const LoginForm: FC<LoginFormProps> = (props) => {
   );
 };
 
-export default memo(LoginForm);
+export default LoginForm;

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Counter } from 'entities/Counter';
@@ -7,7 +7,7 @@ interface MainPageProps {
   additionalClasses?: string[],
 }
 
-const MainPage: FC<MainPageProps> = (props) => {
+const MainPage = memo((props: MainPageProps) => {
   const { additionalClasses = [] } = props;
 
   const { t } = useTranslation();
@@ -18,6 +18,6 @@ const MainPage: FC<MainPageProps> = (props) => {
       <Counter />
     </div>
   );
-};
+});
 
 export default MainPage;
