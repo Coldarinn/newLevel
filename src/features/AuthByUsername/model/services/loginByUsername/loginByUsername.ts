@@ -21,7 +21,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
 
       localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
       dispatch(userActions.setAuthData(response.data));
-
+      //
       return response.data;
     } catch (e) {
       return rejectWithValue('Пользователь с введенным именем и паролем не найден');
