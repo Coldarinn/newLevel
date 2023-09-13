@@ -10,7 +10,7 @@ interface MainPageProps {
 const MainPage = memo((props: MainPageProps) => {
   const { additionalClasses = [] } = props;
 
-  const { t } = useTranslation();
+  const { t } = useTranslation('main');
 
   return (
     <div className={classNames('', {}, [...additionalClasses])}>

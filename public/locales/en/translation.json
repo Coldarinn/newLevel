@@ -1,19 +1,9 @@
 {
-   "Перевод": "PEREVOD",
-   "Пример текста": "PEREVOD 2",
    "Язык": "English",
-   "Страница не найдена": "Page not found",
    "Главная": "Main",
    "О сайте": "About",
    "Профиль": "Profile",
-   "Главная страница": "Main Page",
-   "Произошла непредвиденная ошибка": "An unexpected error has occurred",
-   "Обновить страницу": "Refresh the page",
-   "something...": "something...",
    "Войти": "Login",
    "Выйти": "Logout",
-   "Имя пользователя": "Username",
-   "Пароль": "Password",
-   "Форма авторизации": "Auth Form",
-   "Пользователь с введенным именем и паролем не найден": "The user with the entered name and password was not found"
+   "Не удалось получить личные данные": "Could not get personal data"
 }

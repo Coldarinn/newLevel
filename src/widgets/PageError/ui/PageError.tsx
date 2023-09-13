@@ -11,7 +11,7 @@ interface PageErrorProps {
 export const PageError: FC<PageErrorProps> = (props) => {
   const { additionalClasses = [] } = props;
 
-  const { t } = useTranslation();
+  const { t } = useTranslation('error');
 
   const reloadPage = () => {
     window.location.reload();

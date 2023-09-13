@@ -47,7 +47,7 @@ const LoginForm = (props: LoginFormProps) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const { t } = useTranslation();
+  const { t } = useTranslation('login');
 
   const dispatch = useAppDispatch();
 
@@ -70,7 +70,7 @@ const LoginForm = (props: LoginFormProps) => {
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
       <div className={classNames(cls.LoginForm, {}, [...additionalClasses])}>
         <Text title={t('Форма авторизации')} additionalClasses={[cls.textBlock]} />
-        {error && <Text text={error} theme={TextTheme.ERROR} additionalClasses={[cls.textBlock]} />}
+        {error && <Text text={t(error)} theme={TextTheme.ERROR} additionalClasses={[cls.textBlock]} />}
         <Input placeholder={t('Имя пользователя')} value={username} onChange={onChangeUsername} autoFocus />
         <Input placeholder={t('Пароль')} value={password} onChange={onChangePassword} autoFocus />
         <Button additionalClasses={[cls.button]} theme={ButtonTheme.OUTLINE} disabled={isLoading} onClick={onClick}>
