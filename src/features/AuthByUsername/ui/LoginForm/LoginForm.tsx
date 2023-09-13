@@ -1,15 +1,16 @@
 import {
-  memo, useCallback, useEffect,
+  useCallback, useEffect,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input';
-import { useAppDispatch, useAppSelector } from 'app/hooks/redux';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useStore } from 'react-redux';
 import { ReduxStoreWithManager } from 'app/providers/StoreProvider/config/StateSchema';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
+import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import cls from './LoginForm.module.scss';

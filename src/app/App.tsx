@@ -3,8 +3,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { userActions } from 'entities/User';
+import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
 import { AppRouter } from './providers/router';
-import { useAppDispatch } from './hooks/redux';
 
 const App: FC = () => {
   const dispatch = useAppDispatch();
