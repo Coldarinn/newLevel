@@ -5,9 +5,9 @@ export enum Currency {
 }
 
 export enum Country {
-  Russia = 'Russia',
-  Ukraine = 'Ukraine',
-  Belarus = 'Belarus',
-  USA = 'USA',
-  Canada = 'Canada',
+  RUSSIA = 'Россия',
+  UKRAINE = 'Украина',
+  BELARUS = 'Беларусь',
+  USA = 'США',
+  CANADA = 'Канада',
 }

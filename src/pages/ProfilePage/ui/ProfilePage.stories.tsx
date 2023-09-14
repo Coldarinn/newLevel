@@ -16,12 +16,12 @@ export const ProfilePage: StoryObj = {
   args: {
     initialState: {
       profile: {
-        firstname: 'Тимур',
-        lastname: 'Ульби',
+        firstname: 'Кирилл',
+        lastname: 'Палкин',
         age: 22,
         currency: 'RUB',
-        country: 'Russia',
-        city: 'Moscow',
+        country: 'Россия',
+        city: 'Москва',
         username: 'admin',
         avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
       },
