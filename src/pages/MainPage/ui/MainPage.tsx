@@ -3,7 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Counter } from 'entities/Counter';
 
-interface MainPageProps {
+export interface MainPageProps {
   additionalClasses?: string[],
 }
 

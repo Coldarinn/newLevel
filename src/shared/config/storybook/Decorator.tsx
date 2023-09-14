@@ -7,9 +7,10 @@ import { Suspense, useEffect } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { profileReducer } from 'entities/Profile';
+import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import i18n from '../i18n/i18nForTests';
 
-const initialAsyncReducers = {
+const initialAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
 };

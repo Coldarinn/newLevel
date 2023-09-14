@@ -8,7 +8,7 @@ const reducers: ReducersList = {
   profile: profileReducer,
 };
 
-interface ProfilePageProps {
+export interface ProfilePageProps {
   additionalClasses?: string[],
 }
 
