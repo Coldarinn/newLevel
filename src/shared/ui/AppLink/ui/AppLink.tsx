@@ -4,9 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './AppLink.module.scss';
 
 export enum AppLinkTheme {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-  RED = 'red',
+  DEFAULT = 'default',
 }
 
 interface AppLinkProps extends LinkProps {
@@ -16,7 +14,7 @@ interface AppLinkProps extends LinkProps {
 
 export const AppLink = memo((props: AppLinkProps) => {
   const {
-    additionalClasses = [], theme = AppLinkTheme.PRIMARY, children, to, ...otherProps
+    additionalClasses = [], theme = AppLinkTheme.DEFAULT, children, to, ...otherProps
   } = props;
 
   return (

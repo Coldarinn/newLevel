@@ -1,16 +1,12 @@
-.AppLink {
-  text-decoration: none;
-  color: var(--primary-color);
-}
+.default {
+  display: inline-block;
+  padding: var(--padding-s);
+  transition: background-color 0.3s;
+  border-radius: var(--border-radius-lg);
 
-.primary {
-  color: var(--primary-color);
-}
-
-.secondary {
-  color: var(--inverted-primary-color);
-}
-
-.red {
-  color: red;
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--bg-hover-color);
+    }
+  }
 }

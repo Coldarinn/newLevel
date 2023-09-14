@@ -4,8 +4,9 @@ import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector
 import { getProfileData } from 'entities/Profile/model/selectors/getProfileData/getProfileData';
 import { Text } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button';
+import { Button } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
+import { ButtonPadding, ButtonTheme } from 'shared/ui/Button/ui/Button';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
@@ -27,7 +28,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     <div className={classNames(cls.ProfileCard, {}, [...additionalClasses])}>
       <div className={cls.header}>
         <Text title={t('Персональные данные')} />
-        <Button theme={ButtonTheme.OUTLINE} size={ButtonSize.M}>
+        <Button theme={ButtonTheme.BACKGROUND} padding={ButtonPadding.L}>
           {t('Редактировать')}
         </Button>
       </div>

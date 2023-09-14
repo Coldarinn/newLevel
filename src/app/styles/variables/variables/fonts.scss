@@ -1,0 +1,37 @@
+:root {
+  --font-family-default:
+    -apple-system,
+    blinkmacsystemfont,
+    "Segoe UI",
+    "Noto Sans",
+    helvetica,
+    arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji";
+
+  // s
+  --font-size-s: 12px;
+  --font-line-s: 20px;
+  --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-default);
+
+  // m
+  --font-size-m: 16px;
+  --font-line-m: 24px;
+  --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-default);
+
+  // xm
+  --font-size-xm: 18px;
+  --font-line-xm: 26px;
+  --font-xm: var(--font-size-xm) / var(--font-line-xm) var(--font-family-default);
+
+  // l
+  --font-size-l: 20px;
+  --font-line-l: 28px;
+  --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-default);
+
+  // xl
+  --font-size-xl: 24px;
+  --font-line-xl: 32px;
+  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-default);
+}

@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { DecoratedComponent } from 'shared/config/storybook/Decorator';
 import ProfilePageComponent from './ProfilePage';
 
@@ -8,8 +8,25 @@ const meta = {
   parameters: {
     layout: 'fullscreen',
   },
+  component: ProfilePageComponent,
+  render: (args) => <ProfilePageComponent {...args} />,
 } satisfies Meta<typeof ProfilePageComponent>;
 
-export default meta;
+export const ProfilePage: StoryObj = {
+  args: {
+    initialState: {
+      profile: {
+        firstname: 'Тимур',
+        lastname: 'Ульби',
+        age: 22,
+        currency: 'RUB',
+        country: 'Russia',
+        city: 'Moscow',
+        username: 'admin',
+        avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
+      },
+    },
+  },
+};
 
-export const ProfilePage = () => <ProfilePageComponent />;
+export default meta;

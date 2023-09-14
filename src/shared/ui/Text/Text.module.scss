@@ -1,19 +1,21 @@
-.title {
-  font: var(--font-l);
-  color: var(--primary-color);
+.Text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-m);
 }
 
-.text {
-  font: var(--font-m);
-  color: var(--secondary-color);
+.title {
+  font: var(--font-xl);
 }
 
 .error {
-  .title {
-    color: var(--red-light);
-  }
+  font: var(--font-m);
+}
 
-  .text {
-    color: var(--red-dark);
-  }
+.default {
+  color: var(--fg-default-color);
+}
+
+.danger {
+  color: var(--danger-color);
 }

@@ -4,31 +4,29 @@ import cls from './Button.module.scss';
 
 export enum ButtonTheme {
   CLEAR = 'clear',
-  OUTLINE = 'outline',
+  DEFAULT = 'default',
+  PRIMARY = 'primary',
   BACKGROUND = 'background',
-  BACKGROUND_INVERTED = 'backgroundInverted',
 }
 
-export enum ButtonSize {
-  M = 'size_m',
-  L = 'size_l',
-  XL = 'size_xl',
+export enum ButtonPadding {
+  S = 'padding-s',
+  M = 'padding-m',
+  L = 'padding-l',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   additionalClasses?: string[],
   theme?: ButtonTheme,
-  square?: boolean;
+  padding?: ButtonPadding,
   disabled?: boolean;
-  size?: ButtonSize;
 }
 
 export const Button = memo((props: ButtonProps) => {
   const {
     additionalClasses = [],
-    theme = ButtonTheme.CLEAR,
-    size = ButtonSize.M,
-    square = false,
+    theme = ButtonTheme.DEFAULT,
+    padding = ButtonPadding.S,
     children,
     disabled = false,
     ...otherProps
@@ -40,10 +38,9 @@ export const Button = memo((props: ButtonProps) => {
       className={classNames(
         cls.Button,
         {
-          [cls.square]: square,
           [cls.disabled]: disabled,
         },
-        [...additionalClasses, cls[theme], cls[size]],
+        [...additionalClasses, cls[theme], cls[padding]],
       )}
       disabled={disabled}
       {...otherProps}

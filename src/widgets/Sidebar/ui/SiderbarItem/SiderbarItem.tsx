@@ -1,5 +1,5 @@
-import { FC, memo } from 'react';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
+import { memo } from 'react';
+import { AppLink } from 'shared/ui/AppLink';
 import { SidebarItemType } from 'widgets/Sidebar/model/items';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -19,11 +19,12 @@ const SiderbarItem = (props: SiderbarItemProps) => {
 
   return (
     <AppLink
-      theme={AppLinkTheme.SECONDARY}
       to={item.path}
       additionalClasses={[cls.item]}
     >
-      <item.Icon className={cls.icon} />
+      <span className={cls.iconWrapper}>
+        <item.Icon className={cls.icon} />
+      </span>
       <span className={classNames(cls.link, { [cls.collapsed]: collapsed }, [])}>
         {t(item.text)}
       </span>

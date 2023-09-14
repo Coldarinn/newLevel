@@ -14,9 +14,8 @@ export default ({ config }: {config: Configuration}) => {
   config.resolve?.modules?.push(paths.src);
   config.resolve?.extensions?.push('.ts', '.tsx');
 
-  // eslint-disable-next-line no-param-reassign
   if (config.module && config.module.rules) {
-    // eslint-disable-next-line no-param-reassign
+    // @ts-ignore
     config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
       if (/svg/.test(rule.test as string)) {
         return { ...rule, exclude: /\.svg$/i };
@@ -33,11 +32,12 @@ export default ({ config }: {config: Configuration}) => {
   config.module?.rules?.push(buildCssLoader(true));
 
   const mode = process.env.mode || 'development';
+  const apiUrl = process.env.apiUrl || 'http://localhost:8000';
   const isDev = mode === 'development';
 
   config.plugins?.push(new DefinePlugin({
     __IS_DEV__: JSON.stringify(isDev),
-    __API_URL__: JSON.stringify(''),
+    __API_URL__: JSON.stringify(apiUrl),
   }));
 
   return config;

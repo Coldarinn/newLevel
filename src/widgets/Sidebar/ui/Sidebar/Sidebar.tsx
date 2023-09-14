@@ -1,9 +1,10 @@
 import { memo, useState } from 'react';
-import { Button, ButtonTheme, ButtonSize } from 'shared/ui/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { SidebarItemsList } from 'widgets/Sidebar/model/items';
+import ArrowIcon from 'shared/assets/icons/arrow.svg';
 import cls from './Sidebar.module.scss';
 import SiderbarItem from '../SiderbarItem/SiderbarItem';
 
@@ -27,13 +28,13 @@ export const Sidebar = memo((props: SidebarProps) => {
     >
       <Button
         data-testid="sidebar-toggle"
+        theme={ButtonTheme.CLEAR}
         additionalClasses={[cls.collapseBtn]}
         onClick={onToggle}
-        theme={ButtonTheme.BACKGROUND_INVERTED}
-        size={ButtonSize.L}
-        square
       >
-        {collapsed ? '>' : '<'}
+        <span className={cls.arrowIcon}>
+          <ArrowIcon />
+        </span>
       </Button>
       <div className={cls.items}>
         {SidebarItemsList.map((item) => <SiderbarItem key={item.path} item={item} collapsed={collapsed} />)}

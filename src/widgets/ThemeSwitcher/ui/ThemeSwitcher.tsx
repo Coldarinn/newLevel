@@ -1,10 +1,9 @@
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
-import { Theme } from 'shared/const/theme';
-import LightIcon from 'shared/assets/icons/theme-light.svg';
-import DarkIcon from 'shared/assets/icons/theme-dark.svg';
-import { Button } from 'shared/ui/Button';
+import ThemeIcon from 'shared/assets/icons/theme.svg';
+import { Button, ButtonTheme } from 'shared/ui/Button';
+import cls from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
   additionalClasses?: string[],
@@ -13,14 +12,15 @@ interface ThemeSwitcherProps {
 export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
   const { additionalClasses = [] } = props;
 
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
 
   return (
     <Button
-      additionalClasses={[classNames('', {}, [...additionalClasses])]}
+      theme={ButtonTheme.CLEAR}
+      additionalClasses={[classNames(cls.button, {}, [...additionalClasses])]}
       onClick={toggleTheme}
     >
-      { theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
+      <ThemeIcon />
     </Button>
   );
 });

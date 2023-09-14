@@ -22,7 +22,7 @@ export const profileSlice = createSlice({
       })
       .addCase(fetchProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
         state.isLoading = false;
-        state.data = action.payload;
+        state.data = action?.payload;
       })
       .addCase(fetchProfileData.rejected, (state, action) => {
         state.isLoading = false;

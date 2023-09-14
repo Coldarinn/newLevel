@@ -1,62 +1,62 @@
 .Button {
-  color: var(--primary-color);
+  display: inline-block;
+  color: var(--fg-default-color);
   cursor: pointer;
+  background-color: transparent;
+  font: var(--font-m);
+
+  &:not(.clear) {
+    &.padding-s {
+      padding: var(--padding-s);
+    }
+
+    &.padding-m {
+      padding: var(--padding-s) var(--padding-l);
+    }
+
+    &.padding-l {
+      padding: var(--padding-xs) var(--padding-xl);
+    }
+  }
 }
 
-.clear {
-  background: none;
-  border: none;
-  outline: none;
+.default {
+  transition: background-color 0.3s;
+  border-radius: var(--border-radius-lg);
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--bg-hover-color);
+    }
+  }
 }
 
-.outline {
-  background: none;
-  border: 1px solid var(--primary-color);
-  padding: 10px 15px;
-  color: var(--primary-color);
+.primary {
+  color: var(--white-color);
+  transition: background-color 0.3s;
+  border-radius: var(--border-radius-lg);
+  background-color: var(--primary-color);
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--primary-hover-color);
+    }
+  }
 }
 
 .background {
-  background: var(--bg-color);
-  border: none;
-  color: var(--primary-color);
-}
+  border: 1px solid var(--btn-border-color);
+  color: var(--btn-fg-color);
+  transition: background-color 0.3s, border 0.3s;
+  background-color: var(--btn-bg-color);
+  border-radius: var(--border-radius-lg);
 
-.backgroundInverted {
-  background: var(--inverted-bg-color);
-  border: none;
-  color: var(--inverted-primary-color);
-}
-
-.square {
-  padding: 0;
-}
-
-.square.size_m {
-  width: var(--font-line-m);
-  height: var(--font-line-m);
-}
-
-.square.size_l {
-  width: var(--font-line-l);
-  height: var(--font-line-l);
-}
-
-.square.size_xl {
-  width: var(--font-line-xl);
-  height: var(--font-line-xl);
-}
-
-.size_m {
-  font: var(--font-m);
-}
-
-.size_l {
-  font: var(--font-l);
-}
-
-.size_xl {
-  font: var(--font-xl);
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--btn-bg-hover-color);
+      border: 1px solid var(--btn-border-hover-color);
+    }
+  }
 }
 
 .disabled {

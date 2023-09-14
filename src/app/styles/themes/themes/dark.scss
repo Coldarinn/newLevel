@@ -1,0 +1,26 @@
+.app_dark_theme {
+  // bg colors
+  --bg-default-color: #161b22;
+  --bg-inset-color: #010409;
+  --bg-hover-color: #292f36;
+
+  // text colors
+  --fg-default-color: #e6edf3;
+  --fg-muted-color: #7d8590;
+
+  // border
+  --border-default-color: #30363d;
+
+  // overlay
+  --overlay-color: rgb(110 118 129 / 40%);
+
+  // box-shadow
+  --box-shadow: inset 0 1px var(--border-default-color);
+
+  // btn
+  --btn-bg-color: #21262d;
+  --btn-bg-hover-color: #30363d;
+  --btn-fg-color: #c9d1d9;
+  --btn-border-color: rgb(240 246 252 / 10%);
+  --btn-border-hover-color: #8b949e;
+}

@@ -14,7 +14,7 @@ const meta = {
 
 export const Primary: StoryObj = {
   args: {
-    theme: TextTheme.PRIMARY,
+    theme: TextTheme.DEFAULT,
     title: 'Title example',
     text: 'Text example',
     additionalClasses: [],
@@ -23,7 +23,7 @@ export const Primary: StoryObj = {
 
 export const Error: StoryObj = {
   args: {
-    theme: TextTheme.ERROR,
+    theme: TextTheme.DANGER,
     title: 'Title example',
     text: 'Text example',
     additionalClasses: [],

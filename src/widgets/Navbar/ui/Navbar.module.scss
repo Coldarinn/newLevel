@@ -1,14 +1,12 @@
 .Navbar {
   display: flex;
-  width: 100%;
-  height: var(--navbar-height);
-  background: var(--inverted-bg-color);
-  padding: 0 20px;
   align-items: center;
   justify-content: flex-end;
   gap: 15px;
-}
-
-.button {
-  color: var(--inverted-primary-color);
+  width: 100%;
+  height: var(--navbar-height);
+  background: var(--bg-inset-color);
+  padding: 0 20px;
+  box-shadow: var(--box-shadow);
+  border-bottom: 1px solid var(--border-default-color);
 }

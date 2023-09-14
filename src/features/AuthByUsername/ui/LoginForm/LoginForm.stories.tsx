@@ -5,7 +5,7 @@ import LoginFormComponent, { LoginFormProps } from './LoginForm';
 const RenderComponent = (args: LoginFormProps) => (
   <div style={{
     width: '500px',
-    background: 'var(--bg-color)',
+    background: 'var(--bg-default-color)',
     padding: '20px 50px',
     borderRadius: '8px',
   }}

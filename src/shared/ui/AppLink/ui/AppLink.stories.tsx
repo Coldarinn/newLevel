@@ -12,26 +12,10 @@ const meta = {
   render: (args) => <AppLinkComponent {...args} />,
 } satisfies Meta<typeof AppLinkComponent>;
 
-export const Primary: StoryObj = {
+export const AppLink: StoryObj = {
   args: {
-    theme: AppLinkTheme.PRIMARY,
     children: 'Link text',
-    additionalClasses: [],
-  },
-};
-
-export const Secondary: StoryObj = {
-  args: {
-    theme: AppLinkTheme.SECONDARY,
-    children: 'Link text',
-    additionalClasses: [],
-  },
-};
-
-export const Red: StoryObj = {
-  args: {
-    theme: AppLinkTheme.RED,
-    children: 'Link text',
+    theme: AppLinkTheme.DEFAULT,
     additionalClasses: [],
   },
 };
