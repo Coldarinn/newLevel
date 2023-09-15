@@ -4,8 +4,9 @@
 @import "common";
 
 body {
-  font: var(--font-m);
+  background: var(--bg-default-color);
   color: var(--fg-default-color);
+  font: var(--font-m);
 }
 
 .app {

@@ -1,4 +1,4 @@
-import { ProfileCard, fetchProfileData, profileReducer } from 'entities/Profile';
+import { EditableProfileCard, fetchProfileData, profileReducer } from 'features/EditableProfileCard';
 import { memo, useEffect } from 'react';
 import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -24,7 +24,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={classNames('', {}, [...additionalClasses])}>
-        <ProfileCard />
+        <EditableProfileCard />
       </div>
     </DynamicModuleLoader>
   );

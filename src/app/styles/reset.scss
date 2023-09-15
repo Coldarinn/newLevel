@@ -26,3 +26,22 @@ svg * {
   overflow-clip-margin: content-box;
   fill: currentcolor;
 }
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar:horizontal {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: var(--bg-default-color);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--bg-inset-color);
+}

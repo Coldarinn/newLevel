@@ -1,13 +1,11 @@
-.header {
+.EditableProfileCardHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
 }
 
-.data {
+.row {
   display: flex;
-  flex-direction: column;
   gap: 20px;
-  max-width: 400px;
 }

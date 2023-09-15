@@ -3,6 +3,12 @@
   flex-direction: column;
   gap: 5px;
   width: 100%;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
 }
 
 .inputWrapper {
@@ -22,4 +28,10 @@
     color: var(--fg-default-color);
     outline: none;
   }
+}
+
+.readonly {
+  cursor: default;
+  opacity: 0.5;
+  pointer-events: none;
 }
