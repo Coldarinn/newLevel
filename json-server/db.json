@@ -26,12 +26,12 @@
     }
   ],
   "profile": {
-    "firstname": "Кирилл edit",
-    "lastname": "Палкин",
-    "age": 22,
-    "currency": "RUB",
+    "firstname": "Kirill",
+    "lastname": "Palkin",
+    "age": "22",
+    "currency": "EUR",
     "country": "Россия",
-    "city": "Москва",
+    "city": "Moscow",
     "username": "admin",
     "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
   }

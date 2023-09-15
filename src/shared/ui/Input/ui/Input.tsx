@@ -4,18 +4,26 @@ import {
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readonly'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readonly' | 'require'>
 
 export interface InputProps extends HTMLInputProps {
    additionalClasses?: string[],
    value?: string | number;
    onChange?: (value: string) => void;
    readonly?: boolean;
+   require?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
   const {
-    additionalClasses = [], value = '', onChange, placeholder = '', type = 'text', readonly = false, ...otherProps
+    additionalClasses = [],
+    value = '',
+    onChange,
+    placeholder = '',
+    type = 'text',
+    readonly = false,
+    require = false,
+    ...otherProps
   } = props;
 
   const ref = useRef<HTMLInputElement>(null);
@@ -31,7 +39,7 @@ export const Input = memo((props: InputProps) => {
           { placeholder }
         </div>
       )}
-      <div className={classNames(cls.inputWrapper, { [cls.readonly]: readonly }, [])}>
+      <div className={classNames(cls.inputWrapper, { [cls.readonly]: readonly, [cls.error]: !value && require }, [])}>
         <input
           ref={ref}
           type={type}

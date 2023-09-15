@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ProfileCard } from 'entities/Profile/ui/ProfileCard';
 import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
@@ -56,9 +56,12 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     dispatch(profileActions.updateProfileForm({ country: value || '' }));
   }, [dispatch]);
 
+  const isDisable = useMemo(() => !(formData?.firstname && formData?.lastname && formData?.city
+  && formData?.avatar && formData?.age && formData?.username), [formData]);
+
   return (
     <div className={classNames('', {}, [...additionalClasses])}>
-      <EditableProfileCardHeader readonly={readonly} />
+      <EditableProfileCardHeader readonly={readonly} disabled={isDisable} />
       <ProfileCard
         data={formData}
         isLoading={isLoading}

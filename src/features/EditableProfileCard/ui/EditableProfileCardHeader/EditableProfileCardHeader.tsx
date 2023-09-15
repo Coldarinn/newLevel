@@ -11,10 +11,11 @@ import cls from './EditableProfileCardHeader.module.scss';
 interface EditableProfileCardHeaderProps {
   additionalClasses?: string[];
   readonly?: boolean;
+  disabled?: boolean;
 }
 
 export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderProps) => {
-  const { additionalClasses = [], readonly } = props;
+  const { additionalClasses = [], readonly, disabled } = props;
 
   const { t } = useTranslation('profile');
 
@@ -56,6 +57,7 @@ export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderP
             theme={ButtonTheme.PRIMARY}
             padding={ButtonPadding.L}
             onClick={onSave}
+            disabled={disabled}
           >
             {t('Сохранить')}
           </Button>

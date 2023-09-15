@@ -28,6 +28,10 @@
     color: var(--fg-default-color);
     outline: none;
   }
+
+  &.error {
+    border-color: var(--danger-color);
+  }
 }
 
 .readonly {

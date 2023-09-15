@@ -51,14 +51,51 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         <div className={cls.avatar}>
           <Avatar src={data?.avatar} />
         </div>
-        <Input placeholder={t('Имя')} value={data?.firstname} onChange={onChangeFirstname} readonly={readonly} />
-        <Input placeholder={t('Фамилия')} value={data?.lastname} readonly={readonly} onChange={onChangeLastname} />
-        <Input placeholder={t('Город')} value={data?.city} readonly={readonly} onChange={onChangeCity} />
-        <Input placeholder={t('Возраст')} value={data?.age} type="number" readonly={readonly} onChange={onChangeAge} />
+        <Input
+          placeholder={t('Имя')}
+          value={data?.firstname}
+          onChange={onChangeFirstname}
+          readonly={readonly}
+          require
+        />
+        <Input
+          placeholder={t('Фамилия')}
+          value={data?.lastname}
+          readonly={readonly}
+          onChange={onChangeLastname}
+          require
+        />
+        <Input
+          placeholder={t('Город')}
+          value={data?.city}
+          readonly={readonly}
+          onChange={onChangeCity}
+          require
+        />
+        <Input
+          placeholder={t('Возраст')}
+          value={data?.age}
+          type="number"
+          readonly={readonly}
+          onChange={onChangeAge}
+          require
+        />
         <CountrySelect selectedValue={data?.country} readonly={readonly} onChange={onChangeCountry} />
         <CurrencySelect selectedValue={data?.currency} readonly={readonly} onChange={onChangeCurrency} />
-        <Input placeholder={t('Аватар')} value={data?.avatar} readonly={readonly} onChange={onChangeAvatar} />
-        <Input placeholder={t('Логин')} value={data?.username} readonly={readonly} onChange={onChangeUsername} />
+        <Input
+          placeholder={t('Аватар')}
+          value={data?.avatar}
+          readonly={readonly}
+          onChange={onChangeAvatar}
+          require
+        />
+        <Input
+          placeholder={t('Логин')}
+          value={data?.username}
+          readonly={readonly}
+          onChange={onChangeUsername}
+          require
+        />
       </div>
     </div>
   );
