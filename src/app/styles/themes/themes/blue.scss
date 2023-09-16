@@ -1,0 +1,30 @@
+.app_blue_theme {
+  // bg colors
+  --bg-default-color: #286ce2;
+  --bg-inset-color: #0659ff;
+  --bg-hover-color: #59a8ff;
+
+  // text colors
+  --fg-default-color: #fbfcff;
+  --fg-muted-color: #f4f8fb;
+
+  // border
+  --border-default-color: #59a8ff;
+
+  // overlay
+  --overlay-color: rgb(110 118 129 / 40%);
+
+  // box-shadow
+  --box-shadow: inset 0 1px var(--border-default-color);
+
+  // btn
+  --btn-bg-color: #458cdb;
+  --btn-bg-hover-color: #5494dd;
+  --btn-fg-color: #f0f5fa;
+  --btn-border-color: rgb(47 142 238 / 10%);
+  --btn-border-hover-color: #bec8d3;
+
+  // other colors
+  --accent-color: #c7e0fc;
+  --danger-color: #ef7078;
+}
