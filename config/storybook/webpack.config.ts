@@ -34,10 +34,12 @@ export default ({ config }: {config: Configuration}) => {
   const mode = process.env.mode || 'development';
   const apiUrl = process.env.apiUrl || 'http://localhost:8000';
   const isDev = mode === 'development';
+  const project = 'storybook';
 
   config.plugins?.push(new DefinePlugin({
     __IS_DEV__: JSON.stringify(isDev),
     __API_URL__: JSON.stringify(apiUrl),
+    __PROJECT__: JSON.stringify(project),
   }));
 
   return config;

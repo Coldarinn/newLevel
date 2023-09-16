@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { Currency } from '../model/types/currency';
 
-interface CurrencySelectProps {
+export interface CurrencySelectProps {
   additionalClasses?: string[],
   selectedValue?: string;
   onChange?: (value: string) => void;

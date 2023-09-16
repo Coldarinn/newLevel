@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { Country } from '../model/types/country';
 
-interface CountrySelectProps {
+export interface CountrySelectProps {
   additionalClasses?: string[],
   selectedValue?: string;
   onChange?: (value: string) => void;
