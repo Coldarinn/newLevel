@@ -2,12 +2,15 @@ import { type FC, Suspense, useEffect } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { userActions } from 'entities/User';
+import { getUserInited, userActions } from 'entities/User';
 import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
+import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
 import { AppRouter } from './providers/router';
 
 const App: FC = () => {
   const dispatch = useAppDispatch();
+
+  const inited = useAppSelector(getUserInited);
 
   useEffect(() => {
     dispatch(userActions.initAuthData());
@@ -19,7 +22,7 @@ const App: FC = () => {
         <Navbar />
         <div className="content-page">
           <Sidebar />
-          <AppRouter />
+          {inited && <AppRouter />}
         </div>
       </Suspense>
     </div>
