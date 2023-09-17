@@ -26,7 +26,6 @@ export const Default: StoryObj = {
   args: {
     initialState: {
       profile: {
-        data: {},
         form: {
           firstname: 'Kirill',
           lastname: 'Palkin',
@@ -81,8 +80,6 @@ export const IsLoading: StoryObj = {
   args: {
     initialState: {
       profile: {
-        data: {},
-        form: {},
         isLoading: true,
         readonly: true,
         error: '',
@@ -95,8 +92,6 @@ export const Error: StoryObj = {
   args: {
     initialState: {
       profile: {
-        data: {},
-        form: {},
         isLoading: false,
         readonly: true,
         error: 'Не удалось получить личные данные',

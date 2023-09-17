@@ -100,7 +100,6 @@ export const Loading: StoryObj = {
     notCentered: true,
     initialState: {
       article: {
-        data: {},
         isLoading: true,
         error: undefined,
       },
@@ -113,7 +112,6 @@ export const Error: StoryObj = {
     notCentered: true,
     initialState: {
       article: {
-        data: {},
         isLoading: false,
         error: 'Не удалось получить статью',
       },
