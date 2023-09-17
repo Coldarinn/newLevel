@@ -6,5 +6,7 @@
    "Войти": "Login",
    "Выйти": "Logout",
    "Выберите страну": "Choose a country",
-   "Выберите валюту": "Choose a currency"
+   "Выберите валюту": "Choose a currency",
+   "Статьи": "Articles",
+   "Статья": "Article"
 }

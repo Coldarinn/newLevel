@@ -17,10 +17,20 @@ export const globalTypes = {
   theme: {
     name: 'Тема',
     description: 'Тема',
-    defaultValue: Theme.LIGHT,
+    defaultValue: Theme.DARK,
     toolbar: {
       icon: 'contrast',
-      items: [{ title: 'Светлая тема', value: Theme.LIGHT }, { title: 'Тёмная тема', value: Theme.DARK }],
+      items: [
+        {
+          title: 'Светлая тема', value: Theme.LIGHT,
+        },
+        {
+          title: 'Тёмная тема', value: Theme.DARK,
+        },
+        {
+          title: 'Синяя тема', value: Theme.BLUE,
+        },
+      ],
       dynamicTitle: true,
     },
   },
