@@ -8,11 +8,13 @@ import { I18nextProvider } from 'react-i18next';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { profileReducer } from 'features/EditableProfileCard';
 import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { articleReducer } from 'entities/Article/model/slices/articleSlice';
 import i18n from '../i18n/i18nForTests';
 
 const initialAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
+  article: articleReducer,
 };
 
 export const DecoratedComponent = (Story: StoryFn, { globals, args }: StoryContext) => {
@@ -30,8 +32,8 @@ export const DecoratedComponent = (Story: StoryFn, { globals, args }: StoryConte
             <Suspense fallback>
               <div
                 className="app"
-                style={{
-                  display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%',
+                style={args?.notCentered ? {} : {
+                  display: 'flex', justifyContent: 'center', alignItems: 'center',
                 }}
               >
                 <Story />
