@@ -5,6 +5,7 @@
   background: var(--bg-inset-color);
   transition: width 0.3s;
   border-right: 1px solid var(--border-default-color);
+  flex-shrink: 0;
 }
 
 .switchers {

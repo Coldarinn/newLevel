@@ -29,24 +29,22 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 
   const { t } = useTranslation('profile');
 
+  let content;
+
   if (isLoading) {
-    return (
+    content = (
       <div className={cls.block}>
         <Loader />
       </div>
     );
-  }
-
-  if (error) {
-    return (
+  } else if (error) {
+    content = (
       <div className={cls.block}>
         <Text theme={TextTheme.DANGER} text={t(error)} />
       </div>
     );
-  }
-
-  return (
-    <div className={classNames(cls.ProfileCard, {}, [...additionalClasses])}>
+  } else {
+    content = (
       <div className={cls.data}>
         <div className={cls.avatar}>
           <Avatar src={data?.avatar} />
@@ -97,6 +95,12 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
           require
         />
       </div>
+    );
+  }
+
+  return (
+    <div className={classNames(cls.ProfileCard, {}, [...additionalClasses])}>
+      {content}
     </div>
   );
 });
