@@ -10,8 +10,8 @@ body {
 }
 
 .app {
+  height: 100vh;
   background: var(--bg-default-color);
-  min-height: 100vh;
 }
 
 .content-page {
@@ -19,6 +19,8 @@ body {
 }
 
 .page-wrapper {
-  flex-grow: 1;
+  height: calc(100vh - var(--navbar-height));
   padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
 }
