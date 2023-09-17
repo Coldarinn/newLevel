@@ -90,24 +90,22 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   } else {
     content = (
       <>
-        <div className={cls.avatar}>
-          <Avatar
-            size={200}
-            src={data?.img}
-          />
-        </div>
         <Text
           additionalClasses={[cls.title]}
           title={data?.title}
+        />
+        <img className={cls.image} src={data?.img} alt={data?.subtitle} />
+        <Text
+          additionalClasses={[cls.subtitle]}
           text={data?.subtitle}
         />
-        <div className={cls.articleInfo}>
-          <Text text={String(data?.views)} />
-        </div>
-        <div className={cls.articleInfo}>
+        <div className={cls.flex}>
+          <Text text={`${String(data?.views)} просмотров`} />
           <Text text={data?.createdAt} />
         </div>
-        {data?.blocks.map(renderBlock)}
+        <div className={cls.content}>
+          {data?.blocks.map(renderBlock)}
+        </div>
       </>
     );
   }

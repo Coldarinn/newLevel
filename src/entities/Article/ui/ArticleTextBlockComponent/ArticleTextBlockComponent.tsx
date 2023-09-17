@@ -12,7 +12,7 @@ export const ArticleTextBlockComponent = (props: ArticleTextBlockComponentProps)
   const { additionalClasses = [], block } = props;
 
   return (
-    <div className={classNames(cls.articleTextBlockComponent, {}, [...additionalClasses])}>
+    <div className={classNames(cls.block, {}, [...additionalClasses])}>
       {block.title && (
         <Text title={block.title} />
       )}

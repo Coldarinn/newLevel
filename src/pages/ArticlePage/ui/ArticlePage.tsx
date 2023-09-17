@@ -23,7 +23,6 @@ const ArticlePage = (props: ArticlePageProps) => {
 
   return (
     <div className={classNames('', {}, [...additionalClasses])}>
-      <Text title={t('Статья')} />
       <ArticleDetails id={id} />
     </div>
   );

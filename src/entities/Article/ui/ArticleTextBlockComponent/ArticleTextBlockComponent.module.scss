@@ -1,3 +1,5 @@
-.articleTextBlockComponent {
-  display: inline-block;
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
