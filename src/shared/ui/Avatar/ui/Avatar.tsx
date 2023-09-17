@@ -2,7 +2,7 @@ import { CSSProperties, FC, useMemo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Avatar.module.scss';
 
-interface AvatarProps {
+export interface AvatarProps {
   additionalClasses?: string[],
   src?: string;
   size?: number;

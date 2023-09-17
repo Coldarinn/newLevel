@@ -3,7 +3,7 @@ import CopyIcon from 'shared/assets/icons/copy.svg';
 import { Button } from 'shared/ui/Button';
 import cls from './Code.module.scss';
 
-interface CodeProps {
+export interface CodeProps {
   additionalClasses?: string[],
   text: string
 }
