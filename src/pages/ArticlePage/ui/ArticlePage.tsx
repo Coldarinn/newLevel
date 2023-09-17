@@ -15,7 +15,11 @@ const ArticlePage = (props: ArticlePageProps) => {
 
   const { t } = useTranslation('article');
 
-  if (!id && __PROJECT__ !== 'storybook') {
+  if (!id) {
+    if (__PROJECT__ !== 'storybook') {
+      return <div />;
+    }
+
     return (
       <Text theme={TextTheme.DANGER} title={t('Не удалось получить статью')} />
     );
