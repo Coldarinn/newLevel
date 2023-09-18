@@ -85,19 +85,19 @@
   "comments": [
     {
       "id": "1",
-      "text": "some comment",
+      "text": "My position on politics is pretty much neutral, I can safely say that I am for everything good and I am against everything bad, that is all that matters for me.",
       "articleId": "1",
       "userId": "1"
     },
     {
       "id": "2",
-      "text": "some comment 2",
+      "text": "Howdy, I'm Tiffany Fenwick, add me to your friend list. My hometown is Vietnam, but right now, I live in Mortinsart. I love this town. What else do you want to know? My job is health service manager, I have a personal life as well, I like genealogy. Which music genre you love the most? I love modern blues and I can't imagine my life without books, I love Hippocrates – Medical Writings. After a long day at work, I love to play Katamari Damacy, I like following TV show - Date My Mom (2004–2006), reality, sometimes it is really funny. If you want to talk contact me at tiffanyfenwick@gmail.com Howdy, I'm Tiffany Fenwick, add me to your friend list. My hometown is Vietnam, but right now, I live in Mortinsart. I love this town. What else do you want to know? My job is health service manager, I have a personal life as well, I like genealogy. Which music genre you love the most? I love modern blues and I can't imagine my life without books, I love Hippocrates – Medical Writings. After a long day at work, I love to play Katamari Damacy, I like following TV show - Date My Mom (2004–2006), reality, sometimes it is really funny. If you want to talk contact me at tiffanyfenwick@gmail.com",
       "articleId": "1",
       "userId": "1"
     },
     {
       "id": "3",
-      "text": "some comment 3",
+      "text": "Comment text",
       "articleId": "1",
       "userId": "1"
     }
@@ -107,13 +107,22 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://i.pinimg.com/originals/9a/e0/2d/9ae02d4b4288396108ef77830a59e060.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://i.yapx.cc/Ra9P6.jpg"
+    },
+    {
+      "id": "3",
+      "username": "user 3",
+      "password": "123",
+      "role": "USER",
+      "avatar": "https://yt3.googleusercontent.com/rw_-dGtnT7sIS6zl6o6Z5uBnLTBaSVLJvoHtX-VSo0pIOTH3qhX3qRftgwTOyScFYFuVqmEiFw=s900-c-k-c0x00ffffff-no-rj"
     }
   ],
   "profile": {

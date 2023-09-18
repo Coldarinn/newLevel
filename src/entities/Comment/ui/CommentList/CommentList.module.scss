@@ -1,0 +1,15 @@
+.commentList {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  gap: 15px;
+}
+
+.commentCard {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--padding-l);
+  padding: var(--padding-m) var(--padding-2xl);
+  background-color: var(--bg-inset-color);
+  border-radius: var(--border-radius-lg);
+}
