@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { DecoratedComponent } from 'shared/config/storybook/Decorator';
 import AboutPageComponent from './AboutPage';
 
@@ -6,10 +6,16 @@ const meta = {
   title: 'pages/AboutPage',
   decorators: [DecoratedComponent],
   parameters: {
-    layout: 'fullscreen',
+    layout: 'fullpage',
   },
+  component: AboutPageComponent,
+  render: (args) => <AboutPageComponent {...args} />,
 } satisfies Meta<typeof AboutPageComponent>;
 
-export default meta;
+export const AboutPage: StoryObj = {
+  args: {
+    notCentered: true,
+  },
+};
 
-export const AboutPage = () => <AboutPageComponent />;
+export default meta;

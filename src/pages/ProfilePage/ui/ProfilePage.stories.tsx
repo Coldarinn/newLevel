@@ -37,6 +37,7 @@ const meta = {
 
 export const Default: StoryObj = {
   args: {
+    notCentered: true,
     initialState: {
       profile: {
         data,
@@ -51,6 +52,7 @@ export const Default: StoryObj = {
 
 export const Readonly: StoryObj = {
   args: {
+    notCentered: true,
     initialState: {
       profile: {
         data,
@@ -65,6 +67,7 @@ export const Readonly: StoryObj = {
 
 export const IsLoading: StoryObj = {
   args: {
+    notCentered: true,
     initialState: {
       profile: {
         data,
@@ -79,6 +82,7 @@ export const IsLoading: StoryObj = {
 
 export const Error: StoryObj = {
   args: {
+    notCentered: true,
     initialState: {
       profile: {
         data,
