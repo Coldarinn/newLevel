@@ -100,6 +100,7 @@ export const Loading: StoryObj = {
     notCentered: true,
     initialState: {
       article: {
+        data,
         isLoading: true,
         error: undefined,
       },

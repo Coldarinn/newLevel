@@ -2,6 +2,18 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { DecoratedComponent } from 'shared/config/storybook/Decorator';
 import ProfilePageComponent, { ProfilePageProps } from './ProfilePage';
 
+const data = {
+  id: '1',
+  firstname: 'Kirill 1',
+  lastname: 'Palkin',
+  age: '22',
+  currency: 'RUB',
+  country: 'Россия',
+  city: 'Moscow',
+  username: 'user1',
+  avatar: 'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
+};
+
 const RenderComponent = (args: ProfilePageProps) => (
   <div style={{
     width: '660px',
@@ -26,16 +38,8 @@ export const Default: StoryObj = {
   args: {
     initialState: {
       profile: {
-        form: {
-          firstname: 'Kirill',
-          lastname: 'Palkin',
-          age: '22',
-          currency: 'EUR',
-          country: 'Россия',
-          city: 'Moscow',
-          username: 'admin',
-          avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
-        },
+        data,
+        form: data,
         isLoading: false,
         readonly: false,
         error: '',
@@ -48,26 +52,8 @@ export const Readonly: StoryObj = {
   args: {
     initialState: {
       profile: {
-        data: {
-          firstname: 'Kirill',
-          lastname: 'Palkin',
-          age: '22',
-          currency: 'EUR',
-          country: 'Россия',
-          city: 'Moscow',
-          username: 'admin',
-          avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
-        },
-        form: {
-          firstname: 'Kirill',
-          lastname: 'Palkin',
-          age: '22',
-          currency: 'EUR',
-          country: 'Россия',
-          city: 'Moscow',
-          username: 'admin',
-          avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
-        },
+        data,
+        form: data,
         isLoading: false,
         readonly: true,
         error: '',
@@ -80,6 +66,8 @@ export const IsLoading: StoryObj = {
   args: {
     initialState: {
       profile: {
+        data,
+        form: data,
         isLoading: true,
         readonly: true,
         error: '',
@@ -92,6 +80,8 @@ export const Error: StoryObj = {
   args: {
     initialState: {
       profile: {
+        data,
+        form: data,
         isLoading: false,
         readonly: true,
         error: 'Не удалось получить личные данные',
