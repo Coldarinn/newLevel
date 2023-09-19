@@ -10,5 +10,7 @@
    "Статьи": "Articles",
    "Статья": "Article",
    "Комментарии отсутствуют": "There are no comments",
-   "Аватар пользователя": "User avatar"
+   "Аватар пользователя": "User avatar",
+   "Оставить комментарий": "Send a comment",
+   "Не удалось сохранить комментарий": "Couldn't save comment"
 }

@@ -1,6 +1,8 @@
 import { EditableProfileCard, fetchProfileData, profileReducer } from 'features/EditableProfileCard';
 import { memo, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
@@ -15,13 +17,13 @@ export interface ProfilePageProps {
 const ProfilePage = memo((props: ProfilePageProps) => {
   const { additionalClasses = [] } = props;
 
+  const { id } = useParams<{id: string}>();
+
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
-    }
-  }, [dispatch]);
+  useInitialEffect(() => {
+    dispatch(fetchProfileData(id));
+  });
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

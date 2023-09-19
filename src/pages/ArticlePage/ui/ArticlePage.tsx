@@ -20,6 +20,9 @@ import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect
 import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
 import { fetchArticleComments } from 'features/ArticleComments';
 import { getArticleError } from 'entities/Article/model/selectors/getArticleError/getArticleError';
+import { AddCommentForm } from 'features/AddCommentForm';
+import { useCallback } from 'react';
+import { addArticleComment } from 'features/ArticleComments/model/services/addArticleComment/addArticleComment';
 import cls from './ArticlePage.module.scss';
 
 export interface ArticlePageProps {
@@ -48,6 +51,10 @@ const ArticlePage = (props: ArticlePageProps) => {
   const articleError = useAppSelector(getArticleError);
   const commentsError = useAppSelector(getArticleCommentsError);
 
+  const onSend = useCallback((text: string) => {
+    dispatch(addArticleComment(text));
+  }, [dispatch]);
+
   if (!id) {
     if (__PROJECT__ !== 'storybook') {
       return <div />;
@@ -62,6 +69,8 @@ const ArticlePage = (props: ArticlePageProps) => {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={classNames('', {}, [...additionalClasses])}>
         <ArticleDetails id={id} />
+        <Text title={t('Оставить комментарий')} additionalClasses={[cls.commentFormTitle]} />
+        <AddCommentForm additionalClasses={[cls.commentForm]} onSend={onSend} />
         {!articleError && (
           commentsError ? (
             <Text theme={TextTheme.DANGER} text={t(commentsError)} />

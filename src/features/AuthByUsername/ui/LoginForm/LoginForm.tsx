@@ -1,4 +1,5 @@
 import {
+  FormEvent,
   useCallback, useEffect,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -60,7 +61,8 @@ const LoginForm = (props: LoginFormProps) => {
     dispatch(loginActions.setPassword(value));
   };
 
-  const onClick = useCallback(async () => {
+  const onSubmit = useCallback(async (e: FormEvent) => {
+    e.preventDefault();
     const result = await dispatch(loginByUsername({ username, password }));
     if (result.meta.requestStatus === 'fulfilled') {
       onSuccess?.();
@@ -69,7 +71,7 @@ const LoginForm = (props: LoginFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
-      <div className={classNames(cls.LoginForm, {}, [...additionalClasses])}>
+      <form className={classNames(cls.LoginForm, {}, [...additionalClasses])} onSubmit={onSubmit}>
         <Text title={t('Форма авторизации')} additionalClasses={[cls.textBlock]} />
         {error && <Text text={t(error)} theme={TextTheme.DANGER} additionalClasses={[cls.textBlock]} />}
         <div className={cls.inputWrapper}>
@@ -80,14 +82,14 @@ const LoginForm = (props: LoginFormProps) => {
         </div>
         <Button
           additionalClasses={[cls.button, 'font-xm']}
+          type="submit"
           theme={ButtonTheme.PRIMARY}
           padding={ButtonPadding.M}
           disabled={isLoading}
-          onClick={onClick}
         >
           {t('Войти')}
         </Button>
-      </div>
+      </form>
     </DynamicModuleLoader>
   );
 };

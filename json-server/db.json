@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -93,46 +95,83 @@
       "id": "2",
       "text": "Howdy, I'm Tiffany Fenwick, add me to your friend list. My hometown is Vietnam, but right now, I live in Mortinsart. I love this town. What else do you want to know? My job is health service manager, I have a personal life as well, I like genealogy. Which music genre you love the most? I love modern blues and I can't imagine my life without books, I love Hippocrates – Medical Writings. After a long day at work, I love to play Katamari Damacy, I like following TV show - Date My Mom (2004–2006), reality, sometimes it is really funny. If you want to talk contact me at tiffanyfenwick@gmail.com Howdy, I'm Tiffany Fenwick, add me to your friend list. My hometown is Vietnam, but right now, I live in Mortinsart. I love this town. What else do you want to know? My job is health service manager, I have a personal life as well, I like genealogy. Which music genre you love the most? I love modern blues and I can't imagine my life without books, I love Hippocrates – Medical Writings. After a long day at work, I love to play Katamari Damacy, I like following TV show - Date My Mom (2004–2006), reality, sometimes it is really funny. If you want to talk contact me at tiffanyfenwick@gmail.com",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "id": "3",
       "text": "Comment text",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "comment test",
+      "id": "Ko9dxKZ"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": " sad sa sad sa dsad sada",
+      "id": "9UZf-xg"
     }
   ],
   "users": [
     {
       "id": "1",
-      "username": "admin",
+      "username": "user1",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://i.pinimg.com/originals/9a/e0/2d/9ae02d4b4288396108ef77830a59e060.jpg"
+      "avatar": "https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg"
     },
     {
       "id": "2",
-      "username": "user",
+      "username": "user2",
       "password": "123",
       "role": "USER",
-      "avatar": "https://i.yapx.cc/Ra9P6.jpg"
+      "avatar": "https://iphoneswallpapers.com/wp-content/uploads/2021/02/Hacker-Nation-iPhone-Wallpaper.jpg"
     },
     {
       "id": "3",
-      "username": "user 3",
+      "username": "user3",
       "password": "123",
       "role": "USER",
-      "avatar": "https://yt3.googleusercontent.com/rw_-dGtnT7sIS6zl6o6Z5uBnLTBaSVLJvoHtX-VSo0pIOTH3qhX3qRftgwTOyScFYFuVqmEiFw=s900-c-k-c0x00ffffff-no-rj"
+      "avatar": "https://i.yapx.cc/RcBeT.jpg"
     }
   ],
-  "profile": {
-    "firstname": "Kirill edit",
-    "lastname": "Palkin",
-    "age": "22",
-    "currency": "EUR",
-    "country": "Россия",
-    "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Kirill 1",
+      "lastname": "Palkin",
+      "age": "22",
+      "currency": "RUB",
+      "country": "Россия",
+      "city": "Moscow",
+      "username": "user1",
+      "avatar": "https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg"
+    },
+    {
+      "id": "2",
+      "firstname": "Kirill 2",
+      "lastname": "Palkin",
+      "age": "22",
+      "currency": "RUB",
+      "country": "Россия",
+      "city": "Moscow",
+      "username": "user2",
+      "avatar": "https://iphoneswallpapers.com/wp-content/uploads/2021/02/Hacker-Nation-iPhone-Wallpaper.jpg"
+    },
+    {
+      "id": "3",
+      "firstname": "Kirill 3",
+      "lastname": "Palkin",
+      "age": "22",
+      "currency": "RUB",
+      "country": "Россия",
+      "city": "Moscow",
+      "username": "user3",
+      "avatar": "https://i.yapx.cc/RcBeT.jpg"
+    }
+  ]
 }
