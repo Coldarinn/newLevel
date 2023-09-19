@@ -6,7 +6,6 @@ import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { Skeleton } from 'shared/ui/Skeleton';
-import { Avatar } from 'shared/ui/Avatar';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import { getArticleError } from '../../model/selectors/getArticleError/getArticleError';
 import { getArticleIsLoading } from '../../model/selectors/getArticleIsLoading/getArticleIsLoading';

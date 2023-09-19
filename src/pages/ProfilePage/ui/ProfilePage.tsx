@@ -1,5 +1,5 @@
 import { EditableProfileCard, fetchProfileData, profileReducer } from 'features/EditableProfileCard';
-import { memo, useEffect } from 'react';
+import { memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect';
