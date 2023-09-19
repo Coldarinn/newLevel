@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DecoratedComponent } from 'shared/config/storybook/Decorator';
+import { Errors } from 'shared/const/errors';
 import ProfilePageComponent, { ProfilePageProps } from './ProfilePage';
 
 const data = {
@@ -84,7 +85,7 @@ export const Error: StoryObj = {
         form: data,
         isLoading: false,
         readonly: true,
-        error: 'Не удалось получить личные данные',
+        error: Errors.GET_PROFILE,
       },
     },
   },

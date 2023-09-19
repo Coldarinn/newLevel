@@ -9,12 +9,16 @@ import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { profileReducer } from 'features/EditableProfileCard';
 import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { articleReducer } from 'entities/Article/model/slices/articleSlice';
+import { articleCommentsReducer } from 'features/ArticleComments/model/slice/articleCommentsSlice';
+import { addCommentFormReducer } from 'features/AddCommentForm/model/slice/addCommentFormSlice';
 import i18n from '../i18n/i18nForTests';
 
 const initialAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
   article: articleReducer,
+  articleComments: articleCommentsReducer,
+  addCommentForm: addCommentFormReducer,
 };
 
 export const DecoratedComponent = (Story: StoryFn, { globals, args }: StoryContext) => {

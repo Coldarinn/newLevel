@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
 import { User, userActions } from 'entities/User';
+import { Errors } from 'shared/const/errors';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 
 interface LoginByUsernameProps {
@@ -23,7 +24,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
       //
       return response.data;
     } catch (e) {
-      return rejectWithValue('Пользователь с введенным именем и паролем не найден');
+      return rejectWithValue(Errors.NO_USER);
     }
   },
 );

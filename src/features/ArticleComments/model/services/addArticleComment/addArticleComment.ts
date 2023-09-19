@@ -3,6 +3,7 @@ import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
 import { getArticleData } from 'entities/Article/model/selectors/getArticleData/getArticleData';
 import { Comment } from 'entities/Comment';
 import { getUserAuthData } from 'entities/User';
+import { Errors } from 'shared/const/errors';
 import { fetchArticleComments } from '../fetchArticleComments/fetchArticleComments';
 
 export const addArticleComment = createAsyncThunk<Comment, string | undefined, ThunkConfig<string>>(
@@ -32,7 +33,7 @@ export const addArticleComment = createAsyncThunk<Comment, string | undefined, T
 
       return response.data;
     } catch (e) {
-      return rejectWithValue('Не удалось сохранить комментарий');
+      return rejectWithValue(Errors.SAVE_COMMENT);
     }
   },
 );

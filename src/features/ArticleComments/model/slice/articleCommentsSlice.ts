@@ -40,5 +40,5 @@ export const getArticleComments = articleCommentsAdapter.getSelectors<StateSchem
   (state) => state.articleComments || initialState,
 );
 
-export const { actions: articleCommentsSliceActions } = articleCommentsSlice;
-export const { reducer: articleCommentsSliceReducer } = articleCommentsSlice;
+export const { actions: articleCommentsActions } = articleCommentsSlice;
+export const { reducer: articleCommentsReducer } = articleCommentsSlice;

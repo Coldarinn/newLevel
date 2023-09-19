@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
 import { memo, useCallback, useEffect } from 'react';
@@ -18,7 +17,7 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
-  id: string;
+  id?: string;
 }
 
 const initialReducers: ReducersList = {

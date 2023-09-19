@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
 import { Comment } from 'entities/Comment';
+import { Errors } from 'shared/const/errors';
 
 export const fetchArticleComments = createAsyncThunk<Comment[], string | undefined, ThunkConfig<string>>(
   '/articleComments/fetchArticleComments',
@@ -19,7 +20,7 @@ export const fetchArticleComments = createAsyncThunk<Comment[], string | undefin
 
       return response.data;
     } catch (e) {
-      return rejectWithValue('Не удалось получить комментарии');
+      return rejectWithValue(Errors.GET_COMMENTS);
     }
   },
 );

@@ -1,6 +1,7 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Errors } from 'shared/const/errors';
 import { fetchProfileData } from './fetchProfileData';
 
 const data = {
@@ -31,6 +32,6 @@ describe('fetchProfileData', () => {
 
     expect(thunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toEqual('rejected');
-    expect(result.payload).toEqual('Не удалось получить личные данные');
+    expect(result.payload).toEqual(Errors.GET_PROFILE);
   });
 });

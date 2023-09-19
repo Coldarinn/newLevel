@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { CommentList } from 'entities/Comment';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
-  articleCommentsSliceReducer,
+  articleCommentsReducer,
   getArticleComments,
 } from 'features/ArticleComments/model/slice/articleCommentsSlice';
 import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
@@ -30,7 +30,7 @@ export interface ArticlePageProps {
 }
 
 const reducers: ReducersList = {
-  articleComments: articleCommentsSliceReducer,
+  articleComments: articleCommentsReducer,
 };
 
 const ArticlePage = (props: ArticlePageProps) => {
@@ -55,22 +55,24 @@ const ArticlePage = (props: ArticlePageProps) => {
     dispatch(addArticleComment(text));
   }, [dispatch]);
 
-  if (!id) {
-    if (__PROJECT__ !== 'storybook') {
-      return <div />;
+  if (__PROJECT__ !== 'storybook') {
+    if (!id) {
+      return (
+        <Text theme={TextTheme.DANGER} title={t('Не удалось получить статью')} />
+      );
     }
-
-    return (
-      <Text theme={TextTheme.DANGER} title={t('Не удалось получить статью')} />
-    );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={classNames('', {}, [...additionalClasses])}>
         <ArticleDetails id={id} />
-        <Text title={t('Оставить комментарий')} additionalClasses={[cls.commentFormTitle]} />
-        <AddCommentForm additionalClasses={[cls.commentForm]} onSend={onSend} />
+        {!articleError && (
+          <>
+            <Text title={t('Оставить комментарий')} additionalClasses={[cls.commentFormTitle]} />
+            <AddCommentForm additionalClasses={[cls.commentForm]} onSend={onSend} />
+          </>
+        )}
         {!articleError && (
           commentsError ? (
             <Text theme={TextTheme.DANGER} text={t(commentsError)} />
@@ -83,7 +85,6 @@ const ArticlePage = (props: ArticlePageProps) => {
         )}
       </div>
     </DynamicModuleLoader>
-
   );
 };
 

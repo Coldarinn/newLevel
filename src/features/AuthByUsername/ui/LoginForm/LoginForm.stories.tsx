@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DecoratedComponent } from 'shared/config/storybook/Decorator';
+import { Errors } from 'shared/const/errors';
 import LoginFormComponent, { LoginFormProps } from './LoginForm';
 
 const RenderComponent = (args: LoginFormProps) => (
@@ -26,7 +27,7 @@ const meta = {
 
 export const Default: StoryObj = {
   args: {
-    initialState: { loginForm: { username: '123', password: 'asd' } },
+    initialState: { loginForm: { username: 'user1', password: '123' } },
   },
 };
 
@@ -38,7 +39,7 @@ export const IsLoading: StoryObj = {
 
 export const WithError: StoryObj = {
   args: {
-    initialState: { loginForm: { username: '123', password: 'asd', error: 'Пользователь с введенным именем и паролем не найден' } },
+    initialState: { loginForm: { username: 'user1', password: '123', error: Errors.NO_USER } },
   },
 };
 

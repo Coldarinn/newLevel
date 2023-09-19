@@ -14,9 +14,8 @@ export const RequireAuth = ({ children }: { children: ReactNode }) => {
   }
 
   return (
-    // eslint-disable-next-line react/jsx-no-useless-fragment
-    <>
+    <div>
       {children}
-    </>
+    </div>
   );
 };

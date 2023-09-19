@@ -3,10 +3,10 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { Loader } from 'shared/ui/Loader';
 import { CountrySelect } from 'entities/Country';
 import { CurrencySelect } from 'entities/Currency';
 import { Avatar } from 'shared/ui/Avatar';
+import { Skeleton } from 'shared/ui/Skeleton';
 import { ProfileCardProps } from '../model/types/profile';
 import cls from './ProfileCard.module.scss';
 
@@ -33,8 +33,26 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 
   if (isLoading) {
     content = (
-      <div className={cls.block}>
-        <Loader />
+      <div className={cls.data}>
+        <div className={cls.avatar}>
+          <Skeleton width={100} height={100} rounded="50%" />
+        </div>
+        <Skeleton width={75} height={24} rounded="8px" />
+        <Skeleton width="100%" height={41} rounded="8px" />
+        <Skeleton width={75} height={24} rounded="8px" />
+        <Skeleton width="100%" height={41} rounded="8px" />
+        <Skeleton width={75} height={24} rounded="8px" />
+        <Skeleton width="100%" height={41} rounded="8px" />
+        <Skeleton width={75} height={24} rounded="8px" />
+        <Skeleton width="100%" height={41} rounded="8px" />
+        <Skeleton width={75} height={24} rounded="8px" />
+        <Skeleton width="100%" height={41} rounded="8px" />
+        <Skeleton width={75} height={24} rounded="8px" />
+        <Skeleton width="100%" height={41} rounded="8px" />
+        <Skeleton width={75} height={24} rounded="8px" />
+        <Skeleton width="100%" height={41} rounded="8px" />
+        <Skeleton width={75} height={24} rounded="8px" />
+        <Skeleton width="100%" height={41} rounded="8px" />
       </div>
     );
   } else if (error) {

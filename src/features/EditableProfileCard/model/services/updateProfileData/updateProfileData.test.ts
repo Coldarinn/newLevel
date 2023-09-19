@@ -2,6 +2,7 @@ import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { Profile } from 'entities/Profile';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Errors } from 'shared/const/errors';
 import { updateProfileData } from './updateProfileData';
 
 const data: Profile = {
@@ -34,6 +35,6 @@ describe('updateProfileData', () => {
 
     expect(thunk.api.put).toHaveBeenCalled();
     expect(result.meta.requestStatus).toEqual('rejected');
-    expect(result.payload).toEqual('Не удалось обновить данные');
+    expect(result.payload).toEqual(Errors.UPDATE_PROFILE);
   });
 });

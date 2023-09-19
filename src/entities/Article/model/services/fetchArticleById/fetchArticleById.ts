@@ -1,8 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
+import { Errors } from 'shared/const/errors';
 import { Article } from '../../types/article';
 
-export const fetchArticleById = createAsyncThunk<Article, string, ThunkConfig<string>>(
+export const fetchArticleById = createAsyncThunk<Article, string | undefined, ThunkConfig<string>>(
   'article/fetchArticleById',
   async (articleId, { extra, rejectWithValue }) => {
     try {
@@ -14,7 +15,7 @@ export const fetchArticleById = createAsyncThunk<Article, string, ThunkConfig<st
 
       return response.data;
     } catch (e) {
-      return rejectWithValue('Не удалось получить статью');
+      return rejectWithValue(Errors.GET_ARTICLE);
     }
   },
 );
