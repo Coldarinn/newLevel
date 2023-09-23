@@ -1,0 +1,33 @@
+.articleListItemSkeleton {
+  padding: var(--padding-xs);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius-lg);
+  background-color: var(--bg-inset-color);
+
+  &.BIG {
+    width: 100%;
+  }
+
+  &.SMALL {
+    width: 200px;
+  }
+}
+
+.image {
+  height: 200px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: var(--padding-s);
+  margin-top: var(--padding-xs);
+  margin-bottom: var(--padding-m);
+}
+
+.types {
+  display: flex;
+  gap: 10px;
+}
