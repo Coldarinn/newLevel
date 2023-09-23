@@ -11,12 +11,14 @@ import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicM
 import { articleReducer } from 'entities/Article/model/slices/articleSlice';
 import { articleCommentsReducer } from 'features/ArticleComments/model/slice/articleCommentsSlice';
 import { addCommentFormReducer } from 'features/AddCommentForm/model/slice/addCommentFormSlice';
+import { articleListReducer } from 'entities/Article/model/slices/articleListSlice';
 import i18n from '../i18n/i18nForTests';
 
 const initialAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
   article: articleReducer,
+  articleList: articleListReducer,
   articleComments: articleCommentsReducer,
   addCommentForm: addCommentFormReducer,
 };

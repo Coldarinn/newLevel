@@ -24,7 +24,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
 
       <div className={cls.flex}>
         <div className={cls.types} title={String(article.type.map((item) => item))}>
-          {article.type.map((item) => <span className={cls.type}>{item}</span>)}
+          {article.type.map((item) => <span key={item} className={cls.type}>{item}</span>)}
         </div>
         <div className={cls.views}>
           {article.views}
@@ -32,7 +32,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
         </div>
       </div>
 
-      <Link to={`/article/${article.id}`} className={cls.title}>
+      <Link to={`/article/${article.id}`} title={article.title} className={cls.title}>
         {article.title}
       </Link>
     </div>

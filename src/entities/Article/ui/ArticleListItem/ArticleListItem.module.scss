@@ -43,14 +43,18 @@
 
 .title {
   font-size: var(--font-size-l);
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .item {
   padding: var(--padding-xs);
   transition: transform 0.3s;
-  box-shadow: var(--box-shadow);
   border-radius: var(--border-radius-lg);
-  background-color: var(--bg-inset-color);
+  background-color: var(--bg-hover-color);
 
   &.BIG {
     width: 100%;

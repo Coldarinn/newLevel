@@ -5,7 +5,7 @@ import { AxiosInstance } from 'axios';
 import { ProfileSchema } from 'features/EditableProfileCard';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
-import { articleSchema } from 'entities/Article/model/types/articleSchema';
+import { articleListSchema, articleSchema } from 'entities/Article/model/types/articleSchema';
 import { ArticleCommentsSchema } from 'features/ArticleComments';
 import { AddCommentFormSchema } from 'features/AddCommentForm';
 
@@ -16,6 +16,7 @@ export interface StateSchema {
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     article?: articleSchema;
+    articleList?: articleListSchema;
     articleComments?: ArticleCommentsSchema;
     addCommentForm?: AddCommentFormSchema;
 }
