@@ -16,6 +16,8 @@ import {
 import { getArticleListError } from 'entities/Article/model/selectors/getArticleListError/getArticleListError';
 import { getArticleListView } from 'entities/Article/model/selectors/getArticleListView/getArticleListView';
 import { useCallback } from 'react';
+import { Page } from 'widgets/Page';
+import { fetchNextPage } from 'entities/Article/model/services/fetchNextPage/fetchNextPage';
 import cls from './ArticlesPage.module.scss';
 
 export interface ArticlesPageProps {
@@ -43,9 +45,13 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(fetchArticlesList());
     dispatch(articleListActions.initState());
+    dispatch(fetchArticlesList({ page: 1 }));
   });
+
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextPage());
+  }, [dispatch]);
 
   if (error) {
     return (
@@ -55,11 +61,11 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.articlesPage, {}, [...additionalClasses])}>
+      <Page additionalClasses={[classNames(cls.articlesPage, {}, [...additionalClasses])]} onScrollEnd={onLoadNextPart}>
         <Text title={t('Статьи')} />
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
         <ArticleList articles={articles} view={view} isLoading={isLoading} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

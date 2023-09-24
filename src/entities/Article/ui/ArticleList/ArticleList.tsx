@@ -28,21 +28,14 @@ export const ArticleList = (props: ArticleListProps) => {
     <ArticleListItem key={article.id} article={article} view={view} />
   );
 
-  if (isLoading) {
-    return (
-      <div className={classNames(cls.list, {}, [...additionalClasses])}>
-        { renderSkeletons(view) }
-      </div>
-    );
-  }
-
   return (
     <div className={classNames(cls.list, {}, [...additionalClasses])}>
       {articles.length > 0 ? (
         articles.map(renderArticle)
       ) : (
-        <Text text={t('Статьи отсутсвуют')} />
+        !isLoading && <Text text={t('Статьи отсутсвуют')} />
       )}
+      {isLoading && renderSkeletons(view)}
     </div>
   );
 };

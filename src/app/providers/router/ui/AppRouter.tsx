@@ -19,12 +19,10 @@ const renderWithWrapper = (route: AppRoutesProps) => (
 
 export const AppRouter = () => (
   <Suspense fallback={<PageLoader />}>
-    <div className="page-wrapper">
-      <ErrorBoundary>
-        <Routes>
-          {Object.values(routeConfig).map(renderWithWrapper)}
-        </Routes>
-      </ErrorBoundary>
-    </div>
+    <ErrorBoundary>
+      <Routes>
+        {Object.values(routeConfig).map(renderWithWrapper)}
+      </Routes>
+    </ErrorBoundary>
   </Suspense>
 );

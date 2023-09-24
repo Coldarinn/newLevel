@@ -1,7 +1,7 @@
 import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/Text/Text';
+import { Page } from 'widgets/Page';
 
 export interface MainPageProps {
   additionalClasses?: string[],
@@ -13,9 +13,9 @@ const MainPage = memo((props: MainPageProps) => {
   const { t } = useTranslation('main');
 
   return (
-    <div className={classNames('', {}, [...additionalClasses])}>
+    <Page additionalClasses={[...additionalClasses]}>
       <Text title={t('Главная страница')} />
-    </div>
+    </Page>
   );
 });
 

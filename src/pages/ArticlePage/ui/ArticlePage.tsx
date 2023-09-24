@@ -1,4 +1,3 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { ArticleDetails } from 'entities/Article';
@@ -23,6 +22,7 @@ import { getArticleError } from 'entities/Article/model/selectors/getArticleErro
 import { AddCommentForm } from 'features/AddCommentForm';
 import { useCallback } from 'react';
 import { addArticleComment } from 'features/ArticleComments/model/services/addArticleComment/addArticleComment';
+import { Page } from 'widgets/Page';
 import cls from './ArticlePage.module.scss';
 
 export interface ArticlePageProps {
@@ -65,7 +65,7 @@ const ArticlePage = (props: ArticlePageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames('', {}, [...additionalClasses])}>
+      <Page additionalClasses={[...additionalClasses]}>
         <ArticleDetails id={id} />
         {!articleError && (
           <>
@@ -83,7 +83,7 @@ const ArticlePage = (props: ArticlePageProps) => {
             </div>
           )
         )}
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

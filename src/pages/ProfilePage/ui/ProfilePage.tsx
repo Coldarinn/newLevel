@@ -3,8 +3,8 @@ import { memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Page } from 'widgets/Page';
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -27,9 +27,9 @@ const ProfilePage = memo((props: ProfilePageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames('', {}, [...additionalClasses])}>
+      <Page additionalClasses={[...additionalClasses]}>
         <EditableProfileCard />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 });
