@@ -18,6 +18,7 @@ const initialState = articleListAdapter.getInitialState<articleListSchema>({
   limit: 0,
   page: 1,
   hasMore: true,
+  _inited: false,
 });
 
 export const articleListSlice = createSlice({
@@ -35,6 +36,7 @@ export const articleListSlice = createSlice({
       const view = localStorage.getItem(LOCAL_STORAGE_ARTICLES_VIEW_KEY) as ArticleView;
       state.limit = view === ArticleView.BIG ? 4 : 9;
       state.view = view;
+      state._inited = true;
     },
   },
   extraReducers: (builder) => {

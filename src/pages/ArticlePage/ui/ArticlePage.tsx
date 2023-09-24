@@ -1,7 +1,6 @@
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { ArticleDetails } from 'entities/Article';
-import { useParams } from 'react-router-dom';
 import { CommentList } from 'entities/Comment';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
@@ -23,6 +22,7 @@ import { AddCommentForm } from 'features/AddCommentForm';
 import { useCallback } from 'react';
 import { addArticleComment } from 'features/ArticleComments/model/services/addArticleComment/addArticleComment';
 import { Page } from 'widgets/Page';
+import { useParams } from 'react-router-dom';
 import cls from './ArticlePage.module.scss';
 
 export interface ArticlePageProps {
