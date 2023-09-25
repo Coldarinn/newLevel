@@ -7,10 +7,10 @@ import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch
 import { useLocation } from 'react-router-dom';
 import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
 import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect';
-import { useThrottle } from 'shared/hooks/useThrottle/useThrottle';
-import cls from './Page.module.scss';
+import { useDebounce } from 'shared/hooks/useDebounce/useDebounce';
 import { scrollSaveActions } from '../model/slice/scrollSaveSlice';
 import { getScrollSavePosition } from '../model/selectors/getScrollSavePosition/getScrollSavePosition';
+import cls from './Page.module.scss';
 
 interface PageProps {
   additionalClasses?: string[],
@@ -40,9 +40,12 @@ export const Page = (props: PageProps) => {
     wrapperRef.current.scrollTop = scrollPosition;
   });
 
-  const onScroll = useThrottle((event: UIEvent<HTMLDivElement>) => {
-    dispatch(scrollSaveActions.setScrollPosition({ path: pathname, position: event.currentTarget.scrollTop }));
-  }, 500);
+  const onScroll = useDebounce((event: UIEvent<HTMLDivElement>) => {
+    dispatch(scrollSaveActions.setScrollPosition({
+      path: pathname,
+      position: event.currentTarget?.scrollTop ?? (event.target as HTMLElement).scrollTop,
+    }));
+  }, 200);
 
   return (
     <section ref={wrapperRef} className={classNames(cls.page, {}, [...additionalClasses])} onScroll={onScroll}>
