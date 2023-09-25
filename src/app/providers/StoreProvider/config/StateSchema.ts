@@ -8,9 +8,11 @@ import { LoginSchema } from 'features/AuthByUsername';
 import { articleListSchema, articleSchema } from 'entities/Article/model/types/articleSchema';
 import { ArticleCommentsSchema } from 'features/ArticleComments';
 import { AddCommentFormSchema } from 'features/AddCommentForm';
+import { ScrollSaveSchema } from 'widgets/Page/model/types/ScrollSaveSchema';
 
 export interface StateSchema {
     user: UserSchema;
+    scrollSave: ScrollSaveSchema;
 
     // Async
     loginForm?: LoginSchema;

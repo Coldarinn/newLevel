@@ -3,6 +3,7 @@ import {
 } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/User';
 import { $api } from 'shared/api/api';
+import { scrollSaveReducer } from 'widgets/Page';
 import { ReducerManager, StateSchema, ThunkExtraArg } from './StateSchema';
 import { createReducerManager } from './reducerManager';
 
@@ -13,6 +14,7 @@ export function createReduxStore(
   const rootReducers = {
     ...asyncReducers,
     user: userReducer,
+    scrollSave: scrollSaveReducer,
   };
 
   const reducerManager = createReducerManager(rootReducers);
