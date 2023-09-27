@@ -1,10 +1,11 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Avatar } from 'shared/ui/Avatar';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Avatar } from 'shared/ui/Avatar';
 import { Text } from 'shared/ui/Text/Text';
-import cls from './CommentCard.module.scss';
+
 import { Comment } from '../../model/types/comment';
+import cls from './CommentCard.module.scss';
 
 interface CommentCardProps {
   additionalClasses?: string[];

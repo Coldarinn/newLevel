@@ -1,9 +1,10 @@
 import {
   memo, useEffect, useRef, useState,
 } from 'react';
+import ArrowIcon from 'shared/assets/icons/arrow.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonPadding, ButtonTheme } from 'shared/ui/Button';
-import ArrowIcon from 'shared/assets/icons/arrow.svg';
+
 import cls from './Select.module.scss';
 
 export interface SelectOption {

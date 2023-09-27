@@ -10,7 +10,7 @@ declare module '*.png';
 declare module '*.jpg';
 declare module '*.jpeg';
 declare module '*.svg' {
-    import { VFC, SVGProps } from 'react';
+    import { SVGProps, VFC } from 'react';
 
     const SVG: VFC<SVGProps<SVGSVGElement>>;
     export default SVG;

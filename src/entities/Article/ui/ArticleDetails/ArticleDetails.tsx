@@ -1,16 +1,17 @@
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
 import { memo, useCallback, useEffect } from 'react';
-import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
+import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Skeleton } from 'shared/ui/Skeleton';
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+
+import { getArticleData } from '../../model/selectors/getArticleData/getArticleData';
 import { getArticleError } from '../../model/selectors/getArticleError/getArticleError';
 import { getArticleIsLoading } from '../../model/selectors/getArticleIsLoading/getArticleIsLoading';
-import { getArticleData } from '../../model/selectors/getArticleData/getArticleData';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleReducer } from '../../model/slices/articleSlice';
+import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';

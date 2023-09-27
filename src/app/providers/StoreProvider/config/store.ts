@@ -1,11 +1,13 @@
 import {
-  CombinedState, Reducer, ReducersMapObject, configureStore,
+  CombinedState, configureStore,
+  Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/User';
 import { $api } from 'shared/api/api';
 import { scrollSaveReducer } from 'widgets/Page';
-import { ReducerManager, StateSchema, ThunkExtraArg } from './StateSchema';
+
 import { createReducerManager } from './reducerManager';
+import { ReducerManager, StateSchema, ThunkExtraArg } from './StateSchema';
 
 export function createReduxStore(
   initialState?: StateSchema,

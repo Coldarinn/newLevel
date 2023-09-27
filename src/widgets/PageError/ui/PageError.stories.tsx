@@ -1,5 +1,6 @@
 import { Meta } from '@storybook/react';
 import { DecoratedComponent } from 'shared/config/storybook/Decorator';
+
 import { PageError as PageErrorComponent } from './PageError';
 
 const meta = {

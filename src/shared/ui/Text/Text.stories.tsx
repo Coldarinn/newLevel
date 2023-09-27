@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DecoratedComponent } from 'shared/config/storybook/Decorator';
+
 import { Text as TextComponent, TextTheme } from './Text';
 
 const meta = {

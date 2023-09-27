@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DecoratedComponent } from 'shared/config/storybook/Decorator';
-import { CurrencySelect as CurrencySelectComponent, CurrencySelectProps } from './CurrencySelect';
+
 import { Currency } from '../model/types/currency';
+import { CurrencySelect as CurrencySelectComponent, CurrencySelectProps } from './CurrencySelect';
 
 const RenderComponent = (args: CurrencySelectProps) => (
   <div style={{

@@ -1,7 +1,8 @@
+import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Select } from 'shared/ui/Select';
-import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
+
 import { Country } from '../model/types/country';
 
 export interface CountrySelectProps {

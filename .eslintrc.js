@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 module.exports = {
   env: {
     browser: true,
@@ -23,6 +24,7 @@ module.exports = {
     '@typescript-eslint',
     'i18next',
     'react-hooks',
+    'simple-import-sort',
   ],
   rules: {
     'react/jsx-indent': [1, 2],
@@ -49,6 +51,8 @@ module.exports = {
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
     'react/jsx-no-useless-fragment': 'off',
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
   },
   globals: {
     __IS_DEV__: true,

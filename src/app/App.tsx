@@ -1,10 +1,11 @@
+import { getUserInited, userActions } from 'entities/User';
 import { Suspense, useEffect } from 'react';
+import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
+import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { getUserInited, userActions } from 'entities/User';
-import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
-import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
+
 import { AppRouter } from './providers/router';
 
 const App = () => {

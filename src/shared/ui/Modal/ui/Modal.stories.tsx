@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DecoratedComponent } from 'shared/config/storybook/Decorator';
 import { useTranslation } from 'react-i18next';
+import { DecoratedComponent } from 'shared/config/storybook/Decorator';
+
 import { Modal as ModalComponent } from './Modal';
 
 const meta = {

@@ -1,11 +1,12 @@
-import { memo, useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button';
-import { LoginModal } from 'features/AuthByUsername';
 import { getUserAuthData, userActions } from 'entities/User';
-import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
+import { LoginModal } from 'features/AuthByUsername';
+import { memo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
+import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Button } from 'shared/ui/Button';
+
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {

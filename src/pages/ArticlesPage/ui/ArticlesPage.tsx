@@ -1,23 +1,24 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { useTranslation } from 'react-i18next';
-import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList';
-import { ArticleView } from 'entities/Article/model/types/article';
-import { ArticleViewSelector } from 'entities/Article/ui/ArticleViewSelector/ArticleViewSelector';
-import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect';
-import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
-import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articleListActions, articleListReducer, getArticleList } from 'entities/Article/model/slices/articleListSlice';
-import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
+import { getArticleListError } from 'entities/Article/model/selectors/getArticleListError/getArticleListError';
 import {
   getArticleListIsLoading,
 } from 'entities/Article/model/selectors/getArticleListIsLoading/getArticleListIsLoading';
-import { getArticleListError } from 'entities/Article/model/selectors/getArticleListError/getArticleListError';
 import { getArticleListView } from 'entities/Article/model/selectors/getArticleListView/getArticleListView';
-import { useCallback } from 'react';
-import { Page } from 'widgets/Page';
 import { fetchNextPage } from 'entities/Article/model/services/fetchNextPage/fetchNextPage';
 import { initArticlesList } from 'entities/Article/model/services/initArticlesList/initArticlesList';
+import { articleListActions, articleListReducer, getArticleList } from 'entities/Article/model/slices/articleListSlice';
+import { ArticleView } from 'entities/Article/model/types/article';
+import { ArticleList } from 'features/ArticleList/ui/ArticleList/ArticleList';
+import { ArticleViewSelector } from 'features/ArticleViewSelector';
+import { useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
+import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
+import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Page } from 'widgets/Page';
+
 import cls from './ArticlesPage.module.scss';
 
 export interface ArticlesPageProps {

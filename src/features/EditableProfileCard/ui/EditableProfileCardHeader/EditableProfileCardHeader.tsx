@@ -1,14 +1,15 @@
+import { getUserAuthData } from 'entities/User';
+import { getProfileData } from 'features/EditableProfileCard/model/selectors/getProfileData/getProfileData';
 import { memo, useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Text } from 'shared/ui/Text/Text';
-import { Button, ButtonTheme, ButtonPadding } from 'shared/ui/Button';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
-import { getProfileData } from 'features/EditableProfileCard/model/selectors/getProfileData/getProfileData';
-import { getUserAuthData } from 'entities/User';
-import { profileActions } from '../../model/slice/profileSlice';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Button, ButtonPadding, ButtonTheme } from 'shared/ui/Button';
+import { Text } from 'shared/ui/Text/Text';
+
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import { profileActions } from '../../model/slice/profileSlice';
 import cls from './EditableProfileCardHeader.module.scss';
 
 interface EditableProfileCardHeaderProps {

@@ -1,14 +1,15 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import ArrowIcon from 'shared/assets/icons/arrowSave.svg';
-import { Button } from 'shared/ui/Button';
 import { FormEvent, memo, useCallback } from 'react';
-import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
-import { Input } from 'shared/ui/Input';
+import ArrowIcon from 'shared/assets/icons/arrowSave.svg';
 import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
+import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import cls from './AddCommentForm.module.scss';
+import { Button } from 'shared/ui/Button';
+import { Input } from 'shared/ui/Input';
+
 import { getAddCommentFormText } from '../model/selectors/getAddCommentFormText/getAddCommentFormText';
 import { addCommentFormActions, addCommentFormReducer } from '../model/slice/addCommentFormSlice';
+import cls from './AddCommentForm.module.scss';
 
 export interface AddCommentFormProps {
   additionalClasses?: string[],

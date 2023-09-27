@@ -1,28 +1,29 @@
-import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { useTranslation } from 'react-i18next';
 import { ArticleDetails } from 'entities/Article';
+import { getArticleError } from 'entities/Article/model/selectors/getArticleError/getArticleError';
 import { CommentList } from 'entities/Comment';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {
-  articleCommentsReducer,
-  getArticleComments,
-} from 'features/ArticleComments/model/slice/articleCommentsSlice';
-import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
+import { AddCommentForm } from 'features/AddCommentForm';
+import { fetchArticleComments } from 'features/ArticleComments';
 import {
   getArticleCommentsError,
 } from 'features/ArticleComments/model/selectors/getArticleCommentsError/getArticleCommentsError';
 import {
   getArticleCommentsIsLoading,
 } from 'features/ArticleComments/model/selectors/getArticleCommentsIsLoading/getArticleCommentsIsLoading';
-import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect';
-import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
-import { fetchArticleComments } from 'features/ArticleComments';
-import { getArticleError } from 'entities/Article/model/selectors/getArticleError/getArticleError';
-import { AddCommentForm } from 'features/AddCommentForm';
-import { useCallback } from 'react';
 import { addArticleComment } from 'features/ArticleComments/model/services/addArticleComment/addArticleComment';
-import { Page } from 'widgets/Page';
+import {
+  articleCommentsReducer,
+  getArticleComments,
+} from 'features/ArticleComments/model/slice/articleCommentsSlice';
+import { useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
+import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
+import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
+import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Page } from 'widgets/Page';
+
 import cls from './ArticlePage.module.scss';
 
 export interface ArticlePageProps {

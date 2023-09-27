@@ -1,7 +1,8 @@
 import { Meta } from '@storybook/react';
-import { DecoratedComponent } from 'shared/config/storybook/Decorator';
 import MainIcon from 'shared/assets/icons/main.svg';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { DecoratedComponent } from 'shared/config/storybook/Decorator';
+
 import SidebarItemComponent from './SiderbarItem';
 
 const meta = {

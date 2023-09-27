@@ -1,8 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
-import { getArticleListPage } from '../../selectors/getArticleListPage/getArticleListPage';
+
 import { getArticleListHasMore } from '../../selectors/getArticleListHasMore/getArticleListHasMore';
 import { getArticleListIsLoading } from '../../selectors/getArticleListIsLoading/getArticleListIsLoading';
+import { getArticleListPage } from '../../selectors/getArticleListPage/getArticleListPage';
 import { articleListActions } from '../../slices/articleListSlice';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 

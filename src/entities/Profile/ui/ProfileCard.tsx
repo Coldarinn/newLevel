@@ -1,12 +1,13 @@
-import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { Input } from 'shared/ui/Input';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { CountrySelect } from 'entities/Country';
 import { CurrencySelect } from 'entities/Currency';
+import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Avatar } from 'shared/ui/Avatar';
+import { Input } from 'shared/ui/Input';
 import { Skeleton } from 'shared/ui/Skeleton';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+
 import { ProfileCardProps } from '../model/types/profile';
 import cls from './ProfileCard.module.scss';
 

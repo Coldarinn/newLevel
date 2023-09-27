@@ -1,15 +1,16 @@
-import { PayloadAction, createEntityAdapter, createSlice } from '@reduxjs/toolkit';
+import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
+import { ArticleListSchema } from 'features/ArticleList/model/types/articleList';
 import { LOCAL_STORAGE_ARTICLES_VIEW_KEY } from 'shared/const/localstorage';
-import { articleListSchema } from '../types/articleSchema';
-import { Article, ArticleView } from '../types/article';
+
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
+import { Article, ArticleView } from '../types/article';
 
 const articleListAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id,
 });
 
-const initialState = articleListAdapter.getInitialState<articleListSchema>({
+const initialState = articleListAdapter.getInitialState<ArticleListSchema>({
   error: undefined,
   isLoading: false,
   view: ArticleView.SMALL,

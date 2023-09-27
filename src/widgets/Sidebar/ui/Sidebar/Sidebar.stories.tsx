@@ -1,5 +1,6 @@
 import { Meta } from '@storybook/react';
 import { DecoratedComponent } from 'shared/config/storybook/Decorator';
+
 import { Sidebar as SidebarComponent } from './Sidebar';
 
 const meta = {

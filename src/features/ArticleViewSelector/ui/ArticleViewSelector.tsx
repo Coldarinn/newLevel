@@ -2,6 +2,7 @@ import { ArticleView } from 'entities/Article/model/types/article';
 import GridIcon from 'shared/assets/icons/grid.svg';
 import RowsIcon from 'shared/assets/icons/rows.svg';
 import { Button, ButtonTheme } from 'shared/ui/Button';
+
 import cls from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {

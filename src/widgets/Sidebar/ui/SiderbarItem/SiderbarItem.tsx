@@ -1,11 +1,12 @@
+import { getUserAuthData } from 'entities/User';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink } from 'shared/ui/AppLink';
 import { SidebarItemType } from 'widgets/Sidebar/model/items';
-import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { getUserAuthData } from 'entities/User';
-import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
+
 import cls from './SiderbarItem.module.scss';
 
 interface SiderbarItemProps {

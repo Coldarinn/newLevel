@@ -1,14 +1,15 @@
-import { memo, useCallback, useMemo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { ProfileCard } from 'entities/Profile/ui/ProfileCard';
+import { memo, useCallback, useMemo } from 'react';
 import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
-import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
+import { classNames } from 'shared/lib/classNames/classNames';
+
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
+import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { profileActions } from '../../model/slice/profileSlice';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
-import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 
 interface EditableProfileCardProps {
   additionalClasses?: string[];

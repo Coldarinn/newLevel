@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DecoratedComponent } from 'shared/config/storybook/Decorator';
+
 import { Input as InputComponent, InputProps } from './Input';
 
 const Template = (args: InputProps) => (

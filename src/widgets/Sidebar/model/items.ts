@@ -1,9 +1,9 @@
-import { VFC, SVGProps } from 'react';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { SVGProps, VFC } from 'react';
 import AboutIcon from 'shared/assets/icons/about.svg';
+import ArticleIcon from 'shared/assets/icons/article.svg';
 import MainIcon from 'shared/assets/icons/main.svg';
 import ProfileIcon from 'shared/assets/icons/profile.svg';
-import ArticleIcon from 'shared/assets/icons/article.svg';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 export interface SidebarItemType {
     path: string;

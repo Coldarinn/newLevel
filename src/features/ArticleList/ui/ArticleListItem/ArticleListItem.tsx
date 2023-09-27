@@ -1,8 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Article, ArticleView } from 'entities/Article/model/types/article';
 import { useTranslation } from 'react-i18next';
-import ViewIcon from 'shared/assets/icons/view.svg';
 import { Link } from 'react-router-dom';
-import { Article, ArticleView } from '../../model/types/article';
+import ViewIcon from 'shared/assets/icons/view.svg';
+import { classNames } from 'shared/lib/classNames/classNames';
+
 import cls from './ArticleListItem.module.scss';
 
 interface ArticleListItemProps {
