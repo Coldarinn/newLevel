@@ -36,9 +36,10 @@ export enum ArticleView {
 }
 
 export enum ArticleType {
-  IT = 'IT',
-  SCIENCE = 'SCIENCE',
-  ECONOMICS = 'ECONOMICS'
+  ALL = 'Все статьи',
+  IT = 'Айти',
+  SCIENCE = 'Наука',
+  ECONOMICS = 'Экономика',
 }
 
 export interface Article {

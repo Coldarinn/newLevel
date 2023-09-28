@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-escape */
 module.exports = {
   env: {
     browser: true,

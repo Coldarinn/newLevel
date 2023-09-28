@@ -1,0 +1,31 @@
+.searchInput {
+  position: relative;
+  display: block;
+  background: transparent;
+  border: 1px solid var(--border-default-color);
+  padding: 0 var(--padding-2xl);
+  transition: 0.3s;
+  border-radius: var(--border-radius-lg);
+
+  &:focus-within {
+    border-color: var(--accent-color);
+  }
+}
+
+.input {
+  background: none;
+  border: none;
+  padding: var(--padding-m) 0 var(--padding-m) 4px;
+  color: var(--fg-default-color);
+  outline: none;
+}
+
+.icon {
+  top: 50%;
+  left: var(--padding-s);
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  color: var(--fg-muted-color);
+  transform: translateY(-60%);
+}

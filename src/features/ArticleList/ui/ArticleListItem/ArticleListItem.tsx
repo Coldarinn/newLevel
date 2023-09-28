@@ -25,7 +25,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
 
       <div className={cls.flex}>
         <div className={cls.types} title={String(article.type.map((item) => item))}>
-          {article.type.map((item) => <span key={item} className={cls.type}>{item}</span>)}
+          {article.type.map((item) => <span key={item} className={cls.type}>{t(item)}</span>)}
         </div>
         <div className={cls.views}>
           {article.views}

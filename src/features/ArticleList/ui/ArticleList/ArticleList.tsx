@@ -22,7 +22,6 @@ export const ArticleList = (props: ArticleListProps) => {
   const {
     additionalClasses = [], view = ArticleView.SMALL, isLoading, articles = [],
   } = props;
-
   const { t } = useTranslation();
 
   const renderArticle = (article: Article) => (

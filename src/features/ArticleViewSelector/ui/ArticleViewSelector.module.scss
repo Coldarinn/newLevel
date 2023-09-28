@@ -1,14 +1,16 @@
 .articleViewSelector {
-  display: flex;
-  gap: var(--padding-s);
   margin: 20px 0;
+
+  button {
+    line-height: 0;
+  }
 }
 
-.button {
-  width: 40px;
-  height: 40px;
-}
+.icon {
+  width: 24px;
+  height: 24px;
 
-.icon path {
-  fill: none;
+  path {
+    fill: none;
+  }
 }
