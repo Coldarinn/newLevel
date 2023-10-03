@@ -26,8 +26,6 @@ export const ArticleViewSelector = (props: ArticleViewSelectorProps) => {
   const { view, onViewClick } = props;
 
   const onClick = useCallback((newView: ArticleView) => {
-    console.log('newView = ', newView);
-
     onViewClick(newView);
   }, [onViewClick]);
 

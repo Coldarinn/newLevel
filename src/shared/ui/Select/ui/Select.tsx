@@ -1,5 +1,5 @@
 import {
-  memo, useEffect, useRef, useState,
+  useEffect, useMemo, useRef, useState,
 } from 'react';
 import ArrowIcon from 'shared/assets/icons/arrow.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -7,30 +7,32 @@ import { Button, ButtonPadding, ButtonTheme } from 'shared/ui/Button';
 
 import cls from './Select.module.scss';
 
-export interface SelectOption {
-  id: string;
-  value: string;
+export interface SelectOption<T> {
+  id: T;
+  value: T;
 }
 
-interface SelectProps {
+interface SelectProps<T> {
   additionalClasses?: string[],
-  options?: SelectOption[];
+  options?: SelectOption<T>[];
   placeholder?: string;
-  selectedValue?: string;
-  onChange?: (value: string) => void;
+  selectedValue?: T;
+  onChange?: (value: T) => void;
   readonly?: boolean;
 }
 
-export const Select = memo((props: SelectProps) => {
+export const Select = <T extends string>(props: SelectProps<T>) => {
   const {
     additionalClasses = [], options = [], placeholder, selectedValue, onChange, readonly,
   } = props;
+
+  const foundValue = useMemo(() => options.find((item) => item.id === selectedValue)?.value, [options, selectedValue]);
 
   const [isOpen, setIsOpen] = useState(false);
 
   const selectRef = useRef<HTMLDivElement>(null);
 
-  const onOptionClick = (option: string) => {
+  const onOptionClick = (option: T) => {
     onChange?.(option);
     setIsOpen(false);
   };
@@ -70,7 +72,7 @@ export const Select = memo((props: SelectProps) => {
         disabled={readonly}
       >
         <span className={cls.placeholder}>
-          {selectedValue || placeholder}
+          {foundValue || placeholder}
         </span>
         <span className={cls.icon}>
           <ArrowIcon />
@@ -82,7 +84,7 @@ export const Select = memo((props: SelectProps) => {
             key={option.value}
             additionalClasses={[cls.option]}
             disabled={readonly}
-            onClick={() => onOptionClick(option.value)}
+            onClick={() => onOptionClick(option.id)}
           >
             {option.value}
           </Button>
@@ -90,4 +92,4 @@ export const Select = memo((props: SelectProps) => {
       </div>
     </div>
   );
-});
+};

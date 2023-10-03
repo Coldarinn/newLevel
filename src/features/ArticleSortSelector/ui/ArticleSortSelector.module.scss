@@ -1,0 +1,26 @@
+.articleSort {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.select {
+  width: 400px;
+}
+
+.button {
+  line-height: 0;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+
+  path {
+    fill: none;
+  }
+}
+
+.rotate {
+  transform: scaleY(-1);
+}
