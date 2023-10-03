@@ -14,6 +14,8 @@ import {
   articleCommentsReducer,
   getArticleComments,
 } from 'features/ArticleComments/model/slice/articleCommentsSlice';
+import { ArticleRecommend } from 'features/ArticleRecommend';
+import { articleRecommendReducer } from 'features/ArticleRecommend/model/slice/articleRecommendSlice';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
@@ -32,6 +34,7 @@ export interface ArticlePageProps {
 
 const reducers: ReducersList = {
   articleComments: articleCommentsReducer,
+  articleRecommend: articleRecommendReducer,
 };
 
 const ArticlePage = (props: ArticlePageProps) => {
@@ -68,6 +71,7 @@ const ArticlePage = (props: ArticlePageProps) => {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page additionalClasses={[...additionalClasses]}>
         <ArticleDetails id={id} />
+        <ArticleRecommend />
         {!articleError && (
           <>
             <Text title={t('Оставить комментарий')} additionalClasses={[cls.commentFormTitle]} />

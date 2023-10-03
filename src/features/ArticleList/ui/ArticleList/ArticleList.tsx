@@ -1,4 +1,5 @@
 import { Article, ArticleView } from 'entities/Article/model/types/article';
+import { HTMLAttributeAnchorTarget } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text/Text';
@@ -12,6 +13,7 @@ interface ArticleListProps {
   articles: Article[],
   view?: ArticleView,
   isLoading?: boolean
+  target?: HTMLAttributeAnchorTarget;
 }
 
 const renderSkeletons = (view: ArticleView) => Array(view === ArticleView.BIG ? 5 : 15).fill(0).map((_, idx) => (
@@ -20,12 +22,12 @@ const renderSkeletons = (view: ArticleView) => Array(view === ArticleView.BIG ? 
 
 export const ArticleList = (props: ArticleListProps) => {
   const {
-    additionalClasses = [], view = ArticleView.SMALL, isLoading, articles = [],
+    additionalClasses = [], view = ArticleView.SMALL, isLoading, articles = [], target,
   } = props;
   const { t } = useTranslation();
 
   const renderArticle = (article: Article) => (
-    <ArticleListItem key={article.id} article={article} view={view} />
+    <ArticleListItem key={article.id} article={article} view={view} target={target} />
   );
 
   return (

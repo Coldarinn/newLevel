@@ -42,7 +42,11 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'max-len': ['warn', { code: 120, ignoreComments: true }],
-    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'rounded'] }],
+    'i18next/no-literal-string': ['error', {
+      markupOnly: true,
+      ignoreAttribute:
+      ['data-testid', 'to', 'rounded', 'target'],
+    }],
     'jsx-a11y/no-static-element-interactions': 'off',
     'react-hooks/rules-of-hooks': 'error', // Проверяем правила хуков
     'react-hooks/exhaustive-deps': 'error', // Проверяем зависимости эффекта
