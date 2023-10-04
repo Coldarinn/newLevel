@@ -1,4 +1,5 @@
 import { getUserAuthData } from 'entities/User';
+import { ThemeSwitcher } from 'features/ThemeSwitcher';
 import { memo, useState } from 'react';
 import ArrowIcon from 'shared/assets/icons/arrow.svg';
 import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
@@ -6,7 +7,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { SidebarItemsList } from 'widgets/Sidebar/model/items';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 
 import SiderbarItem from '../SiderbarItem/SiderbarItem';
 import cls from './Sidebar.module.scss';
