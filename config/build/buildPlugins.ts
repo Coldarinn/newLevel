@@ -1,4 +1,6 @@
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+// const CopyPlugin = require("copy-webpack-plugin");
+import CopyPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
@@ -25,5 +27,10 @@ export function buildPlugins({
     }),
     ...(isDev ? [new ReactRefreshWebpackPlugin({ overlay: false }), new webpack.HotModuleReplacementPlugin()] : []),
     ...(analyze ? [new BundleAnalyzerPlugin({ openAnalyzer: false })] : []),
+    new CopyPlugin({
+      patterns: [
+        { from: paths.locales, to: paths.buildLocales },
+      ],
+    }),
   ];
 }
