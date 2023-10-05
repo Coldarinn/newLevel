@@ -46,7 +46,7 @@ module.exports = {
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
       ignoreAttribute:
-      ['data-testid', 'to', 'rounded', 'target'],
+      ['data-testid', 'to', 'rounded', 'target', 'direction', 'as'],
     }],
     'jsx-a11y/no-static-element-interactions': 'off',
     'react-hooks/rules-of-hooks': 'error', // Проверяем правила хуков

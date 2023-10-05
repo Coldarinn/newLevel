@@ -1,8 +1,5 @@
-import { getUserAuthData } from 'entities/User';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink } from 'shared/ui/AppLink';
 import { SidebarItemType } from 'widgets/Sidebar/model/items';
@@ -21,11 +18,9 @@ const SiderbarItem = (props: SiderbarItemProps) => {
 
   const { t } = useTranslation();
 
-  const authData = useAppSelector(getUserAuthData);
-
   return (
     <AppLink
-      to={item.path === RoutePath.profile ? `${item.path}/${authData?.id}` : item.path}
+      to={item.path}
       additionalClasses={[cls.item]}
     >
       <span className={cls.iconWrapper}>
