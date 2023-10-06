@@ -1,5 +1,4 @@
 import { getUserAuthData } from 'entities/User';
-import { getProfileData } from 'features/EditableProfileCard/model/selectors/getProfileData/getProfileData';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
@@ -8,6 +7,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonPadding, ButtonTheme } from 'shared/ui/Button';
 import { Text } from 'shared/ui/Text/Text';
 
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 import { profileActions } from '../../model/slice/profileSlice';
 import cls from './EditableProfileCardHeader.module.scss';

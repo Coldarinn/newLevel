@@ -2,8 +2,8 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink } from 'shared/ui/AppLink';
-import { SidebarItemType } from 'widgets/Sidebar/model/items';
 
+import { SidebarItemType } from '../../model/items';
 import cls from './SiderbarItem.module.scss';
 
 interface SiderbarItemProps {

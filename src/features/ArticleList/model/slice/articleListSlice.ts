@@ -3,10 +3,10 @@ import { StateSchema } from 'app/providers/StoreProvider';
 import {
   Article, ArticleSort, ArticleType, ArticleView,
 } from 'entities/Article/model/types/article';
-import { ArticleListSchema } from 'features/ArticleList/model/types/articleList';
 import { LOCAL_STORAGE_ARTICLES_VIEW_KEY } from 'shared/const/localstorage';
 import { SortOrder } from 'shared/types';
 
+import { ArticleListSchema } from '../../model/types/articleList';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 
 const articleListAdapter = createEntityAdapter<Article>({

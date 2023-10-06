@@ -6,8 +6,8 @@ import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher';
-import { SidebarItemsList } from 'widgets/Sidebar/model/items';
 
+import { SidebarItemsList } from '../../model/items';
 import SiderbarItem from '../SiderbarItem/SiderbarItem';
 import cls from './Sidebar.module.scss';
 

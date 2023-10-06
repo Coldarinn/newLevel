@@ -1,8 +1,8 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import { Profile } from 'entities/Profile';
-import { fetchProfileData, profileReducer } from 'features/EditableProfileCard';
 
+import { fetchProfileData, profileReducer } from '../../../EditableProfileCard';
 import { ProfileSchema } from '../types/profileSchema';
 import { profileActions } from './profileSlice';
 
