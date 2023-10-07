@@ -1,5 +1,5 @@
-import { Article, ArticleView } from 'entities/Article/model/types/article';
-import { HTMLAttributeAnchorTarget } from 'react';
+import { Article, ArticleView } from 'entities/Article';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import ViewIcon from 'shared/assets/icons/view.svg';
@@ -14,7 +14,7 @@ interface ArticleListItemProps {
   view?: ArticleView
 }
 
-export const ArticleListItem = (props: ArticleListItemProps) => {
+export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const {
     additionalClasses = [], article, view = ArticleView.BIG, target,
   } = props;
@@ -42,4 +42,4 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
       </Link>
     </div>
   );
-};
+});

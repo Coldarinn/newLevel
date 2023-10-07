@@ -1,7 +1,8 @@
 import { ArticleList } from 'features/ArticleList/ui/ArticleList/ArticleList';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Text, TextTheme } from 'shared/ui/Text/ui/Text';
+import { Text, TextTheme } from 'shared/ui/Text';
 
 import { useGetArticleRecommendQuery } from '../api/articleRecommendApi';
 import cls from './ArticleRecommend.module.scss';
@@ -10,7 +11,7 @@ interface ArticleRecommendProps {
   additionalClasses?: string[],
 }
 
-export const ArticleRecommend = (props: ArticleRecommendProps) => {
+export const ArticleRecommend = memo((props: ArticleRecommendProps) => {
   const { additionalClasses = [] } = props;
 
   const { data: articles, isLoading, error } = useGetArticleRecommendQuery(4);
@@ -27,4 +28,4 @@ export const ArticleRecommend = (props: ArticleRecommendProps) => {
       )}
     </div>
   );
-};
+});

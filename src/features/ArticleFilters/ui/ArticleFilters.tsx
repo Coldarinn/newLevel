@@ -1,11 +1,13 @@
-import { ArticleSort, ArticleType, ArticleView } from 'entities/Article/model/types/article';
-import { getArticleListOrder } from 'features/ArticleList/model/selectors/getArticleListOrder/getArticleListOrder';
-import { getArticleListSearch } from 'features/ArticleList/model/selectors/getArticleListSearch/getArticleListSearch';
-import { getArticleListSort } from 'features/ArticleList/model/selectors/getArticleListSort/getArticleListSort';
-import { getArticleListType } from 'features/ArticleList/model/selectors/getArticleListType/getArticleListType';
-import { getArticleListView } from 'features/ArticleList/model/selectors/getArticleListView/getArticleListView';
-import { fetchArticlesList } from 'features/ArticleList/model/services/fetchArticlesList/fetchArticlesList';
-import { articleListActions } from 'features/ArticleList/model/slice/articleListSlice';
+import { ArticleSort, ArticleType, ArticleView } from 'entities/Article';
+import {
+  articleListActions,
+  fetchArticlesList,
+  getArticleListOrder,
+  getArticleListSearch,
+  getArticleListSort,
+  getArticleListType,
+  getArticleListView,
+} from 'features/ArticleList';
 import { ArticleSortSelector } from 'features/ArticleSortSelector';
 import { ArticleTypeTabs } from 'features/ArticleTypeTabs';
 import { ArticleViewSelector } from 'features/ArticleViewSelector';

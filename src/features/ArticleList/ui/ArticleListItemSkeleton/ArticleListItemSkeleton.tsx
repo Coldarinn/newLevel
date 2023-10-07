@@ -1,4 +1,4 @@
-import { ArticleView } from 'entities/Article/model/types/article';
+import { ArticleView } from 'entities/Article';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Skeleton } from 'shared/ui/Skeleton';
 

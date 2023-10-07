@@ -11,7 +11,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Button, ButtonPadding, ButtonTheme } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
-import { Text, TextTheme } from 'shared/ui/Text/ui/Text';
+import { Text, TextTheme } from 'shared/ui/Text';
 
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';

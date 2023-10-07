@@ -1,4 +1,4 @@
-import { ArticleView } from 'entities/Article/model/types/article';
+import { ArticleView } from 'entities/Article';
 import { useCallback } from 'react';
 import GridIcon from 'shared/assets/icons/grid.svg';
 import RowsIcon from 'shared/assets/icons/rows.svg';

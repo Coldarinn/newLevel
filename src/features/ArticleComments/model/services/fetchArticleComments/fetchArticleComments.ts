@@ -4,7 +4,7 @@ import { Comment } from 'entities/Comment';
 import { Errors } from 'shared/const/errors';
 
 export const fetchArticleComments = createAsyncThunk<Comment[], string | undefined, ThunkConfig<string>>(
-  '/articleComments/fetchArticleComments',
+  'articleComments/fetchArticleComments',
   async (articleId, { extra, rejectWithValue }) => {
     try {
       const response = await extra.api.get<Comment[]>('/comments/', {

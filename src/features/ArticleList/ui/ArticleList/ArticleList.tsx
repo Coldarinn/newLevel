@@ -1,8 +1,8 @@
-import { Article, ArticleView } from 'entities/Article/model/types/article';
-import { HTMLAttributeAnchorTarget } from 'react';
+import { Article, ArticleView } from 'entities/Article';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Text } from 'shared/ui/Text/ui/Text';
+import { Text } from 'shared/ui/Text';
 
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItemSkeleton/ArticleListItemSkeleton';
@@ -20,7 +20,7 @@ const renderSkeletons = (view: ArticleView) => Array(view === ArticleView.BIG ? 
   <ArticleListItemSkeleton key={idx} view={view} />
 ));
 
-export const ArticleList = (props: ArticleListProps) => {
+export const ArticleList = memo((props: ArticleListProps) => {
   const {
     additionalClasses = [], view = ArticleView.SMALL, isLoading, articles = [], target,
   } = props;
@@ -40,4 +40,4 @@ export const ArticleList = (props: ArticleListProps) => {
       {isLoading && renderSkeletons(view)}
     </div>
   );
-};
+});

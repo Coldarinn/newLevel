@@ -1,14 +1,8 @@
 import { ArticleFilters } from 'features/ArticleFilters/ui/ArticleFilters';
-import { getArticleListError } from 'features/ArticleList/model/selectors/getArticleListError/getArticleListError';
 import {
-  getArticleListIsLoading,
-} from 'features/ArticleList/model/selectors/getArticleListIsLoading/getArticleListIsLoading';
-import { getArticleListView } from 'features/ArticleList/model/selectors/getArticleListView/getArticleListView';
-import { fetchNextPage } from 'features/ArticleList/model/services/fetchNextPage/fetchNextPage';
-import { initArticlesList } from 'features/ArticleList/model/services/initArticlesList/initArticlesList';
-import {
-  articleListReducer, getArticleList,
-} from 'features/ArticleList/model/slice/articleListSlice';
+  articleListReducer, fetchNextPage, getArticleList,
+  getArticleListError, getArticleListIsLoading, getArticleListView, initArticlesList,
+} from 'features/ArticleList';
 import { ArticleList } from 'features/ArticleList/ui/ArticleList/ArticleList';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -18,7 +12,7 @@ import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector
 import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Text, TextTheme } from 'shared/ui/Text/ui/Text';
+import { Text, TextTheme } from 'shared/ui/Text';
 import { Page } from 'widgets/Page';
 
 import cls from './ArticlesPage.module.scss';

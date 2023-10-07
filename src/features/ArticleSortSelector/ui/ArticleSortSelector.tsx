@@ -1,4 +1,4 @@
-import { ArticleSort } from 'entities/Article/model/types/article';
+import { ArticleSort } from 'entities/Article';
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import DirectionIcon from 'shared/assets/icons/direction.svg';

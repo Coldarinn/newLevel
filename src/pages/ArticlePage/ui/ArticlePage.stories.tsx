@@ -143,8 +143,7 @@ export const Default: StoryObj = {
         },
         isLoading: false,
       },
-      addCommentForm: {
-        isLoading: false,
+      commentForm: {
         text: '',
       },
     },

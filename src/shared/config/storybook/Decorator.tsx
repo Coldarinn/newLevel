@@ -3,11 +3,11 @@ import 'app/styles/index.scss';
 import { StoryContext, StoryFn } from '@storybook/react';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { ThemeProvider } from 'app/providers/ThemeProvider';
-import { articleReducer } from 'entities/Article/model/slices/articleSlice';
-import { addCommentFormReducer } from 'features/AddCommentForm/model/slice/addCommentFormSlice';
-import { articleCommentsReducer } from 'features/ArticleComments/model/slice/articleCommentsSlice';
-import { articleListReducer } from 'features/ArticleList/model/slice/articleListSlice';
-import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
+import { articleReducer } from 'entities/Article';
+import { commentFormReducer } from 'entities/Comment';
+import { articleCommentsReducer } from 'features/ArticleComments';
+import { articleListReducer } from 'features/ArticleList';
+import { loginReducer } from 'features/AuthByUsername';
 import { profileReducer } from 'features/EditableProfileCard';
 import { Suspense, useEffect } from 'react';
 import { I18nextProvider } from 'react-i18next';
@@ -22,7 +22,7 @@ const initialAsyncReducers: ReducersList = {
   article: articleReducer,
   articleList: articleListReducer,
   articleComments: articleCommentsReducer,
-  addCommentForm: addCommentFormReducer,
+  commentForm: commentFormReducer,
 };
 
 export const DecoratedComponent = (Story: StoryFn, { globals, args }: StoryContext) => {

@@ -5,7 +5,7 @@ import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch
 import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonPadding, ButtonTheme } from 'shared/ui/Button';
-import { Text } from 'shared/ui/Text/ui/Text';
+import { Text } from 'shared/ui/Text';
 
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';

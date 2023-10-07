@@ -2,15 +2,15 @@ import {
   AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { articleSchema } from 'entities/Article/model/types/articleSchema';
+import { articleSchema } from 'entities/Article';
+import { CommentFormSchema } from 'entities/Comment';
 import { UserSchema } from 'entities/User';
-import { AddCommentFormSchema } from 'features/AddCommentForm';
 import { ArticleCommentsSchema } from 'features/ArticleComments';
-import { ArticleListSchema } from 'features/ArticleList/model/types/articleList';
+import { ArticleListSchema } from 'features/ArticleList';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ProfileSchema } from 'features/EditableProfileCard';
 import { rtkApi } from 'shared/api/rtkApi';
-import { ScrollSaveSchema } from 'widgets/Page/model/types/ScrollSaveSchema';
+import { ScrollSaveSchema } from 'widgets/Page';
 
 export interface StateSchema {
     user: UserSchema;
@@ -22,9 +22,8 @@ export interface StateSchema {
     profile?: ProfileSchema;
     article?: articleSchema;
     articleList?: ArticleListSchema;
-    articleRecommend?: ArticleCommentsSchema;
     articleComments?: ArticleCommentsSchema;
-    addCommentForm?: AddCommentFormSchema;
+    commentForm?: CommentFormSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
