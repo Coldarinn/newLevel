@@ -18,7 +18,7 @@ import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector
 import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text, TextTheme } from 'shared/ui/Text/ui/Text';
 import { Page } from 'widgets/Page';
 
 import cls from './ArticlesPage.module.scss';

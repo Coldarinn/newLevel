@@ -4,7 +4,7 @@ import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch
 import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Skeleton } from 'shared/ui/Skeleton';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text, TextTheme } from 'shared/ui/Text/ui/Text';
 
 import { getArticleData } from '../../model/selectors/getArticleData/getArticleData';
 import { getArticleError } from '../../model/selectors/getArticleError/getArticleError';

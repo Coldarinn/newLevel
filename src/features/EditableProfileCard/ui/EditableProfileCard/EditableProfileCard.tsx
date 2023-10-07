@@ -2,23 +2,35 @@ import { ProfileCard } from 'entities/Profile/ui/ProfileCard';
 import { memo, useCallback, useMemo } from 'react';
 import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
+import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
-import { profileActions } from '../../model/slice/profileSlice';
+import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
+import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 
 interface EditableProfileCardProps {
   additionalClasses?: string[];
+  id?: string;
 }
 
+const reducers: ReducersList = {
+  profile: profileReducer,
+};
+
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
-  const { additionalClasses = [] } = props;
+  const { additionalClasses = [], id } = props;
 
   const dispatch = useAppDispatch();
+
+  useInitialEffect(() => {
+    dispatch(fetchProfileData(id));
+  });
 
   const formData = useAppSelector(getProfileForm);
   const error = useAppSelector(getProfileError);
@@ -61,22 +73,24 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
   && formData?.avatar && formData?.age && formData?.username), [formData]);
 
   return (
-    <div className={classNames('', {}, [...additionalClasses])}>
-      <EditableProfileCardHeader readonly={readonly} disabled={isDisable} />
-      <ProfileCard
-        data={formData}
-        isLoading={isLoading}
-        error={error}
-        readonly={readonly}
-        onChangeFirstname={onChangeFirstname}
-        onChangeLastname={onChangeLastname}
-        onChangeAge={onChangeAge}
-        onChangeCity={onChangeCity}
-        onChangeUsername={onChangeUsername}
-        onChangeAvatar={onChangeAvatar}
-        onChangeCurrency={onChangeCurrency}
-        onChangeCountry={onChangeCountry}
-      />
-    </div>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+      <div className={classNames('', {}, [...additionalClasses])}>
+        <EditableProfileCardHeader readonly={readonly} disabled={isDisable} />
+        <ProfileCard
+          data={formData}
+          isLoading={isLoading}
+          error={error}
+          readonly={readonly}
+          onChangeFirstname={onChangeFirstname}
+          onChangeLastname={onChangeLastname}
+          onChangeAge={onChangeAge}
+          onChangeCity={onChangeCity}
+          onChangeUsername={onChangeUsername}
+          onChangeAvatar={onChangeAvatar}
+          onChangeCurrency={onChangeCurrency}
+          onChangeCountry={onChangeCountry}
+        />
+      </div>
+    </DynamicModuleLoader>
   );
 });

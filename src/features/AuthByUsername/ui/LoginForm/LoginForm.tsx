@@ -9,10 +9,9 @@ import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch
 import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Button, ButtonTheme } from 'shared/ui/Button';
-import { ButtonPadding } from 'shared/ui/Button/ui/Button';
+import { Button, ButtonPadding, ButtonTheme } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text, TextTheme } from 'shared/ui/Text/ui/Text';
 
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';

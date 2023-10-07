@@ -7,21 +7,22 @@ import { UserSchema } from 'entities/User';
 import { AddCommentFormSchema } from 'features/AddCommentForm';
 import { ArticleCommentsSchema } from 'features/ArticleComments';
 import { ArticleListSchema } from 'features/ArticleList/model/types/articleList';
-import { ArticleRecommendSchema } from 'features/ArticleRecommend/model/types/ArticleRecommendSchema';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ProfileSchema } from 'features/EditableProfileCard';
+import { rtkApi } from 'shared/api/rtkApi';
 import { ScrollSaveSchema } from 'widgets/Page/model/types/ScrollSaveSchema';
 
 export interface StateSchema {
     user: UserSchema;
     scrollSave: ScrollSaveSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // Async
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     article?: articleSchema;
     articleList?: ArticleListSchema;
-    articleRecommend?: ArticleRecommendSchema;
+    articleRecommend?: ArticleCommentsSchema;
     articleComments?: ArticleCommentsSchema;
     addCommentForm?: AddCommentFormSchema;
 }

@@ -15,7 +15,6 @@ import {
   getArticleComments,
 } from 'features/ArticleComments/model/slice/articleCommentsSlice';
 import { ArticleRecommend } from 'features/ArticleRecommend';
-import { articleRecommendReducer } from 'features/ArticleRecommend/model/slice/articleRecommendSlice';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
@@ -23,7 +22,7 @@ import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch
 import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
 import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text, TextTheme } from 'shared/ui/Text/ui/Text';
 import { Page } from 'widgets/Page';
 
 import cls from './ArticlePage.module.scss';
@@ -34,7 +33,6 @@ export interface ArticlePageProps {
 
 const reducers: ReducersList = {
   articleComments: articleCommentsReducer,
-  articleRecommend: articleRecommendReducer,
 };
 
 const ArticlePage = (props: ArticlePageProps) => {

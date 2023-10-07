@@ -6,7 +6,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Avatar } from 'shared/ui/Avatar';
 import { Input } from 'shared/ui/Input';
 import { Skeleton } from 'shared/ui/Skeleton';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text, TextTheme } from 'shared/ui/Text/ui/Text';
 
 import { ProfileCardProps } from '../model/types/profile';
 import cls from './ProfileCard.module.scss';

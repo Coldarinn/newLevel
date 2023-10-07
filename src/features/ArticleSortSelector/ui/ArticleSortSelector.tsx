@@ -5,7 +5,7 @@ import DirectionIcon from 'shared/assets/icons/direction.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { SortOrder } from 'shared/types';
 import { Button } from 'shared/ui/Button';
-import { Select, SelectOption } from 'shared/ui/Select/ui/Select';
+import { Select, SelectOption } from 'shared/ui/Select';
 
 import cls from './ArticleSortSelector.module.scss';
 
