@@ -67,6 +67,7 @@ const articles = [
 
 export const Grid: StoryObj = {
   args: {
+    notCentered: true,
     articles,
     view: ArticleView.SMALL,
     isLoading: false,
