@@ -45,8 +45,20 @@ module.exports = {
     'max-len': ['warn', { code: 120, ignoreComments: true }],
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
-      ignoreAttribute:
-      ['data-testid', 'to', 'rounded', 'target', 'direction', 'as'],
+      ignoreAttribute: [
+        'data-testid',
+        'to',
+        'rounded',
+        'target',
+        'direction',
+        'as',
+        'enter',
+        'enterFrom',
+        'enterTo',
+        'leave',
+        'leaveFrom',
+        'leaveTo',
+      ],
     }],
     'jsx-a11y/no-static-element-interactions': 'off',
     'react-hooks/rules-of-hooks': 'error', // Проверяем правила хуков

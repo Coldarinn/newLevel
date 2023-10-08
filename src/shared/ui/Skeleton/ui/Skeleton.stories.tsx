@@ -22,4 +22,13 @@ export const Circle: StoryObj = {
   },
 };
 
+export const Rectangle: StoryObj = {
+  args: {
+    width: '300px',
+    height: '100px',
+    rounded: '8px',
+    additionalClasses: [],
+  },
+};
+
 export default meta;

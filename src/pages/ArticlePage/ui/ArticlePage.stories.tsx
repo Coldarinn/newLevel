@@ -7,7 +7,7 @@ const meta = {
   title: 'pages/ArticlePage',
   decorators: [DecoratedComponent],
   parameters: {
-    layout: 'fullpage',
+    layout: 'fullscreen',
   },
   component: ArticlePageComponent,
   render: (args) => <ArticlePageComponent {...args} />,
@@ -158,6 +158,15 @@ export const Loading: StoryObj = {
         data,
         isLoading: true,
         error: undefined,
+      },
+      articleComments: {
+        error: undefined,
+        isLoading: true,
+        ids: [],
+        entities: {},
+      },
+      commentForm: {
+        text: '',
       },
     },
   },

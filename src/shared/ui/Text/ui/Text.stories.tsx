@@ -13,7 +13,7 @@ const meta = {
   render: (args) => <TextComponent {...args} />,
 } satisfies Meta<typeof TextComponent>;
 
-export const Primary: StoryObj = {
+export const Default: StoryObj = {
   args: {
     theme: TextTheme.DEFAULT,
     title: 'Title example',
@@ -22,7 +22,7 @@ export const Primary: StoryObj = {
   },
 };
 
-export const Error: StoryObj = {
+export const Danger: StoryObj = {
   args: {
     theme: TextTheme.DANGER,
     title: 'Title example',

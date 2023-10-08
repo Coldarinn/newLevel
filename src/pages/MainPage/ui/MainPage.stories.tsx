@@ -7,7 +7,7 @@ const meta = {
   title: 'pages/MainPage',
   decorators: [DecoratedComponent],
   parameters: {
-    layout: 'fullpage',
+    layout: 'fullscreen',
   },
   component: MainPageComponent,
   render: (args) => <MainPageComponent {...args} />,

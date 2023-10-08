@@ -7,7 +7,7 @@ const meta = {
   title: 'pages/NotFoundPage',
   decorators: [DecoratedComponent],
   parameters: {
-    layout: 'fullpage',
+    layout: 'fullscreen',
   },
   component: NotFoundPageComponent,
   render: (args) => <NotFoundPageComponent {...args} />,

@@ -1,16 +1,22 @@
-import { Meta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { DecoratedComponent } from 'shared/config/storybook/Decorator';
 
 import { Navbar as NavbarComponent } from './Navbar';
 
 const meta = {
-  title: 'widget/Navbar',
+  title: 'widgets/Navbar',
   decorators: [DecoratedComponent],
   parameters: {
     layout: 'fullscreen',
   },
+  component: NavbarComponent,
+  render: (args) => <NavbarComponent {...args} />,
 } satisfies Meta<typeof NavbarComponent>;
 
-export default meta;
+export const Navbar: StoryObj = {
+  args: {
+    notCentered: true,
+  },
+};
 
-export const Navbar = () => <NavbarComponent />;
+export default meta;

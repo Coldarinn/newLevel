@@ -9,10 +9,10 @@ export enum TextTheme {
 }
 
 interface TextProps {
-   additionalClasses?: string[],
-   title?: string;
-   text?: string;
-   theme?: TextTheme;
+  additionalClasses?: string[],
+  title?: string;
+  text?: string;
+  theme?: TextTheme;
 }
 
 export const Text = memo((props: TextProps) => {

@@ -18,7 +18,7 @@ const data = {
 
 const RenderComponent = (args: ProfilePageProps) => (
   <div style={{
-    width: '660px',
+    width: '100%',
     padding: '30px',
   }}
   >
@@ -36,7 +36,7 @@ const meta = {
   render: (args) => <RenderComponent {...args} />,
 } satisfies Meta<typeof ProfilePageComponent>;
 
-export const Default: StoryObj = {
+export const Edit: StoryObj = {
   args: {
     notCentered: true,
     initialState: {
@@ -46,6 +46,9 @@ export const Default: StoryObj = {
         isLoading: false,
         readonly: false,
         error: '',
+      },
+      user: {
+        authData: data,
       },
     },
   },

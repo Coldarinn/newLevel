@@ -12,8 +12,8 @@ interface ArticleListProps {
   additionalClasses?: string[],
   articles: Article[],
   view?: ArticleView,
-  isLoading?: boolean
-  target?: HTMLAttributeAnchorTarget;
+  isLoading?: boolean,
+  target?: HTMLAttributeAnchorTarget
 }
 
 const renderSkeletons = (view: ArticleView) => Array(view === ArticleView.BIG ? 5 : 15).fill(0).map((_, idx) => (

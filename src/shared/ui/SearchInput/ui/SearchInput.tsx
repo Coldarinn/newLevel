@@ -7,9 +7,9 @@ import cls from './SearchInput.module.scss';
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
 export interface SearchInputProps extends HTMLInputProps {
-   additionalClasses?: string[],
-   value?: string | number;
-   onChange?: (value: string) => void;
+  additionalClasses?: string[],
+  value?: string | number;
+  onChange?: (value: string) => void;
 }
 
 export const SearchInput = (props: SearchInputProps) => {

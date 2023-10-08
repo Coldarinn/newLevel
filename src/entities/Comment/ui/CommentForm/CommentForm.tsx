@@ -10,7 +10,7 @@ import { getCommentFormText } from '../../model/selectors/commentFormSelectors';
 import { commentFormActions } from '../../model/slices/commentFormSlice';
 import cls from './CommentForm.module.scss';
 
-interface CommentFormProps {
+export interface CommentFormProps {
   additionalClasses?: string[],
   onSend: (text: string) => void;
 }

@@ -36,8 +36,8 @@ export const DecoratedComponent = (Story: StoryFn, { globals, args }: StoryConte
     <StoreProvider initialState={args?.initialState ?? {}} asyncReducers={initialAsyncReducers}>
       <BrowserRouter>
         <ThemeProvider>
-          <I18nextProvider i18n={i18n}>
-            <Suspense fallback>
+          <Suspense fallback>
+            <I18nextProvider i18n={i18n}>
               <div
                 className="app"
                 style={args?.notCentered ? {} : {
@@ -46,8 +46,8 @@ export const DecoratedComponent = (Story: StoryFn, { globals, args }: StoryConte
               >
                 <Story />
               </div>
-            </Suspense>
-          </I18nextProvider>
+            </I18nextProvider>
+          </Suspense>
         </ThemeProvider>
       </BrowserRouter>
     </StoreProvider>

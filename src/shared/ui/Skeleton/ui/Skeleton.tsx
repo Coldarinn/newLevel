@@ -22,6 +22,13 @@ export const Skeleton = (props: SkeletonProps) => {
   };
 
   return (
-    <div className={classNames(cls.skeleton, {}, [...additionalClasses])} style={styles} />
+    <div
+      className={classNames(
+        cls.skeleton,
+        { [cls.rounded]: rounded === '50%' },
+        [...additionalClasses],
+      )}
+      style={styles}
+    />
   );
 };

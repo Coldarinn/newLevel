@@ -3,9 +3,10 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
+  gap: var(--padding-2xl);
 }
 
 .row {
   display: flex;
-  gap: 20px;
+  gap: var(--padding-l);
 }

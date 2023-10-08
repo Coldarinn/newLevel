@@ -17,6 +17,10 @@
     background: linear-gradient(to right, transparent 0%, var(--border-default-color) 50%, transparent 100%);
     animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
+
+  &.rounded {
+    flex-shrink: 0;
+  }
 }
 
 @keyframes load {

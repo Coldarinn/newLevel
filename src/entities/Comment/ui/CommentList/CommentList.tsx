@@ -7,7 +7,7 @@ import { Comment } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
 import cls from './CommentList.module.scss';
 
-interface CommentListProps {
+export interface CommentListProps {
   additionalClasses?: string[],
   comments?: Comment[];
   isLoading?: boolean;

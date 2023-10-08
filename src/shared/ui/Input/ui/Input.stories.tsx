@@ -1,13 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DecoratedComponent } from 'shared/config/storybook/Decorator';
 
-import { Input as InputComponent, InputProps } from './Input';
-
-const Template = (args: InputProps) => (
-  <div style={{ margin: '0 auto', maxWidth: '300px' }}>
-    <InputComponent {...args} />
-  </div>
-);
+import { Input as InputComponent } from './Input';
 
 const meta = {
   title: 'shared/Input',
@@ -16,14 +10,44 @@ const meta = {
     layout: 'fullscreen',
   },
   component: InputComponent,
-  render: (args) => <Template {...args} />,
+  render: (args) => <InputComponent {...args} />,
 } satisfies Meta<typeof InputComponent>;
 
-export const Input: StoryObj = {
+export const Placeholder: StoryObj = {
   args: {
-    placeholder: 'Input placeholder',
-    value: 'Input value',
-    additionalClasses: [],
+    placeholder: 'Placeholder text',
+  },
+};
+
+export const WithoutPlaceholder: StoryObj = {};
+
+export const Value: StoryObj = {
+  args: {
+    placeholder: 'Placeholder text',
+    value: 'Value text',
+  },
+};
+
+export const Readonly: StoryObj = {
+  args: {
+    placeholder: 'Placeholder text',
+    value: 'Value text',
+    readonly: true,
+  },
+};
+
+export const Require: StoryObj = {
+  args: {
+    placeholder: 'Placeholder text',
+    require: true,
+  },
+};
+
+export const Number: StoryObj = {
+  args: {
+    placeholder: 'Placeholder text',
+    type: 'number',
+    value: 123,
   },
 };
 

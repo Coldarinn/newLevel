@@ -21,7 +21,7 @@ import { SearchInput } from 'shared/ui/SearchInput';
 
 import cls from './ArticleFilters.module.scss';
 
-interface ArticleFiltersProps {
+export interface ArticleFiltersProps {
   additionalClasses?: string[],
 }
 

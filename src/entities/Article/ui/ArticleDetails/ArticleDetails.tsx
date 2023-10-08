@@ -75,8 +75,13 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   if (isLoading) {
     content = (
       <div className={cls.ArticleDetails}>
-        <Skeleton additionalClasses={[cls.avatar]} width={200} height={200} rounded="50%" />
+        <Skeleton width={400} height={40} rounded="8px" />
+        <Skeleton additionalClasses={[cls.avatar]} width="100%" height={200} />
         <Skeleton width={300} height={32} rounded="8px" />
+        <div className={cls.flex}>
+          <Skeleton width={150} height={32} rounded="8px" />
+          <Skeleton width={150} height={32} rounded="8px" />
+        </div>
         <Skeleton width={600} height={24} rounded="8px" />
         <Skeleton width="100%" height={200} rounded="8px" />
         <Skeleton width="100%" height={200} rounded="8px" />
