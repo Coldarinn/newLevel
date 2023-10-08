@@ -56,7 +56,7 @@ const comments = [
       username: 'user3',
       password: '123',
       role: 'USER',
-      avatar: 'https://i.yapx.cc/RcBeT.jpg',
+      avatar: 'https://pic.rutubelist.ru/user/f1/07/f1078786104bb3e02b7b16dd058b0a57.jpg',
     },
   },
 ];
