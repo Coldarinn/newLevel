@@ -74,6 +74,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
           onChange={onChangeFirstname}
           readonly={readonly}
           require
+          data-testid="ProfileCard.firstname"
         />
         <Input
           placeholder={t('Фамилия')}
