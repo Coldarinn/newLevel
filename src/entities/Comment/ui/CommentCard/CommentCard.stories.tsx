@@ -30,7 +30,7 @@ const comment = {
     id: '1',
     username: 'user1',
     password: '123',
-    role: 'ADMIN',
+    roles: ['admin'],
     avatar: 'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
   },
 };

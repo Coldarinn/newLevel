@@ -602,23 +602,29 @@
   "users": [
     {
       "id": "1",
-      "username": "user1",
-      "password": "123",
-      "role": "ADMIN",
+      "username": "admin",
+      "password": "admin",
+      "roles": [
+        "admin"
+      ],
       "avatar": "https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg"
     },
     {
       "id": "2",
-      "username": "user2",
-      "password": "123",
-      "role": "USER",
+      "username": "user",
+      "password": "user",
+      "roles": [
+        "user"
+      ],
       "avatar": "https://iphoneswallpapers.com/wp-content/uploads/2021/02/Hacker-Nation-iPhone-Wallpaper.jpg"
     },
     {
       "id": "3",
-      "username": "user3",
-      "password": "123",
-      "role": "USER",
+      "username": "manager",
+      "password": "manager",
+      "roles": [
+        "manager"
+      ],
       "avatar": "https://i.yapx.cc/RcBeT.jpg"
     }
   ],
@@ -631,7 +637,7 @@
       "currency": "RUB",
       "country": "BELARUS",
       "city": "Moscow",
-      "username": "user1",
+      "username": "admin",
       "avatar": "https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg"
     },
     {
@@ -642,7 +648,7 @@
       "currency": "RUB",
       "country": "Россия",
       "city": "Moscow",
-      "username": "user2",
+      "username": "user",
       "avatar": "https://iphoneswallpapers.com/wp-content/uploads/2021/02/Hacker-Nation-iPhone-Wallpaper.jpg"
     },
     {
@@ -653,7 +659,7 @@
       "currency": "RUB",
       "country": "Россия",
       "city": "Moscow",
-      "username": "user3",
+      "username": "manager",
       "avatar": "https://i.yapx.cc/RcBeT.jpg"
     }
   ]
