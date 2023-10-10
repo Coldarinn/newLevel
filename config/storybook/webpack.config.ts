@@ -16,6 +16,10 @@ export default ({ config }: {config: Configuration}) => {
   config.resolve?.modules?.unshift(paths.src);
   config.resolve?.modules?.push(paths.src);
   config.resolve?.extensions?.push('.ts', '.tsx');
+  config!.resolve!.alias = {
+    ...config!.resolve!.alias,
+    '@': paths.src,
+  };
 
   if (config.module && config.module.rules) {
     // @ts-ignore

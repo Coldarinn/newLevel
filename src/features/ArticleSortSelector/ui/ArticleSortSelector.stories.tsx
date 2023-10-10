@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { ArticleSort } from 'entities/Article';
-import { DecoratedComponent } from 'shared/config/storybook/Decorator';
+
+import { ArticleSort } from '@/entities/Article';
+import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
 
 import { ArticleSortSelector as ArticleSortSelectorComponent } from './ArticleSortSelector';
 

@@ -1,6 +1,6 @@
-import { ArticleView } from 'entities/Article';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Skeleton } from 'shared/ui/Skeleton';
+import { ArticleView } from '@/entities/Article';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 import cls from './ArticleListItemSkeleton.module.scss';
 

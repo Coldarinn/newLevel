@@ -1,8 +1,9 @@
-import { ArticleView } from 'entities/Article';
 import { useCallback } from 'react';
-import GridIcon from 'shared/assets/icons/grid.svg';
-import RowsIcon from 'shared/assets/icons/rows.svg';
-import { Tabs } from 'shared/ui/Tabs';
+
+import { ArticleView } from '@/entities/Article';
+import GridIcon from '@/shared/assets/icons/grid.svg';
+import RowsIcon from '@/shared/assets/icons/rows.svg';
+import { Tabs } from '@/shared/ui/Tabs';
 
 import cls from './ArticleViewSelector.module.scss';
 

@@ -1,7 +1,8 @@
 import { memo, Suspense } from 'react';
-import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect';
-import { classNames } from 'shared/lib/classNames/classNames';
+
+import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/hooks/useInitialEffect/useInitialEffect';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { fetchArticleComments } from '../../model/services/fetchArticleComments/fetchArticleComments';
 import { ArticleCommentsForm } from '../ArticleCommentsForm/ArticleCommentsForm';

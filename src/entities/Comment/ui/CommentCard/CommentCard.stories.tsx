@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { DecoratedComponent } from 'shared/config/storybook/Decorator';
+
+import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
 
 import { CommentCard as CommentCardComponent, CommentCardProps } from './CommentCard';
 

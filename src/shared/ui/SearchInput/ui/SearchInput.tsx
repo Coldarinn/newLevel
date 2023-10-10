@@ -1,6 +1,7 @@
 import { ChangeEvent, InputHTMLAttributes, useRef } from 'react';
-import SearchIcon from 'shared/assets/icons/search.svg';
-import { classNames } from 'shared/lib/classNames/classNames';
+
+import SearchIcon from '@/shared/assets/icons/search.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './SearchInput.module.scss';
 

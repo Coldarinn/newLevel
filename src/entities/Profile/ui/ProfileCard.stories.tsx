@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { DecoratedComponent } from 'shared/config/storybook/Decorator';
-import { Errors } from 'shared/const/errors';
+
+import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
+import { Errors } from '@/shared/const/errors';
 
 import { ProfileCardProps } from '../model/types/profile';
 import { ProfileCard as ProfileCardComponent } from './ProfileCard';

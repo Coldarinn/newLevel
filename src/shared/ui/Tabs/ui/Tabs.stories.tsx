@@ -1,6 +1,7 @@
 import { action } from '@storybook/addon-actions';
 import { Meta, StoryObj } from '@storybook/react';
-import { DecoratedComponent } from 'shared/config/storybook/Decorator';
+
+import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
 
 import { Tabs as TabsComponent } from './Tabs';
 

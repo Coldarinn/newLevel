@@ -1,4 +1,6 @@
-import { ArticleSort, ArticleType, ArticleView } from 'entities/Article';
+import { useCallback } from 'react';
+
+import { ArticleSort, ArticleType, ArticleView } from '@/entities/Article';
 import {
   articleListActions,
   fetchArticlesList,
@@ -7,17 +9,16 @@ import {
   getArticleListSort,
   getArticleListType,
   getArticleListView,
-} from 'features/ArticleList';
-import { ArticleSortSelector } from 'features/ArticleSortSelector';
-import { ArticleTypeTabs } from 'features/ArticleTypeTabs';
-import { ArticleViewSelector } from 'features/ArticleViewSelector';
-import { useCallback } from 'react';
-import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
-import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
-import { useDebounce } from 'shared/hooks/useDebounce/useDebounce';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { SortOrder } from 'shared/types';
-import { SearchInput } from 'shared/ui/SearchInput';
+} from '@/features/ArticleList';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { ArticleViewSelector } from '@/features/ArticleViewSelector';
+import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
+import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
+import { useDebounce } from '@/shared/hooks/useDebounce/useDebounce';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { SortOrder } from '@/shared/types';
+import { SearchInput } from '@/shared/ui/SearchInput';
 
 import cls from './ArticleFilters.module.scss';
 

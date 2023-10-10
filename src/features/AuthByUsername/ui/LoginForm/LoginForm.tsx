@@ -1,17 +1,18 @@
-import { ReduxStoreWithManager } from 'app/providers/StoreProvider/config/StateSchema';
 import {
   FormEvent,
   useCallback, useEffect,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useStore } from 'react-redux';
-import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
-import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Button, ButtonPadding, ButtonTheme } from 'shared/ui/Button';
-import { Input } from 'shared/ui/Input';
-import { Text, TextTheme } from 'shared/ui/Text';
+
+import { ReduxStoreWithManager } from '@/app/providers/StoreProvider/config/StateSchema';
+import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
+import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Button, ButtonPadding, ButtonTheme } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
+import { Text, TextTheme } from '@/shared/ui/Text';
 
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';

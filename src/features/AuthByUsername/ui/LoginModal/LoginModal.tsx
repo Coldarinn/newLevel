@@ -1,7 +1,8 @@
-import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import { FC, Suspense } from 'react';
-import { Loader } from 'shared/ui/Loader';
-import { Modal } from 'shared/ui/Modal';
+
+import { ErrorBoundary } from '@/app/providers/ErrorBoundary';
+import { Loader } from '@/shared/ui/Loader';
+import { Modal } from '@/shared/ui/Modal';
 
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 import cls from './LoginModal.module.scss';

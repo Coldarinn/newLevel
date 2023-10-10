@@ -1,10 +1,11 @@
-import { getArticleError } from 'entities/Article';
-import { CommentList } from 'entities/Comment';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Text, TextTheme } from 'shared/ui/Text';
+
+import { getArticleError } from '@/entities/Article';
+import { CommentList } from '@/entities/Comment';
+import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text, TextTheme } from '@/shared/ui/Text';
 
 import { getArticleCommentsError } from '../../model/selectors/getArticleCommentsError/getArticleCommentsError';
 import {

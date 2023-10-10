@@ -1,8 +1,9 @@
 import {
   useEffect, useMemo, useRef, useState,
 } from 'react';
-import ArrowIcon from 'shared/assets/icons/arrow.svg';
-import { classNames } from 'shared/lib/classNames/classNames';
+
+import ArrowIcon from '@/shared/assets/icons/arrow.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { Button, ButtonPadding, ButtonTheme } from '../../Button';
 import cls from './Select.module.scss';

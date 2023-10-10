@@ -1,19 +1,20 @@
-import { ArticleFilters } from 'features/ArticleFilters/ui/ArticleFilters';
-import {
-  articleListReducer, fetchNextPage, getArticleList,
-  getArticleListError, getArticleListIsLoading, getArticleListView, initArticlesList,
-} from 'features/ArticleList';
-import { ArticleList } from 'features/ArticleList/ui/ArticleList/ArticleList';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
-import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
-import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
-import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Text, TextTheme } from 'shared/ui/Text';
-import { Page } from 'widgets/Page';
+
+import { ArticleFilters } from '@/features/ArticleFilters/ui/ArticleFilters';
+import {
+  articleListReducer, fetchNextPage, getArticleList,
+  getArticleListError, getArticleListIsLoading, getArticleListView, initArticlesList,
+} from '@/features/ArticleList';
+import { ArticleList } from '@/features/ArticleList/ui/ArticleList/ArticleList';
+import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
+import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
+import { useInitialEffect } from '@/shared/hooks/useInitialEffect/useInitialEffect';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Text, TextTheme } from '@/shared/ui/Text';
+import { Page } from '@/widgets/Page';
 
 import cls from './ArticlesPage.module.scss';
 

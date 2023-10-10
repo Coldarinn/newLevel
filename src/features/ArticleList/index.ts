@@ -10,10 +10,5 @@ export { fetchNextPage } from './model/services/fetchNextPage/fetchNextPage';
 export { articleListReducer } from './model/slice/articleListSlice';
 export { articleListActions } from './model/slice/articleListSlice';
 export { getArticleList } from './model/slice/articleListSlice';
-export { ArticleListSchema } from './model/types/articleList';
-export { initArticlesList } from 'features/ArticleList/model/services/initArticlesList/initArticlesList';
-
-// import {
-//   articleListReducer, fetchNextPage, getArticleList,
-//   getArticleListError, getArticleListIsLoading, getArticleListView, initArticlesList,
-// } from 'features/ArticleList';
+export type { ArticleListSchema } from './model/types/articleList';
+export { initArticlesList } from '@/features/ArticleList/model/services/initArticlesList/initArticlesList';

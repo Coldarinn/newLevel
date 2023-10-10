@@ -1,11 +1,12 @@
-import { ArticleDetails } from 'entities/Article';
-import { ArticleComments, articleCommentsReducer } from 'features/ArticleComments';
-import { ArticleRecommend } from 'features/ArticleRecommend';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Text, TextTheme } from 'shared/ui/Text';
-import { Page } from 'widgets/Page';
+
+import { ArticleDetails } from '@/entities/Article';
+import { ArticleComments, articleCommentsReducer } from '@/features/ArticleComments';
+import { ArticleRecommend } from '@/features/ArticleRecommend';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Text, TextTheme } from '@/shared/ui/Text';
+import { Page } from '@/widgets/Page';
 
 export interface ArticlePageProps {
   additionalClasses?: string[],

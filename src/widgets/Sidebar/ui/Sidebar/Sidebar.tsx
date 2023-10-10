@@ -1,11 +1,12 @@
-import { getUserAuthData } from 'entities/User';
-import { LangSwitcher } from 'features/LangSwitcher';
-import { ThemeSwitcher } from 'features/ThemeSwitcher';
 import { memo, useState } from 'react';
-import ArrowIcon from 'shared/assets/icons/arrow.svg';
-import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from 'shared/ui/Button';
+
+import { getUserAuthData } from '@/entities/User';
+import { LangSwitcher } from '@/features/LangSwitcher';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
+import ArrowIcon from '@/shared/assets/icons/arrow.svg';
+import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 
 import { SidebarItemsList } from '../../model/items';
 import SiderbarItem from '../SiderbarItem/SiderbarItem';

@@ -1,16 +1,17 @@
-import {
-  getUserAuthData, isUserAdmin, isUserManager, userActions,
-} from 'entities/User';
-import { LoginModal } from 'features/AuthByUsername';
 import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
-import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Avatar } from 'shared/ui/Avatar';
-import { Button } from 'shared/ui/Button';
-import { Dropdown } from 'shared/ui/Dropdown';
+
+import {
+  getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from '@/entities/User';
+import { LoginModal } from '@/features/AuthByUsername';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
+import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Button } from '@/shared/ui/Button';
+import { Dropdown } from '@/shared/ui/Dropdown';
 
 import cls from './Navbar.module.scss';
 

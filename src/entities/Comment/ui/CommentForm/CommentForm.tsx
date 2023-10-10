@@ -1,10 +1,11 @@
 import { FormEvent, memo, useCallback } from 'react';
-import ArrowIcon from 'shared/assets/icons/arrowSave.svg';
-import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
-import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui/Button';
-import { Input } from 'shared/ui/Input';
+
+import ArrowIcon from '@/shared/assets/icons/arrowSave.svg';
+import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
+import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
 
 import { getCommentFormText } from '../../model/selectors/commentFormSelectors';
 import { commentFormActions } from '../../model/slices/commentFormSlice';

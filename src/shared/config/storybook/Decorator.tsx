@@ -1,18 +1,19 @@
-import 'app/styles/index.scss';
+import '@/app/styles/index.scss';
 
 import { StoryContext, StoryFn } from '@storybook/react';
-import { StoreProvider } from 'app/providers/StoreProvider';
-import { ThemeProvider } from 'app/providers/ThemeProvider';
-import { articleReducer } from 'entities/Article';
-import { commentFormReducer } from 'entities/Comment';
-import { articleCommentsReducer } from 'features/ArticleComments';
-import { articleListReducer } from 'features/ArticleList';
-import { loginReducer } from 'features/AuthByUsername';
-import { profileReducer } from 'features/EditableProfileCard';
 import { Suspense, useEffect } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { BrowserRouter } from 'react-router-dom';
-import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
+import { articleReducer } from '@/entities/Article';
+import { commentFormReducer } from '@/entities/Comment';
+import { articleCommentsReducer } from '@/features/ArticleComments';
+import { articleListReducer } from '@/features/ArticleList';
+import { loginReducer } from '@/features/AuthByUsername';
+import { profileReducer } from '@/features/EditableProfileCard';
+import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 import i18n from '../i18n/i18nForTests';
 

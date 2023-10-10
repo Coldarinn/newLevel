@@ -1,11 +1,12 @@
-import { getUserAuthData } from 'entities/User';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useAppDispatch } from 'shared/hooks/store/useAppDispatch/useAppDispatch';
-import { useAppSelector } from 'shared/hooks/store/useAppSelector/useAppSelector';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonPadding, ButtonTheme } from 'shared/ui/Button';
-import { Text } from 'shared/ui/Text';
+
+import { getUserAuthData } from '@/entities/User';
+import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
+import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonPadding, ButtonTheme } from '@/shared/ui/Button';
+import { Text } from '@/shared/ui/Text';
 
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';

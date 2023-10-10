@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { DecoratedComponent } from 'shared/config/storybook/Decorator';
+
+import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
 
 import { LangSwitcher as LangSwitcherComponent } from './LangSwitcher';
 

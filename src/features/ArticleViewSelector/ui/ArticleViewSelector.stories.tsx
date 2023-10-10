@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { ArticleView } from 'entities/Article';
-import { DecoratedComponent } from 'shared/config/storybook/Decorator';
+
+import { ArticleView } from '@/entities/Article';
+import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
 
 import { ArticleViewSelector as ArticleViewSelectorComponent } from './ArticleViewSelector';
 

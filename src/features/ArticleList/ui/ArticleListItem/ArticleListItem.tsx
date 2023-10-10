@@ -1,9 +1,10 @@
-import { Article, ArticleView } from 'entities/Article';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import ViewIcon from 'shared/assets/icons/view.svg';
-import { classNames } from 'shared/lib/classNames/classNames';
+
+import { Article, ArticleView } from '@/entities/Article';
+import ViewIcon from '@/shared/assets/icons/view.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './ArticleListItem.module.scss';
 
