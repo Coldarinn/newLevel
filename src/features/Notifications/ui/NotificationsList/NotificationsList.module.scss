@@ -1,0 +1,7 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-xs);
+  max-height: 400px;
+  overflow-y: auto;
+}

@@ -1,0 +1,19 @@
+.item {
+  width: 340px;
+  border: 1px solid var(--border-default-color);
+  padding: var(--padding-s);
+  border-radius: var(--border-radius-lg);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: var(--padding-s)
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--danger-hover-color);
+}

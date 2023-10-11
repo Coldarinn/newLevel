@@ -2,16 +2,17 @@ import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import {
-  getUserAuthData, isUserAdmin, isUserManager, userActions,
+  getUserAuthData, isUserAdmin, userActions,
 } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
+import { Notifications } from '@/features/Notifications';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button } from '@/shared/ui/Button';
-import { Dropdown } from '@/shared/ui/Dropdown';
+import { Dropdown } from '@/shared/ui/Popups';
 
 import cls from './Navbar.module.scss';
 
@@ -46,6 +47,7 @@ export const Navbar = memo((props: NavbarProps) => {
   if (authData) {
     return (
       <header className={classNames(cls.navbar, {}, [...additionalClasses])}>
+        <Notifications />
         <Dropdown
           direction="bottom left"
           items={[

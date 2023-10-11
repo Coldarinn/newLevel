@@ -4,30 +4,25 @@ import { Fragment, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types';
 
+import { mapDirectionClass } from '../../styles/consts';
+import popupCls from '../../styles/Popup.module.scss';
 import cls from './Dropdown.module.scss';
 
 export interface DropdownItem {
-    id: number | string;
-    disabled?: boolean;
-    content?: ReactNode;
-    onClick?: () => void;
-    href?: string;
+  id: number | string;
+  disabled?: boolean;
+  content?: ReactNode;
+  onClick?: () => void;
+  href?: string;
 }
 
 interface DropdownProps {
-    additionalClasses?: string[];
-    items: DropdownItem[];
-    direction?: DropdownDirection;
-    trigger: ReactNode;
-    initialStatus?: boolean;
+  additionalClasses?: string[];
+  items: DropdownItem[];
+  direction?: DropdownDirection;
+  trigger: ReactNode;
+  initialStatus?: boolean;
 }
-
-const mapDirectionClass: Record<DropdownDirection, string> = {
-  'bottom left': cls.optionsBottomLeft,
-  'bottom right': cls.optionsBottomRight,
-  'top right': cls.optionsTopRight,
-  'top left': cls.optionsTopLeft,
-};
 
 export function Dropdown(props: DropdownProps) {
   const {
@@ -46,12 +41,12 @@ export function Dropdown(props: DropdownProps) {
           <Transition
             show={initialStatus ?? open}
             as={Fragment}
-            enter="transition duration-100 ease-out"
-            enterFrom="transform scale-95 opacity-0"
-            enterTo="transform scale-100 opacity-100"
-            leave="transition duration-75 ease-out"
-            leaveFrom="transform scale-100 opacity-100"
-            leaveTo="transform scale-95 opacity-0"
+            enter={popupCls.transition}
+            enterFrom={popupCls.opacity}
+            enterTo={popupCls.full}
+            leave={popupCls.transition}
+            leaveFrom={popupCls.opacity}
+            leaveTo={popupCls.full}
           >
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
               {items.map((item) => {
@@ -63,7 +58,7 @@ export function Dropdown(props: DropdownProps) {
                           href={item.href}
                           target="_blank"
                           rel="noreferrer"
-                          className={classNames(cls.item, { [cls.active]: active })}
+                          className={classNames(cls.item, { [popupCls.active]: active })}
                         >
                           {item.content}
                         </a>
@@ -79,7 +74,7 @@ export function Dropdown(props: DropdownProps) {
                         type="button"
                         onClick={item.onClick}
                         disabled={item.disabled}
-                        className={classNames(cls.item, { [cls.active]: active })}
+                        className={classNames(cls.item, { [popupCls.active]: active })}
                       >
                         {item.content}
                       </button>

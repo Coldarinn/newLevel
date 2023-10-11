@@ -39,23 +39,3 @@
 .active {
   background: var(--btn-bg-hover-color);
 }
-
-.optionsBottomLeft {
-  top: calc(100% + var(--padding-s));
-  right: 0;
-}
-
-.optionsBottomRight {
-  top: calc(100% + var(--padding-s));
-  left: 0;
-}
-
-.optionsTopRight {
-  bottom: calc(100% + var(--padding-s));
-  left: 0;
-}
-
-.optionsTopLeft {
-  right: 0;
-  bottom: calc(100% + var(--padding-s));
-}
