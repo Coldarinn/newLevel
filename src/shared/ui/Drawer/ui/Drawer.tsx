@@ -1,13 +1,14 @@
+import { Portal } from '@headlessui/react';
 import {
-  MouseEventHandler, ReactNode, useCallback, useEffect, useState,
+  memo, MouseEventHandler, ReactNode, useCallback, useEffect, useState,
 } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { Portal } from '../../Portal';
-import cls from './Modal.module.scss';
+import cls from './Drawer.module.scss';
 
-interface ModalProps {
+export interface DrawerProps {
   additionalClasses?: string[],
   children: ReactNode;
   isOpening: boolean;
@@ -15,7 +16,7 @@ interface ModalProps {
   lazy?: boolean;
 }
 
-export const Modal = (props: ModalProps) => {
+export const Drawer = (props: DrawerProps) => {
   const {
     additionalClasses = [], children, isOpening, onClose, lazy = false,
   } = props;
@@ -63,20 +64,15 @@ export const Modal = (props: ModalProps) => {
 
   return (
     <Portal>
-      <div className={classNames(cls.modal, { [cls.isOpen]: isOpen }, [...additionalClasses])}>
+      <div className={classNames(cls.drawer, { [cls.isOpen]: isOpen }, [...additionalClasses])}>
         <div
           className={cls.container}
           role="button"
           tabIndex={0}
           onMouseDown={closeHandler}
         >
-          <div className={cls.body}>
-            <div
-              className={cls.wrapper}
-              onMouseDown={onContentClick}
-            >
-              {children}
-            </div>
+          <div className={cls.body} onMouseDown={onContentClick}>
+            {children}
           </div>
         </div>
       </div>

@@ -12,6 +12,7 @@ import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelect
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button } from '@/shared/ui/Button';
+import { Drawer } from '@/shared/ui/Drawer';
 import { Dropdown } from '@/shared/ui/Popups';
 
 import cls from './Navbar.module.scss';

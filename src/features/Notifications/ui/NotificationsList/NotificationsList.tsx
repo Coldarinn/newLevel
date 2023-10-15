@@ -14,10 +14,10 @@ export const NotificationsList = memo(() => {
   if (isLoading) {
     return (
       <div className={cls.list}>
-        <Skeleton width={340} height={62} rounded="8px" />
-        <Skeleton width={340} height={62} rounded="8px" />
-        <Skeleton width={340} height={62} rounded="8px" />
-        <Skeleton width={340} height={62} rounded="8px" />
+        <Skeleton width="100%" height={62} rounded="8px" />
+        <Skeleton width="100%" height={62} rounded="8px" />
+        <Skeleton width="100%" height={62} rounded="8px" />
+        <Skeleton width="100%" height={62} rounded="8px" />
       </div>
     );
   }
