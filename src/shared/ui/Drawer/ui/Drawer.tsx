@@ -1,8 +1,7 @@
 import { Portal } from '@headlessui/react';
 import {
-  memo, MouseEventHandler, ReactNode, useCallback, useEffect, useState,
+  MouseEventHandler, ReactNode, useCallback, useEffect, useState,
 } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 
