@@ -9,7 +9,7 @@ import { ReduxStoreWithManager } from '@/app/providers/StoreProvider/config/Stat
 import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
 import { Button, ButtonPadding, ButtonTheme } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
 import { Text, TextTheme } from '@/shared/ui/Text';

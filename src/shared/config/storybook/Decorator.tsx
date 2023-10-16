@@ -13,7 +13,7 @@ import { articleCommentsReducer } from '@/features/ArticleComments';
 import { articleListReducer } from '@/features/ArticleList';
 import { loginReducer } from '@/features/AuthByUsername';
 import { profileReducer } from '@/features/EditableProfileCard';
-import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
 
 import i18n from '../i18n/i18nForTests';
 

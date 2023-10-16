@@ -1,6 +1,7 @@
 import { memo, useCallback, useState } from 'react';
 
 import NotificationIcon from '@/shared/assets/icons/notification.svg';
+import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
 import { detectDevice } from '@/shared/lib/deviceDetect/deviceDetect';
 import { Button } from '@/shared/ui/Button';
 import { Drawer } from '@/shared/ui/Drawer';
@@ -39,11 +40,13 @@ export const Notifications = memo((props: NotificationsProps) => {
     return (
       <>
         {trigger}
-        <Drawer isOpening={isOpen} onClose={onCloseDrawer}>
-          <div className={cls.drawer}>
-            <NotificationsList />
-          </div>
-        </Drawer>
+        <AnimationProvider>
+          <Drawer isOpening={isOpen} onClose={onCloseDrawer}>
+            <div className={cls.drawer}>
+              <NotificationsList />
+            </div>
+          </Drawer>
+        </AnimationProvider>
       </>
     );
   }

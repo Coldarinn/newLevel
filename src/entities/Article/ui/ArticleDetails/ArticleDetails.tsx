@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { Text, TextTheme } from '@/shared/ui/Text';
 

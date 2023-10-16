@@ -5,7 +5,7 @@ import { getArticleError } from '@/entities/Article';
 import { CommentForm, commentFormReducer } from '@/entities/Comment';
 import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
 import { Text } from '@/shared/ui/Text';
 
 import { addArticleComment } from '../../model/services/addArticleComment/addArticleComment';

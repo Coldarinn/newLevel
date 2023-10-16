@@ -5,7 +5,7 @@ import {
 
 interface UseModalProps {
   isOpening: boolean;
-  onClose: () => void;
+  onClose: (number?: number) => void;
 }
 
 export const useModal = (props: UseModalProps) => {

@@ -12,7 +12,7 @@ import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispat
 import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect/useInitialEffect';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { Page } from '@/widgets/Page';
 
