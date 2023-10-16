@@ -24,4 +24,4 @@ files.forEach((sourceFile) => {
   });
 });
 
-await project.save();
+project.save();

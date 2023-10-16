@@ -40,13 +40,11 @@ export const Notifications = memo((props: NotificationsProps) => {
     return (
       <>
         {trigger}
-        <AnimationProvider>
-          <Drawer isOpening={isOpen} onClose={onCloseDrawer}>
-            <div className={cls.drawer}>
-              <NotificationsList />
-            </div>
-          </Drawer>
-        </AnimationProvider>
+        <Drawer isOpening={isOpen} onClose={onCloseDrawer}>
+          <div className={cls.drawer}>
+            <NotificationsList />
+          </div>
+        </Drawer>
       </>
     );
   }

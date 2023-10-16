@@ -3,7 +3,7 @@ import { ReactNode, useCallback, useEffect } from 'react';
 
 import { useModal } from '@/shared/hooks/useModal/useModal';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 
 import cls from './Drawer.module.scss';
 
@@ -96,7 +96,7 @@ const DrawerContent = (props: DrawerProps) => {
   );
 };
 
-export const Drawer = (props: DrawerProps) => {
+export const DrawerAsync = (props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs();
 
   if (!isLoaded) {
@@ -107,3 +107,9 @@ export const Drawer = (props: DrawerProps) => {
     <DrawerContent {...props} />
   );
 };
+
+export const Drawer = (props: DrawerProps) => (
+  <AnimationProvider>
+    <DrawerAsync {...props} />
+  </AnimationProvider>
+);
