@@ -3,10 +3,13 @@ import { useParams } from 'react-router-dom';
 
 import { ArticleDetails } from '@/entities/Article';
 import { ArticleComments, articleCommentsReducer } from '@/features/ArticleComments';
+import { ArticleRating } from '@/features/ArticleRating';
 import { ArticleRecommend } from '@/features/ArticleRecommend';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { Page } from '@/widgets/Page';
+
+import cls from './ArticlePage.module.scss';
 
 export interface ArticlePageProps {
   additionalClasses?: string[],
@@ -36,6 +39,7 @@ const ArticlePage = (props: ArticlePageProps) => {
       <Page additionalClasses={[...additionalClasses]}>
         <ArticleDetails id={id} />
         <ArticleRecommend />
+        <ArticleRating articleId={id} additionalClasses={[cls.rate]} />
         <ArticleComments id={id} />
       </Page>
     </DynamicModuleLoader>

@@ -5,7 +5,7 @@ import {
 
 interface UseModalProps {
   isOpening: boolean;
-  onClose: (number?: number) => void;
+  onClose?: (number?: number) => void;
 }
 
 export const useModal = (props: UseModalProps) => {
@@ -14,19 +14,21 @@ export const useModal = (props: UseModalProps) => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const onModalClose = useCallback(() => {
+    setIsOpen(false);
+    onClose?.();
+  }, [onClose]);
+
   useEffect(() => {
     if (isOpening) {
       setIsMounted(true);
       setTimeout(() => {
         setIsOpen(true);
       }, 0);
+    } else {
+      onModalClose();
     }
-  }, [isOpen, isOpening]);
-
-  const onModalClose = useCallback(() => {
-    setIsOpen(false);
-    onClose();
-  }, [onClose]);
+  }, [isOpen, isOpening, onModalClose]);
 
   const onKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') {

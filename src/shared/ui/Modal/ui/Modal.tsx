@@ -10,7 +10,7 @@ interface ModalProps {
   additionalClasses?: string[],
   children: ReactNode;
   isOpening: boolean;
-  onClose: () => void;
+  onClose?: () => void;
   lazy?: boolean;
 }
 

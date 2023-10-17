@@ -1,0 +1,23 @@
+.button {
+  line-height: 0;
+  background: transparent;
+  padding: 0 2px;
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+.selected {
+  pointer-events: none;
+}
+
+.star {
+  path {
+    fill: transparent;
+  }
+}
+
+.hovered {
+  path {
+    fill: var(--accent-color);
+  }
+}

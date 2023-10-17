@@ -1,0 +1,29 @@
+.rating {
+  padding: var(--padding-l);
+  background-color: var(--bg-inset-color);
+  border-radius: var(--border-radius-lg);
+}
+
+.modal {
+  width: 480px;
+  padding: var(--padding-l);
+  border-radius: var(--border-radius-lg);
+  background-color: var(--bg-default-color);
+}
+
+.title {
+  text-align: center;
+  margin: 0 auto var(--padding-2xl);
+}
+
+.button {
+  width: 100%;
+}
+
+.rate {
+  text-align: center;
+}
+
+.input {
+  margin-bottom: var(--padding-2xl);
+}
