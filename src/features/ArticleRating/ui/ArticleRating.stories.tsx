@@ -1,20 +1,53 @@
 import type { Meta, StoryObj } from '@storybook/react';
+
 import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
-import { ArticleRating as ArticleRatingComponent } from './ArticleRating';
+
+import ArticleRatingComponent from './ArticleRating';
 
 export default {
-  title: '***/ArticleRating',
+  title: 'features/ArticleRating',
   decorators: [DecoratedComponent],
   parameters: {
     layout: 'fullscreen',
+  },
+  args: {
+    articleId: 1,
+    initialState: {
+      user: {
+        authData: { id: '1' },
+      },
+    },
   },
   component: ArticleRatingComponent,
   render: (args) => <ArticleRatingComponent {...args} />,
 } satisfies Meta<typeof ArticleRatingComponent>;
 
-export const ArticleRating: StoryObj = {
-  args: {
-    notCentered: true,
-    initialState: {}
+export const Default: StoryObj = {
+  parameters: {
+    mockData: [
+      {
+        url: `${__API_URL__}/article-ratings?userId=1&articleId=1`,
+        method: 'GET',
+        status: 200,
+        response: [],
+      },
+    ],
+  },
+};
+
+export const WithRate: StoryObj = {
+  parameters: {
+    mockData: [
+      {
+        url: `${__API_URL__}/article-ratings?userId=1&articleId=1`,
+        method: 'GET',
+        status: 200,
+        response: [
+          {
+            rate: 4,
+          },
+        ],
+      },
+    ],
   },
 };

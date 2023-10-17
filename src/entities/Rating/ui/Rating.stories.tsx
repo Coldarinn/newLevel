@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
+
 import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
+
 import { Rating as RatingComponent } from './Rating';
 
 export default {
-  title: '***/Rating',
+  title: 'entities/Rating',
   decorators: [DecoratedComponent],
   parameters: {
     layout: 'fullscreen',
@@ -12,9 +14,27 @@ export default {
   render: (args) => <RatingComponent {...args} />,
 } satisfies Meta<typeof RatingComponent>;
 
-export const Rating: StoryObj = {
+export const Default: StoryObj = {
   args: {
-    notCentered: true,
-    initialState: {}
+    title: 'Оцените статью',
+    feedbackTitle: 'Оставьте свой отзыв о статье, это поможет улучшить качество',
+    hasFeedback: false,
+  },
+};
+
+export const WithFeedback: StoryObj = {
+  args: {
+    title: 'Оцените статью',
+    feedbackTitle: 'Оставьте свой отзыв о статье, это поможет улучшить качество',
+    hasFeedback: true,
+  },
+};
+
+export const WithRate: StoryObj = {
+  args: {
+    rate: 4,
+    title: 'Оцените статью',
+    feedbackTitle: 'Оставьте свой отзыв о статье, это поможет улучшить качество',
+    hasFeedback: false,
   },
 };
