@@ -9,33 +9,12 @@ import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { MainPage } from '@/pages/MainPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
+import { AppRoutes, RoutePath } from '@/shared/const/router';
 
 export type AppRoutesProps = RouteProps & {
   authOnly?: boolean;
   roles?: UserRole[];
 }
-
-export enum AppRoutes {
-   MAIN = 'main',
-   ABOUT = 'about',
-   PROFILE = 'profile',
-   ARTICLES = 'articles',
-   ARTICLE = 'article',
-   ADMIN = 'admin',
-   FORBIDDEN = 'forbidden',
-   NOT_FOUND = 'not_bound',
-}
-
-export const RoutePath: Record<AppRoutes, string> = {
-  [AppRoutes.MAIN]: '/',
-  [AppRoutes.ABOUT]: '/about',
-  [AppRoutes.PROFILE]: '/profile',
-  [AppRoutes.ARTICLES]: '/articles',
-  [AppRoutes.ARTICLE]: '/article',
-  [AppRoutes.ADMIN]: '/admin',
-  [AppRoutes.FORBIDDEN]: '/forbidden',
-  [AppRoutes.NOT_FOUND]: '*',
-};
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.MAIN]: {
