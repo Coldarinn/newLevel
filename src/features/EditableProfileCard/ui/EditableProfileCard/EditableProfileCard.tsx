@@ -1,6 +1,6 @@
 import { memo, useCallback, useMemo } from 'react';
 
-import { ProfileCard } from '@/entities/Profile/ui/ProfileCard';
+import { ProfileCard } from '@/entities/Profile';
 import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect/useInitialEffect';

@@ -11,4 +11,5 @@ export { articleListReducer } from './model/slice/articleListSlice';
 export { articleListActions } from './model/slice/articleListSlice';
 export { getArticleList } from './model/slice/articleListSlice';
 export type { ArticleListSchema } from './model/types/articleList';
+export { ArticleList } from './ui/ArticleList/ArticleList';
 export { initArticlesList } from '@/features/ArticleList/model/services/initArticlesList/initArticlesList';

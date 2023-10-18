@@ -2,12 +2,11 @@ import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 
-import { ArticleFilters } from '@/features/ArticleFilters/ui/ArticleFilters';
+import { ArticleFilters } from '@/features/ArticleFilters';
 import {
-  articleListReducer, fetchNextPage, getArticleList,
+  ArticleList, articleListReducer, fetchNextPage, getArticleList,
   getArticleListError, getArticleListIsLoading, getArticleListView, initArticlesList,
 } from '@/features/ArticleList';
-import { ArticleList } from '@/features/ArticleList/ui/ArticleList/ArticleList';
 import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect/useInitialEffect';

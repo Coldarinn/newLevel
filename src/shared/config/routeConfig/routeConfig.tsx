@@ -1,6 +1,6 @@
 import { RouteProps } from 'react-router-dom';
 
-import { UserRole } from '@/entities/User/model/types/user';
+import { UserRole } from '@/entities/User';
 import { AboutPage } from '@/pages/AboutPage';
 import { AdminPage } from '@/pages/AdminPage';
 import { ArticlePage } from '@/pages/ArticlePage';
