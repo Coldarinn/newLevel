@@ -6,13 +6,12 @@ import {
 } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { Notifications } from '@/features/Notifications';
-import { RoutePath } from '@/app/providers/router/config/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button } from '@/shared/ui/Button';
-import { Drawer } from '@/shared/ui/Drawer';
 import { Dropdown } from '@/shared/ui/Popups';
 
 import cls from './Navbar.module.scss';
