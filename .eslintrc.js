@@ -69,7 +69,7 @@ module.exports = {
     'react/jsx-no-useless-fragment': 'off',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
-    'imports-fsd/path-checker': 'error',
+    'imports-fsd/path-checker': ['error', { alias: '@' }],
   },
   globals: {
     __IS_DEV__: true,

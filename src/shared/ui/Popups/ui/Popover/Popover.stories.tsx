@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
-import { Button } from '@/shared/ui/Button';
 
+import { Button } from '../../../Button';
 import { Popover as PopoverComponent } from './Popover';
 
 const trigger = () => (

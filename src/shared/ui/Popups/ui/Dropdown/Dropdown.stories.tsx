@@ -2,8 +2,8 @@ import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
-import { Avatar } from '@/shared/ui/Avatar';
 
+import { Avatar } from '../../../Avatar';
 import { Dropdown as DropdownComponent } from './Dropdown';
 
 const avatar = 'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg';
