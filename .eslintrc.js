@@ -25,6 +25,7 @@ module.exports = {
     'react-hooks',
     'simple-import-sort',
     'imports-fsd',
+    'unused-imports',
   ],
   rules: {
     'react/jsx-indent': [1, 2],
@@ -74,11 +75,11 @@ module.exports = {
       'error',
       {
         alias: '@',
-        // ignoreImportPatterns: ['**/StoreProvider/**', '**/testing'],
         ignoreImportPatterns: ['**/StoreProvider'],
       },
     ],
     'imports-fsd/public-api-imports': ['error', { alias: '@' }],
+    'unused-imports/no-unused-imports': 'error',
   },
   globals: {
     __IS_DEV__: true,
