@@ -3,11 +3,11 @@ import { useContext } from 'react';
 import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localstorage';
 import { Theme } from '@/shared/const/theme';
 
-import { ThemeContext } from './ThemeContext';
+import { ThemeContext } from '../../../app/providers/ThemeProvider/lib/ThemeContext';
 
 interface UseThemeResult {
-    toggleTheme: () => void;
-    theme: Theme;
+  toggleTheme: () => void;
+  theme: Theme;
 }
 
 export function useTheme(): UseThemeResult {

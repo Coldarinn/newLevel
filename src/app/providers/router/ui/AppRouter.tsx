@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { ErrorBoundary } from '@/app/providers/ErrorBoundary';
-import { AppRoutesProps, routeConfig } from '@/app/providers/router/config/routeConfig';
 import { PageLoader } from '@/widgets/PageLoader';
 
+import { ErrorBoundary } from '../../ErrorBoundary';
+import { AppRoutesProps, routeConfig } from '../config/routeConfig';
 import { RequireAuth } from './RequireAuth';
 
 const renderWithWrapper = (route: AppRoutesProps) => (

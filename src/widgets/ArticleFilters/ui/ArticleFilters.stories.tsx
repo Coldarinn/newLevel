@@ -14,7 +14,7 @@ const RenderComponent = (args: ArticleFiltersProps) => (
 );
 
 const meta = {
-  title: 'features/ArticleFilters',
+  title: 'widgets/ArticleFilters',
   decorators: [DecoratedComponent],
   parameters: {
     layout: 'fullscreen',

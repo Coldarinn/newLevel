@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { ThunkConfig } from '@/app/providers/StoreProvider/config/StateSchema';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 
 import { articleListActions } from '../../../../../features/ArticleList/model/slice/articleListSlice';
 import { getArticleListHasMore } from '../../selectors/getArticleListHasMore/getArticleListHasMore';

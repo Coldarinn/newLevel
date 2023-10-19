@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
-import { useTheme } from '@/app/providers/ThemeProvider';
 import ThemeIcon from '@/shared/assets/icons/theme.svg';
+import { useTheme } from '@/shared/hooks/useTheme/useTheme';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 

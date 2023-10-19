@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { ThunkConfig } from '@/app/providers/StoreProvider/config/StateSchema';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { User, userActions } from '@/entities/User';
 import { Errors } from '@/shared/const/errors';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';

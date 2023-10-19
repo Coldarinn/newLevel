@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+// eslint-disable-next-line imports-fsd/layer-imports
 import { ArticleList } from '@/features/ArticleList';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextTheme } from '@/shared/ui/Text';

@@ -1,5 +1,6 @@
 import { FC, Suspense } from 'react';
 
+// eslint-disable-next-line imports-fsd/layer-imports
 import { ErrorBoundary } from '@/app/providers/ErrorBoundary';
 import { Loader } from '@/shared/ui/Loader';
 import { Modal } from '@/shared/ui/Modal';

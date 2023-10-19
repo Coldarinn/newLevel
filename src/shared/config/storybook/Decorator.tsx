@@ -1,3 +1,4 @@
+/* eslint-disable imports-fsd/layer-imports */
 import '@/app/styles/index.scss';
 
 import { StoryContext, StoryFn } from '@storybook/react';

@@ -70,6 +70,14 @@ module.exports = {
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
     'imports-fsd/path-checker': ['error', { alias: '@' }],
+    'imports-fsd/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        // ignoreImportPatterns: ['**/StoreProvider/**', '**/testing'],
+        ignoreImportPatterns: ['**/StoreProvider'],
+      },
+    ],
     'imports-fsd/public-api-imports': ['error', { alias: '@' }],
   },
   globals: {

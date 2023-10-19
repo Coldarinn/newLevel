@@ -2,7 +2,6 @@ import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 
-import { ArticleFilters } from '@/features/ArticleFilters';
 import {
   ArticleList, articleListReducer, fetchNextPage, getArticleList,
   getArticleListError, getArticleListIsLoading, getArticleListView, initArticlesList,
@@ -13,6 +12,7 @@ import { useInitialEffect } from '@/shared/hooks/useInitialEffect/useInitialEffe
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader';
 import { Text, TextTheme } from '@/shared/ui/Text';
+import { ArticleFilters } from '@/widgets/ArticleFilters';
 import { Page } from '@/widgets/Page';
 
 import cls from './ArticlesPage.module.scss';

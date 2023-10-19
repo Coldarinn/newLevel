@@ -5,7 +5,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useStore } from 'react-redux';
 
-import { ReduxStoreWithManager } from '@/app/providers/StoreProvider/config/StateSchema';
+import { ReduxStoreWithManager } from '@/app/providers/StoreProvider';
 import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
 import { classNames } from '@/shared/lib/classNames/classNames';
