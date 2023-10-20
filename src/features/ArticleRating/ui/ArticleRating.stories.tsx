@@ -10,19 +10,19 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
+  component: ArticleRatingComponent,
+  render: (args) => <ArticleRatingComponent {...args} />,
+} satisfies Meta<typeof ArticleRatingComponent>;
+
+export const Default: StoryObj = {
   args: {
-    articleId: 1,
+    articleId: '1',
     initialState: {
       user: {
         authData: { id: '1' },
       },
     },
   },
-  component: ArticleRatingComponent,
-  render: (args) => <ArticleRatingComponent {...args} />,
-} satisfies Meta<typeof ArticleRatingComponent>;
-
-export const Default: StoryObj = {
   parameters: {
     mockData: [
       {
@@ -36,6 +36,14 @@ export const Default: StoryObj = {
 };
 
 export const WithRate: StoryObj = {
+  args: {
+    articleId: '1',
+    initialState: {
+      user: {
+        authData: { id: '1' },
+      },
+    },
+  },
   parameters: {
     mockData: [
       {

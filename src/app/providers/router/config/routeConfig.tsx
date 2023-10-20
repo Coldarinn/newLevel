@@ -9,7 +9,10 @@ import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { MainPage } from '@/pages/MainPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
-import { AppRoutes, RoutePath } from '@/shared/const/router';
+import {
+  AppRoutes, getRouteAbout, getRouteAdmin,
+  getRouteArticle, getRouteArticles, getRouteForbidden, getRouteMain, getRouteProfile,
+} from '@/shared/const/router';
 
 export type AppRoutesProps = RouteProps & {
   authOnly?: boolean;
@@ -18,41 +21,41 @@ export type AppRoutesProps = RouteProps & {
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.MAIN]: {
-    path: RoutePath.main,
+    path: getRouteMain(),
     element: <MainPage />,
   },
   [AppRoutes.ABOUT]: {
-    path: RoutePath.about,
+    path: getRouteAbout(),
     element: <AboutPage />,
   },
   [AppRoutes.PROFILE]: {
-    path: `${RoutePath.profile}/:id`,
+    path: getRouteProfile(':id'),
     element: <ProfilePage />,
     authOnly: true,
   },
   [AppRoutes.ARTICLES]: {
-    path: RoutePath.articles,
+    path: getRouteArticles(),
     element: <ArticlesPage />,
     authOnly: true,
   },
   [AppRoutes.ARTICLE]: {
-    path: `${RoutePath.article}/:id`,
+    path: getRouteArticle(':id'),
     element: <ArticlePage />,
     authOnly: true,
   },
   [AppRoutes.ADMIN]: {
-    path: RoutePath.admin,
+    path: getRouteAdmin(),
     element: <AdminPage />,
     authOnly: true,
     roles: ['admin'],
   },
   [AppRoutes.FORBIDDEN]: {
-    path: RoutePath.forbidden,
+    path: getRouteForbidden(),
     element: <ForbiddenPage />,
     authOnly: true,
   },
   [AppRoutes.NOT_FOUND]: {
-    path: RoutePath.not_bound,
+    path: '*',
     element: <NotFoundPage />,
   },
 };

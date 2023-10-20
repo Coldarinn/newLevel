@@ -6,7 +6,7 @@ import {
 } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { Notifications } from '@/features/Notifications';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -54,12 +54,12 @@ export const Navbar = memo((props: NavbarProps) => {
             ...(isAdmin ? [{
               id: 1,
               content: t('Админка'),
-              href: RoutePath.admin,
+              href: getRouteAdmin(),
             }] : []),
             {
               id: 2,
               content: t('Профиль'),
-              href: `${RoutePath.profile}/${authData.id}`,
+              href: getRouteProfile(authData.id),
             },
             {
               id: 3,
