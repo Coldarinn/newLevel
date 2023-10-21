@@ -2,6 +2,8 @@ import { CSSProperties, useMemo } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 
+import { AppImage } from '../../AppImage';
+import { Skeleton } from '../../Skeleton';
 import cls from './Avatar.module.scss';
 
 export interface AvatarProps {
@@ -22,6 +24,12 @@ export const Avatar = (props: AvatarProps) => {
   }), [size]);
 
   return (
-    <img src={src} alt={alt} style={styles} className={classNames(cls.Avatar, {}, [...additionalClasses])} />
+    <AppImage
+      fallback={<Skeleton width={styles.width} height={styles.height} />}
+      src={src}
+      alt={alt}
+      style={styles}
+      additionalClasses={[classNames(cls.Avatar, {}, [...additionalClasses])]}
+    />
   );
 };

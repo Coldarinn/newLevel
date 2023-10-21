@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { Article, ArticleView } from '@/entities/Article';
 import ViewIcon from '@/shared/assets/icons/view.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 import cls from './ArticleListItem.module.scss';
 
@@ -25,7 +27,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   return (
     <div className={classNames(cls.item, {}, [...additionalClasses, cls[view]])}>
       <Link to={`/article/${article.id}`} target={target}>
-        <img src={article.img} alt={t('Изображение статьи')} className={cls.image} />
+        <AppImage
+          fallback={<Skeleton width="100%" height={200} />}
+          src={article.img}
+          alt={t('Изображение статьи')}
+          additionalClasses={[cls.image]}
+        />
       </Link>
 
       <div className={cls.flex}>
