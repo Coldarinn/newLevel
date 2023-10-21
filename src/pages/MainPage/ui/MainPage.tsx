@@ -16,6 +16,7 @@ const MainPage = memo((props: MainPageProps) => {
   return (
     <Page additionalClasses={[...additionalClasses]} dataTestid="MainPage">
       <Text title={t('Главная страница')} />
+      {/* <Text title={t('Главная страница')} /> */}
     </Page>
   );
 });
