@@ -14,7 +14,7 @@ const AboutPage = memo((props: AboutPageProps) => {
   const { t } = useTranslation('about');
 
   return (
-    <Page additionalClasses={[...additionalClasses]}>
+    <Page additionalClasses={[...additionalClasses]} dataTestid="AboutPage">
       <Text title={t('О странице')} />
     </Page>
   );

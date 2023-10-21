@@ -17,7 +17,7 @@ export const AdminPage: FC<AdminPageProps> = (props) => {
   const { t } = useTranslation('admin');
 
   return (
-    <Page additionalClasses={[classNames(cls.page, {}, [...additionalClasses])]}>
+    <Page additionalClasses={[classNames(cls.page, {}, [...additionalClasses])]} dataTestid="AdminPage">
       <Text title={t('Админ панель')} />
     </Page>
   );

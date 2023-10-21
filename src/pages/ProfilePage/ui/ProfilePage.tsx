@@ -14,7 +14,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
   const { id } = useParams<{id: string}>();
 
   return (
-    <Page additionalClasses={[...additionalClasses]}>
+    <Page additionalClasses={[...additionalClasses]} dataTestid="ProfilePage">
       <EditableProfileCard id={id} />
     </Page>
   );

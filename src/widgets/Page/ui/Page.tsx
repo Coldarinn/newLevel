@@ -18,10 +18,13 @@ interface PageProps {
   additionalClasses?: string[],
   children: ReactNode,
   onScrollEnd?: () => void,
+  dataTestid?: string,
 }
 
 export const Page = (props: PageProps) => {
-  const { additionalClasses = [], children, onScrollEnd } = props;
+  const {
+    additionalClasses = [], children, onScrollEnd, dataTestid,
+  } = props;
 
   const dispatch = useAppDispatch();
 
@@ -50,7 +53,12 @@ export const Page = (props: PageProps) => {
   }, 200);
 
   return (
-    <main ref={wrapperRef} className={classNames(cls.page, {}, [...additionalClasses])} onScroll={onScroll}>
+    <main
+      ref={wrapperRef}
+      className={classNames(cls.page, {}, [...additionalClasses])}
+      onScroll={onScroll}
+      data-testid={dataTestid ?? 'Page'}
+    >
       {children}
       {onScrollEnd ? (
         <div className={cls.trigger} ref={triggerRef} />

@@ -17,7 +17,7 @@ export const ForbiddenPage: FC<ForbiddenPageProps> = (props) => {
   const { t } = useTranslation();
 
   return (
-    <Page additionalClasses={[classNames(cls.page, {}, [...additionalClasses])]}>
+    <Page additionalClasses={[classNames(cls.page, {}, [...additionalClasses])]} dataTestid="ForbiddenPage">
       <Text title={t('У Вас нет доступа к этой странице')} />
     </Page>
   );
