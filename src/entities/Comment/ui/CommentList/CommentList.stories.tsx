@@ -45,7 +45,7 @@ const comments = [
       username: 'user2',
       password: '123',
       roles: ['user'],
-      avatar: 'https://iphoneswallpapers.com/wp-content/uploads/2021/02/Hacker-Nation-iPhone-Wallpaper.jpg',
+      avatar: 'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
     },
   },
   {
@@ -57,7 +57,7 @@ const comments = [
       username: 'user3',
       password: '123',
       roles: ['user'],
-      avatar: 'https://pic.rutubelist.ru/user/f1/07/f1078786104bb3e02b7b16dd058b0a57.jpg',
+      avatar: 'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
     },
   },
 ];
