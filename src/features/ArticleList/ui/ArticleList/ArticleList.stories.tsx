@@ -4,6 +4,7 @@ import { ArticleView } from '@/entities/Article';
 import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
 
 import { ArticleList as ArticleListComponent } from './ArticleList';
+import ImgItem from './storybook.jpg';
 
 const meta = {
   title: 'features/ArticleList',
@@ -20,7 +21,7 @@ const articles = [
     id: '1',
     title: 'Javascript news СВЕЖАЯ',
     subtitle: 'Что нового в JS за 2022 год?',
-    img: 'https://www.mirea.ru/upload/iblock/7cf/vvp_rf2018_1.jpg',
+    img: ImgItem,
     views: 1022,
     createdAt: '26.04.2022',
     userId: '1',
@@ -32,7 +33,7 @@ const articles = [
     id: '2',
     title: 'Экономическая статья - ИНФЛЯЦИЯ!',
     subtitle: 'Экономика',
-    img: 'https://www.mirea.ru/upload/iblock/7cf/vvp_rf2018_1.jpg',
+    img: ImgItem,
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
@@ -44,7 +45,7 @@ const articles = [
     id: '3',
     title: 'Научная статья 1 - Биология',
     subtitle: 'БиологиЯ',
-    img: 'https://www.mirea.ru/upload/iblock/7cf/vvp_rf2018_1.jpg',
+    img: ImgItem,
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
@@ -56,7 +57,7 @@ const articles = [
     id: '4',
     title: 'Научная статья 2 - Биология',
     subtitle: 'БиологиЯ',
-    img: 'https://www.mirea.ru/upload/iblock/7cf/vvp_rf2018_1.jpg',
+    img: ImgItem,
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',

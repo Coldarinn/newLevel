@@ -3,6 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
 
 import { CommentList as CommentListComponent, CommentListProps } from './CommentList';
+import ImgItem from './storybook.jpg';
 
 const RenderComponent = (args: CommentListProps) => (
   <div style={{
@@ -33,7 +34,7 @@ const comments = [
       username: 'user1',
       password: '123',
       roles: ['admin'],
-      avatar: 'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
+      avatar: ImgItem,
     },
   },
   {
@@ -45,7 +46,7 @@ const comments = [
       username: 'user2',
       password: '123',
       roles: ['user'],
-      avatar: 'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
+      avatar: ImgItem,
     },
   },
   {
@@ -57,7 +58,7 @@ const comments = [
       username: 'user3',
       password: '123',
       roles: ['user'],
-      avatar: 'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
+      avatar: ImgItem,
     },
   },
 ];

@@ -4,6 +4,7 @@ import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
 import { Errors } from '@/shared/const/errors';
 
 import { EditableProfileCard as EditableProfileCardComponent } from './EditableProfileCard';
+import ImgItem from './storybook.jpg';
 
 const data = {
   id: '1',
@@ -14,7 +15,7 @@ const data = {
   country: 'Россия',
   city: 'Moscow',
   username: 'user1',
-  avatar: 'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
+  avatar: ImgItem,
 };
 
 const meta = {
