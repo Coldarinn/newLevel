@@ -32,11 +32,21 @@ export default ({ config }: {config: Configuration}) => {
     });
   }
 
-  config.module?.rules?.push({
-    test: /\.svg$/,
-    use: ['@svgr/webpack'],
-  });
-  config.module?.rules?.push(buildCssLoader(true));
+  config.module?.rules?.push(...[
+    {
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    },
+    {
+      test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+      use: [
+        {
+          loader: 'file-loader',
+        },
+      ],
+    },
+    buildCssLoader(true),
+  ]);
 
   const mode = process.env.mode || 'development';
   const apiUrl = process.env.apiUrl || 'http://localhost:8000';

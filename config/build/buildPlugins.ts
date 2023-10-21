@@ -23,10 +23,6 @@ export function buildPlugins({
         chunkFilename: 'css/[name].[contenthash:8].css',
       }),
     ]),
-    // new MiniCssExtractPlugin({
-    //   filename: 'css/[name].[contenthash:8].css',
-    //   chunkFilename: 'css/[name].[contenthash:8].css',
-    // }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
       __API_URL__: JSON.stringify(apiUrl),
@@ -41,11 +37,6 @@ export function buildPlugins({
         ],
       }),
     ]),
-    // new CopyPlugin({
-    //   patterns: [
-    //     { from: paths.locales, to: paths.buildLocales },
-    //   ],
-    // }),
     new CircularDependencyPlugin({
       exclude: /node_modules/,
       failOnError: true,

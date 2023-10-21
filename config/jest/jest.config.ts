@@ -27,9 +27,6 @@ export default {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
   transformIgnorePatterns: ['node_modules/(?!axios)'],
-  // roots: [
-  //   '<rootDir>/src',
-  // ],
   reporters: [
     'default',
     ['jest-html-reporters', {
