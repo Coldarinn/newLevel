@@ -17,10 +17,16 @@ export function buildPlugins({
       template: paths.html,
     }),
     new webpack.ProgressPlugin(),
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[name].[contenthash:8].css',
-    }),
+    ...(isDev ? [] : [
+      new MiniCssExtractPlugin({
+        filename: 'css/[name].[contenthash:8].css',
+        chunkFilename: 'css/[name].[contenthash:8].css',
+      }),
+    ]),
+    // new MiniCssExtractPlugin({
+    //   filename: 'css/[name].[contenthash:8].css',
+    //   chunkFilename: 'css/[name].[contenthash:8].css',
+    // }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
       __API_URL__: JSON.stringify(apiUrl),
@@ -28,11 +34,18 @@ export function buildPlugins({
     }),
     ...(isDev ? [new ReactRefreshWebpackPlugin({ overlay: false }), new webpack.HotModuleReplacementPlugin()] : []),
     ...(analyze ? [new BundleAnalyzerPlugin({ openAnalyzer: false })] : []),
-    new CopyPlugin({
-      patterns: [
-        { from: paths.locales, to: paths.buildLocales },
-      ],
-    }),
+    ...(isDev ? [] : [
+      new CopyPlugin({
+        patterns: [
+          { from: paths.locales, to: paths.buildLocales },
+        ],
+      }),
+    ]),
+    // new CopyPlugin({
+    //   patterns: [
+    //     { from: paths.locales, to: paths.buildLocales },
+    //   ],
+    // }),
     new CircularDependencyPlugin({
       exclude: /node_modules/,
       failOnError: true,

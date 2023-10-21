@@ -14,7 +14,7 @@ export const AppImage = memo((props: AppImageProps) => {
   const {
     additionalClasses = [], src, alt = 'image', fallback, errorFallback, ...otherProps
   } = props;
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isError, setIsError] = useState<boolean>(false);
 
   useLayoutEffect(() => {

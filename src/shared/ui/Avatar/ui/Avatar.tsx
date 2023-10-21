@@ -25,7 +25,7 @@ export const Avatar = (props: AvatarProps) => {
 
   return (
     <AppImage
-      fallback={<Skeleton width={styles.width} height={styles.height} />}
+      fallback={<Skeleton width={styles.width} height={styles.height} rounded="50%" />}
       src={src}
       alt={alt}
       style={styles}
