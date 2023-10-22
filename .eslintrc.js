@@ -93,5 +93,11 @@ module.exports = {
         'i18next/no-literal-string': 'off',
       },
     },
+    {
+      files: ['**/cypress/**/*.{ts,tsx}'],
+      rules: {
+        'imports-fsd/path-checker': 'off',
+      },
+    },
   ],
 };
