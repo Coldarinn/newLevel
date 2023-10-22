@@ -18,20 +18,23 @@ interface TabsProps<T> {
 }
 
 export const Tabs = <T extends string>(props: TabsProps<T>) => {
-  const {
-    additionalClasses = [], tabs, onTabClick, value,
-  } = props;
+  const { additionalClasses = [], tabs, onTabClick, value } = props;
 
-  const onClick = useCallback((tab: TabItem<T>) => () => {
-    onTabClick(tab.value);
-  }, [onTabClick]);
+  const onClick = useCallback(
+    (tab: TabItem<T>) => () => {
+      onTabClick(tab.value);
+    },
+    [onTabClick],
+  );
 
   return (
     <div className={classNames(cls.tabs, {}, [...additionalClasses])}>
       {tabs.map((tab) => (
         <Button
           key={tab.value}
-          theme={tab.value === value ? ButtonTheme.BACKGROUND : ButtonTheme.DEFAULT}
+          theme={
+            tab.value === value ? ButtonTheme.BACKGROUND : ButtonTheme.DEFAULT
+          }
           onClick={onClick(tab)}
           additionalClasses={[cls.button]}
         >

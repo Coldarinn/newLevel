@@ -11,21 +11,26 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 import cls from './ArticleListItem.module.scss';
 
 interface ArticleListItemProps {
-  additionalClasses?: string[],
-  article: Article,
-  target?: HTMLAttributeAnchorTarget,
-  view?: ArticleView
+  additionalClasses?: string[];
+  article: Article;
+  target?: HTMLAttributeAnchorTarget;
+  view?: ArticleView;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const {
-    additionalClasses = [], article, view = ArticleView.BIG, target,
+    additionalClasses = [],
+    article,
+    view = ArticleView.BIG,
+    target,
   } = props;
 
   const { t } = useTranslation('article');
 
   return (
-    <div className={classNames(cls.item, {}, [...additionalClasses, cls[view]])}>
+    <div
+      className={classNames(cls.item, {}, [...additionalClasses, cls[view]])}
+    >
       <Link to={`/article/${article.id}`} target={target}>
         <AppImage
           fallback={<Skeleton width="100%" height={200} />}
@@ -36,8 +41,15 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       </Link>
 
       <div className={cls.flex}>
-        <div className={cls.types} title={String(article.type.map((item) => item))}>
-          {article.type.map((item) => <span key={item} className={cls.type}>{t(item)}</span>)}
+        <div
+          className={cls.types}
+          title={String(article.type.map((item) => item))}
+        >
+          {article.type.map((item) => (
+            <span key={item} className={cls.type}>
+              {t(item)}
+            </span>
+          ))}
         </div>
         <div className={cls.views}>
           {article.views}
@@ -45,7 +57,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         </div>
       </div>
 
-      <Link to={`/article/${article.id}`} title={article.title} className={cls.title} target={target}>
+      <Link
+        to={`/article/${article.id}`}
+        title={article.title}
+        className={cls.title}
+        target={target}
+      >
         {article.title}
       </Link>
     </div>

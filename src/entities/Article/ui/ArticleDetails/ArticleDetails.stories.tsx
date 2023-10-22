@@ -23,9 +23,7 @@ const article = {
   views: 1022,
   createdAt: '26.04.2022',
   userId: '1',
-  type: [
-    'Айти',
-  ],
+  type: ['Айти'],
   blocks: [
     {
       id: '1',

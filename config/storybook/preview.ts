@@ -23,13 +23,16 @@ export const globalTypes = {
       icon: 'contrast',
       items: [
         {
-          title: 'Светлая тема', value: Theme.LIGHT,
+          title: 'Светлая тема',
+          value: Theme.LIGHT,
         },
         {
-          title: 'Тёмная тема', value: Theme.DARK,
+          title: 'Тёмная тема',
+          value: Theme.DARK,
         },
         {
-          title: 'Синяя тема', value: Theme.BLUE,
+          title: 'Синяя тема',
+          value: Theme.BLUE,
         },
       ],
       dynamicTitle: true,

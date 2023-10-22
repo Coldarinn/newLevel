@@ -27,10 +27,7 @@ export const Notifications = memo((props: NotificationsProps) => {
   }, []);
 
   const trigger = (
-    <Button
-      additionalClasses={[cls.button]}
-      onClick={onOpenDrawer}
-    >
+    <Button additionalClasses={[cls.button]} onClick={onOpenDrawer}>
       <NotificationIcon className={cls.icon} />
     </Button>
   );

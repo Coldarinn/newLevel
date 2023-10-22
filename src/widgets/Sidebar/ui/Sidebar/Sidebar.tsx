@@ -13,7 +13,7 @@ import SiderbarItem from '../SiderbarItem/SiderbarItem';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
   initialCollapse?: boolean;
 }
 
@@ -31,7 +31,9 @@ export const Sidebar = memo((props: SidebarProps) => {
   return (
     <section
       data-testid="sidebar"
-      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [...additionalClasses])}
+      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
+        ...additionalClasses,
+      ])}
     >
       <Button
         data-testid="sidebar-toggle"
@@ -44,8 +46,12 @@ export const Sidebar = memo((props: SidebarProps) => {
         </span>
       </Button>
       <div className={cls.items}>
-        {SidebarItemsList.map((item) => ((item.authOnly && auth) || !item.authOnly)
-        && <SiderbarItem key={item.path} item={item} collapsed={collapsed} />)}
+        {SidebarItemsList.map(
+          (item) =>
+            ((item.authOnly && auth) || !item.authOnly) && (
+              <SiderbarItem key={item.path} item={item} collapsed={collapsed} />
+            ),
+        )}
       </div>
       <div className={cls.switchers}>
         <ThemeSwitcher />

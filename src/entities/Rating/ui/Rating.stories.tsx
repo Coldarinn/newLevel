@@ -17,7 +17,8 @@ export default {
 export const Default: StoryObj = {
   args: {
     title: 'Оцените статью',
-    feedbackTitle: 'Оставьте свой отзыв о статье, это поможет улучшить качество',
+    feedbackTitle:
+      'Оставьте свой отзыв о статье, это поможет улучшить качество',
     hasFeedback: false,
   },
 };
@@ -25,7 +26,8 @@ export const Default: StoryObj = {
 export const WithFeedback: StoryObj = {
   args: {
     title: 'Оцените статью',
-    feedbackTitle: 'Оставьте свой отзыв о статье, это поможет улучшить качество',
+    feedbackTitle:
+      'Оставьте свой отзыв о статье, это поможет улучшить качество',
     hasFeedback: true,
   },
 };
@@ -34,7 +36,8 @@ export const WithRate: StoryObj = {
   args: {
     rate: 4,
     title: 'Оцените статью',
-    feedbackTitle: 'Оставьте свой отзыв о статье, это поможет улучшить качество',
+    feedbackTitle:
+      'Оставьте свой отзыв о статье, это поможет улучшить качество',
     hasFeedback: false,
   },
 };

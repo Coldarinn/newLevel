@@ -7,10 +7,11 @@ import { ProfileCardProps } from '../model/types/profile';
 import { ProfileCard as ProfileCardComponent } from './ProfileCard';
 
 const RenderComponent = (args: ProfileCardProps) => (
-  <div style={{
-    width: '700px',
-    margin: '0 auto',
-  }}
+  <div
+    style={{
+      width: '700px',
+      margin: '0 auto',
+    }}
   >
     <ProfileCardComponent {...args} />
   </div>
@@ -35,7 +36,8 @@ const data = {
   country: 'Россия',
   city: 'Moscow',
   username: 'user1',
-  avatar: 'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
+  avatar:
+    'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
 };
 
 export const Default: StoryObj = {
@@ -90,7 +92,8 @@ export const NotValid: StoryObj = {
       country: 'Россия',
       city: '',
       username: 'user1',
-      avatar: 'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
+      avatar:
+        'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
     },
     isLoading: false,
     error: '',

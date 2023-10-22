@@ -2,12 +2,16 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
 
-import { CommentForm as CommentFormComponent, CommentFormProps } from './CommentForm';
+import {
+  CommentForm as CommentFormComponent,
+  CommentFormProps,
+} from './CommentForm';
 
 const RenderComponent = (args: CommentFormProps) => (
-  <div style={{
-    width: '700px',
-  }}
+  <div
+    style={{
+      width: '700px',
+    }}
   >
     <CommentFormComponent {...args} />
   </div>

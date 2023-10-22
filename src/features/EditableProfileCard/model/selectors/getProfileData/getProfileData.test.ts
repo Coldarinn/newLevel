@@ -7,7 +7,10 @@ describe('getProfileData', () => {
     const state: DeepPartial<StateSchema> = {
       profile: { data: { firstname: 'Kirill', lastname: 'Palkin' } },
     };
-    expect(getProfileData(state as StateSchema)).toEqual({ firstname: 'Kirill', lastname: 'Palkin' });
+    expect(getProfileData(state as StateSchema)).toEqual({
+      firstname: 'Kirill',
+      lastname: 'Palkin',
+    });
   });
   test('should return undefined', () => {
     const state: DeepPartial<StateSchema> = {

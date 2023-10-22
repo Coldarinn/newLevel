@@ -14,14 +14,16 @@ const data = {
   country: 'Россия',
   city: 'Moscow',
   username: 'user1',
-  avatar: 'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
+  avatar:
+    'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
 };
 
 const RenderComponent = (args: ProfilePageProps) => (
-  <div style={{
-    width: '100%',
-    padding: '30px',
-  }}
+  <div
+    style={{
+      width: '100%',
+      padding: '30px',
+    }}
   >
     <ProfilePageComponent {...args} />
   </div>

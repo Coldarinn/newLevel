@@ -7,25 +7,28 @@ import { Skeleton } from '../../Skeleton';
 import cls from './Avatar.module.scss';
 
 export interface AvatarProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
   src?: string;
   size?: number;
   alt?: string;
 }
 
 export const Avatar = (props: AvatarProps) => {
-  const {
-    additionalClasses = [], src, size, alt,
-  } = props;
+  const { additionalClasses = [], src, size, alt } = props;
 
-  const styles = useMemo<CSSProperties>(() => ({
-    width: size || 100,
-    height: size || 100,
-  }), [size]);
+  const styles = useMemo<CSSProperties>(
+    () => ({
+      width: size || 100,
+      height: size || 100,
+    }),
+    [size],
+  );
 
   return (
     <AppImage
-      fallback={<Skeleton width={styles.width} height={styles.height} rounded="50%" />}
+      fallback={
+        <Skeleton width={styles.width} height={styles.height} rounded="50%" />
+      }
       src={src}
       alt={alt}
       style={styles}

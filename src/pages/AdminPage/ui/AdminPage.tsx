@@ -8,7 +8,7 @@ import { Page } from '@/widgets/Page';
 import cls from './AdminPage.module.scss';
 
 interface AdminPageProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
 }
 
 export const AdminPage: FC<AdminPageProps> = (props) => {
@@ -17,7 +17,10 @@ export const AdminPage: FC<AdminPageProps> = (props) => {
   const { t } = useTranslation('admin');
 
   return (
-    <Page additionalClasses={[classNames(cls.page, {}, [...additionalClasses])]} dataTestid="AdminPage">
+    <Page
+      additionalClasses={[classNames(cls.page, {}, [...additionalClasses])]}
+      dataTestid="AdminPage"
+    >
       <Text title={t('Админ панель')} />
     </Page>
   );

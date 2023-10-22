@@ -5,9 +5,10 @@ import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
 import { ArticleCommentsForm as ArticleCommentsFormComponent } from './ArticleCommentsForm';
 
 const RenderComponent = (args: any) => (
-  <div style={{
-    width: '700px',
-  }}
+  <div
+    style={{
+      width: '700px',
+    }}
   >
     <ArticleCommentsFormComponent {...args} />
   </div>

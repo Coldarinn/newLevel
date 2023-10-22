@@ -9,7 +9,7 @@ import { CommentCard } from '../CommentCard/CommentCard';
 import cls from './CommentList.module.scss';
 
 export interface CommentListProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
   comments?: Comment[];
   isLoading?: boolean;
 }
@@ -23,7 +23,10 @@ export const CommentList = (props: CommentListProps) => {
     return (
       <>
         {[1, 2, 3].map((item) => (
-          <div key={item} className={classNames(cls.commentCard, {}, [...additionalClasses])}>
+          <div
+            key={item}
+            className={classNames(cls.commentCard, {}, [...additionalClasses])}
+          >
             <Skeleton width={50} height={50} rounded="50%" />
             <Skeleton width="100%" height={100} />
           </div>
@@ -36,7 +39,9 @@ export const CommentList = (props: CommentListProps) => {
     <div className={classNames(cls.commentList, {}, [...additionalClasses])}>
       {comments?.length ? (
         <>
-          {comments.map((comment) => <CommentCard key={comment.id} comment={comment} />)}
+          {comments.map((comment) => (
+            <CommentCard key={comment.id} comment={comment} />
+          ))}
         </>
       ) : (
         <Text text={t('Комментарии отсутствуют')} />

@@ -3,12 +3,16 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
 
 import { Country } from '../model/types/country';
-import { CountrySelect as CountrySelectComponent, CountrySelectProps } from './CountrySelect';
+import {
+  CountrySelect as CountrySelectComponent,
+  CountrySelectProps,
+} from './CountrySelect';
 
 const RenderComponent = (args: CountrySelectProps) => (
-  <div style={{
-    width: '350px',
-  }}
+  <div
+    style={{
+      width: '350px',
+    }}
   >
     <CountrySelectComponent {...args} />
   </div>

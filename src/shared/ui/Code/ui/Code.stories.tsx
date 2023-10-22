@@ -6,9 +6,10 @@ import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
 import { Code as CodeComponent, CodeProps } from './Code';
 
 const RenderComponent = (args: CodeProps) => (
-  <div style={{
-    width: '550px',
-  }}
+  <div
+    style={{
+      width: '550px',
+    }}
   >
     <CodeComponent {...args} />
   </div>

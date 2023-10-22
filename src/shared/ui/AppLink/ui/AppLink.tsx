@@ -10,22 +10,29 @@ export enum AppLinkTheme {
 }
 
 interface AppLinkProps extends LinkProps {
-   additionalClasses?: string[],
-   theme?: AppLinkTheme,
+  additionalClasses?: string[];
+  theme?: AppLinkTheme;
 }
 
 export const AppLink = memo((props: AppLinkProps) => {
   const {
-    additionalClasses = [], theme = AppLinkTheme.DEFAULT, children, to, ...otherProps
+    additionalClasses = [],
+    theme = AppLinkTheme.DEFAULT,
+    children,
+    to,
+    ...otherProps
   } = props;
 
   return (
     <Link
       to={to}
-      className={classNames(cls.AppLink, {}, [...additionalClasses, cls[theme]])}
+      className={classNames(cls.AppLink, {}, [
+        ...additionalClasses,
+        cls[theme],
+      ])}
       {...otherProps}
     >
-      { children }
+      {children}
     </Link>
   );
 });

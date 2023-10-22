@@ -10,7 +10,7 @@ export enum TextTheme {
 }
 
 interface TextProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
   title?: string;
   text?: string;
   theme?: TextTheme;
@@ -18,11 +18,16 @@ interface TextProps {
 
 export const Text = memo((props: TextProps) => {
   const {
-    additionalClasses = [], text, title, theme = TextTheme.DEFAULT,
+    additionalClasses = [],
+    text,
+    title,
+    theme = TextTheme.DEFAULT,
   } = props;
 
   return (
-    <div className={classNames(cls.Text, {}, [...additionalClasses, cls[theme]])}>
+    <div
+      className={classNames(cls.Text, {}, [...additionalClasses, cls[theme]])}
+    >
       {title && <p className={cls.title}>{title}</p>}
       {text && <p className={cls.text}>{text}</p>}
     </div>

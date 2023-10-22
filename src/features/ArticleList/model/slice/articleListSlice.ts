@@ -1,8 +1,15 @@
-import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {
+  createEntityAdapter,
+  createSlice,
+  PayloadAction,
+} from '@reduxjs/toolkit';
 
 import { StateSchema } from '@/app/providers/StoreProvider';
 import {
-  Article, ArticleSort, ArticleType, ArticleView,
+  Article,
+  ArticleSort,
+  ArticleType,
+  ArticleView,
 } from '@/entities/Article';
 import { LOCAL_STORAGE_ARTICLES_VIEW_KEY } from '@/shared/const/localstorage';
 import { SortOrder } from '@/shared/types';
@@ -54,7 +61,9 @@ export const articleListSlice = createSlice({
       state.page = action.payload;
     },
     initState: (state) => {
-      const view = localStorage.getItem(LOCAL_STORAGE_ARTICLES_VIEW_KEY) as ArticleView;
+      const view = localStorage.getItem(
+        LOCAL_STORAGE_ARTICLES_VIEW_KEY,
+      ) as ArticleView;
       state.limit = view === ArticleView.BIG ? 4 : 9;
       state.view = view;
       state._inited = true;

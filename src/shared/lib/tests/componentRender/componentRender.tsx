@@ -8,24 +8,21 @@ import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import i18nForTests from '@/shared/config/i18n/i18nForTests';
 
 export interface componentRenderOptions {
-    route?: string;
-    initialState?: DeepPartial<StateSchema>
-    asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
+  route?: string;
+  initialState?: DeepPartial<StateSchema>;
+  asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
 }
 
-export function componentRender(component: ReactNode, options: componentRenderOptions = {}) {
-  const {
-    route = '/',
-    initialState,
-    asyncReducers,
-  } = options;
+export function componentRender(
+  component: ReactNode,
+  options: componentRenderOptions = {},
+) {
+  const { route = '/', initialState, asyncReducers } = options;
 
   return render(
     <StoreProvider initialState={initialState} asyncReducers={asyncReducers}>
       <MemoryRouter initialEntries={[route]}>
-        <I18nextProvider i18n={i18nForTests}>
-          {component}
-        </I18nextProvider>
+        <I18nextProvider i18n={i18nForTests}>{component}</I18nextProvider>
       </MemoryRouter>
     </StoreProvider>,
   );

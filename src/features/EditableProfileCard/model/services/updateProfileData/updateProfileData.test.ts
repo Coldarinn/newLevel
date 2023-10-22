@@ -15,12 +15,15 @@ const data: Profile = {
   country: Country.RUSSIA,
   city: 'Moscow',
   username: 'admin',
-  avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
+  avatar:
+    'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
 };
 
 describe('updateProfileData', () => {
   test('success update', async () => {
-    const thunk = new TestAsyncThunk(updateProfileData, { profile: { form: data } });
+    const thunk = new TestAsyncThunk(updateProfileData, {
+      profile: { form: data },
+    });
     thunk.api.put.mockReturnValue(Promise.resolve({ data }));
     const result = await thunk.callThunk();
 
@@ -30,7 +33,9 @@ describe('updateProfileData', () => {
   });
 
   test('error update', async () => {
-    const thunk = new TestAsyncThunk(updateProfileData, { profile: { form: data } });
+    const thunk = new TestAsyncThunk(updateProfileData, {
+      profile: { form: data },
+    });
     thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
     const result = await thunk.callThunk();
 

@@ -809,6 +809,19 @@
       "articleId": "5",
       "rate": 4,
       "id": "Aqa6Mui"
+    },
+    {
+      "userId": "2",
+      "articleId": "5",
+      "rate": 3,
+      "feedback": "",
+      "id": "LpJWE6i"
+    },
+    {
+      "userId": "2",
+      "articleId": "5",
+      "rate": 3,
+      "id": "JaMxbwq"
     }
   ]
 }

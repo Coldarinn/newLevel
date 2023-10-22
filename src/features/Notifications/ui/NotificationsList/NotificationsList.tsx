@@ -24,9 +24,7 @@ export const NotificationsList = memo(() => {
 
   return (
     <div className={cls.list}>
-      {data?.map((item) => (
-        <NotificationsItem key={item.id} item={item} />
-      ))}
+      {data?.map((item) => <NotificationsItem key={item.id} item={item} />)}
     </div>
   );
 });

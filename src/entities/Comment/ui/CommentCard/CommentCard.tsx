@@ -21,7 +21,11 @@ export const CommentCard = (props: CommentCardProps) => {
   return (
     <div className={classNames(cls.commentCard, {}, [...additionalClasses])}>
       <Link to={`/profile/${comment.user.id}`}>
-        <Avatar src={comment.user.avatar} size={50} alt={t('Аватар пользователя')} />
+        <Avatar
+          src={comment.user.avatar}
+          size={50}
+          alt={t('Аватар пользователя')}
+        />
       </Link>
       <Text additionalClasses={[cls.text]} text={comment.text} />
     </div>

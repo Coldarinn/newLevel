@@ -19,7 +19,8 @@ const profile: Profile = {
   country: Country.RUSSIA,
   city: 'Moscow',
   username: 'admin213',
-  avatar: 'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
+  avatar:
+    'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
 };
 
 const options = {
@@ -41,11 +42,15 @@ const options = {
 describe('@/features/EditableProfileCard', () => {
   beforeEach(async () => {
     componentRender(<EditableProfileCard id="1" />, options);
-    await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'));
+    await userEvent.click(
+      screen.getByTestId('EditableProfileCardHeader.EditButton'),
+    );
   });
 
   test('Readonly will change', () => {
-    expect(screen.getByTestId('EditableProfileCardHeader.CancelButton')).toBeInTheDocument();
+    expect(
+      screen.getByTestId('EditableProfileCardHeader.CancelButton'),
+    ).toBeInTheDocument();
   });
 
   test('Clear input on cancel', async () => {
@@ -55,19 +60,25 @@ describe('@/features/EditableProfileCard', () => {
     await userEvent.type(screen.getByTestId('ProfileCard.firstname'), 'text');
     expect(screen.getByTestId('ProfileCard.firstname')).toHaveValue('text');
 
-    await userEvent.click(screen.getByTestId('EditableProfileCardHeader.CancelButton'));
+    await userEvent.click(
+      screen.getByTestId('EditableProfileCardHeader.CancelButton'),
+    );
     expect(screen.getByTestId('ProfileCard.firstname')).toHaveValue('admin');
   });
 
   test('Disable save button if there is at least one empty input', async () => {
     await userEvent.clear(screen.getByTestId('ProfileCard.firstname'));
-    expect(screen.getByTestId('EditableProfileCardHeader.SaveButton')).toHaveClass('disabled');
+    expect(
+      screen.getByTestId('EditableProfileCardHeader.SaveButton'),
+    ).toHaveClass('disabled');
   });
 
   test('Put request should be called', async () => {
     const mockPutReq = jest.spyOn($api, 'put');
 
-    await userEvent.click(screen.getByTestId('EditableProfileCardHeader.SaveButton'));
+    await userEvent.click(
+      screen.getByTestId('EditableProfileCardHeader.SaveButton'),
+    );
 
     expect(mockPutReq).toHaveBeenCalled();
   });

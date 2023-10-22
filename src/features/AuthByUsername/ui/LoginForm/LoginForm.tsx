@@ -1,7 +1,4 @@
-import {
-  FormEvent,
-  useCallback, useEffect,
-} from 'react';
+import { FormEvent, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useStore } from 'react-redux';
 
@@ -9,7 +6,10 @@ import { ReduxStoreWithManager } from '@/app/providers/StoreProvider';
 import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader';
 import { Button, ButtonPadding, ButtonTheme } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
 import { Text, TextTheme } from '@/shared/ui/Text';
@@ -23,8 +23,8 @@ import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {
-  additionalClasses?: string[],
-  onSuccess?: () => void,
+  additionalClasses?: string[];
+  onSuccess?: () => void;
 }
 
 const initialReducers: ReducersList = {
@@ -47,7 +47,7 @@ const LoginForm = (props: LoginFormProps) => {
     return () => {
       store.reducerManager.remove('loginForm');
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const { t } = useTranslation('login');
@@ -62,24 +62,49 @@ const LoginForm = (props: LoginFormProps) => {
     dispatch(loginActions.setPassword(value));
   };
 
-  const onSubmit = useCallback(async (e: FormEvent) => {
-    e.preventDefault();
-    const result = await dispatch(loginByUsername({ username, password }));
-    if (result.meta.requestStatus === 'fulfilled') {
-      onSuccess?.();
-    }
-  }, [dispatch, username, password, onSuccess]);
+  const onSubmit = useCallback(
+    async (e: FormEvent) => {
+      e.preventDefault();
+      const result = await dispatch(loginByUsername({ username, password }));
+      if (result.meta.requestStatus === 'fulfilled') {
+        onSuccess?.();
+      }
+    },
+    [dispatch, username, password, onSuccess],
+  );
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
-      <form className={classNames(cls.LoginForm, {}, [...additionalClasses])} onSubmit={onSubmit}>
-        <Text title={t('Форма авторизации')} additionalClasses={[cls.textBlock]} />
-        {error && <Text text={t(error)} theme={TextTheme.DANGER} additionalClasses={[cls.textBlock]} />}
+      <form
+        className={classNames(cls.LoginForm, {}, [...additionalClasses])}
+        onSubmit={onSubmit}
+      >
+        <Text
+          title={t('Форма авторизации')}
+          additionalClasses={[cls.textBlock]}
+        />
+        {error && (
+          <Text
+            text={t(error)}
+            theme={TextTheme.DANGER}
+            additionalClasses={[cls.textBlock]}
+          />
+        )}
         <div className={cls.inputWrapper}>
-          <Input placeholder={t('Имя пользователя')} value={username} onChange={onChangeUsername} autoFocus />
+          <Input
+            placeholder={t('Имя пользователя')}
+            value={username}
+            onChange={onChangeUsername}
+            autoFocus
+          />
         </div>
         <div className={cls.inputWrapper}>
-          <Input placeholder={t('Пароль')} value={password} onChange={onChangePassword} autoFocus />
+          <Input
+            placeholder={t('Пароль')}
+            value={password}
+            onChange={onChangePassword}
+            autoFocus
+          />
         </div>
         <Button
           additionalClasses={[cls.button, 'font-xm']}

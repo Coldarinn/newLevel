@@ -5,7 +5,10 @@ import { getArticleError } from '@/entities/Article';
 import { CommentForm, commentFormReducer } from '@/entities/Comment';
 import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader';
 import { Text } from '@/shared/ui/Text';
 
 import { addArticleComment } from '../../model/services/addArticleComment/addArticleComment';
@@ -22,15 +25,21 @@ export const ArticleCommentsForm = memo(() => {
 
   const articleError = useAppSelector(getArticleError);
 
-  const onSend = useCallback((text: string) => {
-    dispatch(addArticleComment(text));
-  }, [dispatch]);
+  const onSend = useCallback(
+    (text: string) => {
+      dispatch(addArticleComment(text));
+    },
+    [dispatch],
+  );
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       {!articleError && (
         <>
-          <Text title={t('Оставить комментарий')} additionalClasses={[cls.commentFormTitle]} />
+          <Text
+            title={t('Оставить комментарий')}
+            additionalClasses={[cls.commentFormTitle]}
+          />
           <CommentForm onSend={onSend} />
         </>
       )}

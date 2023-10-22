@@ -8,7 +8,7 @@ import { Tabs } from '@/shared/ui/Tabs';
 import cls from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {
-  view: ArticleView,
+  view: ArticleView;
   onViewClick: (view: ArticleView) => void;
 }
 
@@ -26,9 +26,12 @@ const viewTypes = [
 export const ArticleViewSelector = (props: ArticleViewSelectorProps) => {
   const { view, onViewClick } = props;
 
-  const onClick = useCallback((newView: ArticleView) => {
-    onViewClick(newView);
-  }, [onViewClick]);
+  const onClick = useCallback(
+    (newView: ArticleView) => {
+      onViewClick(newView);
+    },
+    [onViewClick],
+  );
 
   return (
     <div className={cls.articleViewSelector}>

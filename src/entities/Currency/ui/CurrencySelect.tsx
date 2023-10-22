@@ -7,18 +7,19 @@ import { Select } from '@/shared/ui/Select';
 import { Currency } from '../model/types/currency';
 
 export interface CurrencySelectProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
   selectedValue?: string;
   onChange?: (value: string) => void;
   readonly?: boolean;
 }
 
-const options = Object.entries(Currency).map(([key, value]) => ({ id: key, value }));
+const options = Object.entries(Currency).map(([key, value]) => ({
+  id: key,
+  value,
+}));
 
 export const CurrencySelect = memo((props: CurrencySelectProps) => {
-  const {
-    additionalClasses = [], selectedValue, onChange, readonly,
-  } = props;
+  const { additionalClasses = [], selectedValue, onChange, readonly } = props;
 
   const { t } = useTranslation();
 

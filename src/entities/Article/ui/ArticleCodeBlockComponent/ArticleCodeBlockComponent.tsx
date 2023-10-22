@@ -4,11 +4,13 @@ import { Code } from '@/shared/ui/Code';
 import { ArticleCodeBlock } from '../../model/types/article';
 
 interface ArticleCodeBlockComponentProps {
-  additionalClasses?: string[],
-  block: ArticleCodeBlock
+  additionalClasses?: string[];
+  block: ArticleCodeBlock;
 }
 
-export const ArticleCodeBlockComponent = (props: ArticleCodeBlockComponentProps) => {
+export const ArticleCodeBlockComponent = (
+  props: ArticleCodeBlockComponentProps,
+) => {
   const { additionalClasses = [], block } = props;
 
   return (

@@ -7,11 +7,13 @@ import { ArticleImageBlock } from '../../model/types/article';
 import cls from './ArticleImageBlockComponent.module.scss';
 
 interface ArticleImageBlockComponentProps {
-  additionalClasses?: string[],
-  block: ArticleImageBlock
+  additionalClasses?: string[];
+  block: ArticleImageBlock;
 }
 
-export const ArticleImageBlockComponent = (props: ArticleImageBlockComponentProps) => {
+export const ArticleImageBlockComponent = (
+  props: ArticleImageBlockComponentProps,
+) => {
   const { additionalClasses = [], block } = props;
 
   return (
@@ -22,9 +24,7 @@ export const ArticleImageBlockComponent = (props: ArticleImageBlockComponentProp
         alt={block.title}
         additionalClasses={[cls.img]}
       />
-      {block.title && (
-        <Text text={block.title} />
-      )}
+      {block.title && <Text text={block.title} />}
     </div>
   );
 };

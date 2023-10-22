@@ -10,7 +10,7 @@ import { useGetArticleRecommendQuery } from '../api/articleRecommendApi';
 import cls from './ArticleRecommend.module.scss';
 
 interface ArticleRecommendProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
 }
 
 export const ArticleRecommend = memo((props: ArticleRecommendProps) => {
@@ -21,12 +21,18 @@ export const ArticleRecommend = memo((props: ArticleRecommendProps) => {
   const { t } = useTranslation('article');
 
   return (
-    <div className={classNames(cls.articleRecommend, {}, [...additionalClasses])}>
+    <div
+      className={classNames(cls.articleRecommend, {}, [...additionalClasses])}
+    >
       <Text title={t('Рекомендуем')} additionalClasses={[cls.title]} />
-      {(error && 'data' in error) ? (
+      {error && 'data' in error ? (
         <Text text={t(JSON.stringify(error.data))} theme={TextTheme.DANGER} />
       ) : (
-        <ArticleList articles={articles} isLoading={isLoading} target="_blank" />
+        <ArticleList
+          articles={articles}
+          isLoading={isLoading}
+          target="_blank"
+        />
       )}
     </div>
   );

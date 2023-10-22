@@ -1,7 +1,7 @@
 {
-   "Войти": "Login",
-   "Имя пользователя": "Username",
-   "Пароль": "Password",
-   "Форма авторизации": "Auth Form",
-   "Пользователь с введенным именем и паролем не найден": "The user with the entered name and password was not found"
+  "Войти": "Login",
+  "Имя пользователя": "Username",
+  "Пароль": "Password",
+  "Форма авторизации": "Auth Form",
+  "Пользователь с введенным именем и паролем не найден": "The user with the entered name and password was not found"
 }

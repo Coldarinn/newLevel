@@ -99,8 +99,16 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
           onChange={onChangeAge}
           require
         />
-        <CountrySelect selectedValue={data?.country} readonly={readonly} onChange={onChangeCountry} />
-        <CurrencySelect selectedValue={data?.currency} readonly={readonly} onChange={onChangeCurrency} />
+        <CountrySelect
+          selectedValue={data?.country}
+          readonly={readonly}
+          onChange={onChangeCountry}
+        />
+        <CurrencySelect
+          selectedValue={data?.currency}
+          readonly={readonly}
+          onChange={onChangeCurrency}
+        />
         <Input
           placeholder={t('Аватар')}
           value={data?.avatar}

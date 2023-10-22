@@ -8,14 +8,12 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextTheme } from '@/shared/ui/Text';
 
 import { getArticleCommentsError } from '../../model/selectors/getArticleCommentsError/getArticleCommentsError';
-import {
-  getArticleCommentsIsLoading,
-} from '../../model/selectors/getArticleCommentsIsLoading/getArticleCommentsIsLoading';
+import { getArticleCommentsIsLoading } from '../../model/selectors/getArticleCommentsIsLoading/getArticleCommentsIsLoading';
 import { getArticleComments } from '../../model/slice/articleCommentsSlice';
 import cls from './ArticleCommentsList.module.scss';
 
 export interface ArticleCommentsListProps {
- additionalClasses?: string[];
+  additionalClasses?: string[];
 }
 
 export const ArticleCommentsList = memo((props: ArticleCommentsListProps) => {
@@ -29,17 +27,20 @@ export const ArticleCommentsList = memo((props: ArticleCommentsListProps) => {
   const commentsError = useAppSelector(getArticleCommentsError);
 
   return (
-    <div className={classNames(cls.ArticleCommentsList, {}, [...additionalClasses])}>
-      {!articleError && (
-        commentsError ? (
+    <div
+      className={classNames(cls.ArticleCommentsList, {}, [
+        ...additionalClasses,
+      ])}
+    >
+      {!articleError &&
+        (commentsError ? (
           <Text theme={TextTheme.DANGER} text={t(commentsError)} />
         ) : (
           <div className={cls.comments}>
             <Text title={t('Комментарии')} />
             <CommentList isLoading={isLoading} comments={comments} />
           </div>
-        )
-      )}
+        ))}
     </div>
   );
 });

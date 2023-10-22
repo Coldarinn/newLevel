@@ -7,7 +7,7 @@ import { Portal } from '../../Portal';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
   children: ReactNode;
   isOpening: boolean;
   onClose?: () => void;
@@ -16,15 +16,17 @@ interface ModalProps {
 
 export const Modal = (props: ModalProps) => {
   const {
-    additionalClasses = [], children, isOpening, onClose, lazy = false,
+    additionalClasses = [],
+    children,
+    isOpening,
+    onClose,
+    lazy = false,
   } = props;
 
-  const {
-    isOpen,
-    isMounted,
-    onModalClose,
-    onModalContentClick,
-  } = useModal({ isOpening, onClose });
+  const { isOpen, isMounted, onModalClose, onModalContentClick } = useModal({
+    isOpening,
+    onClose,
+  });
 
   if (lazy && !isMounted) {
     return null;
@@ -32,7 +34,11 @@ export const Modal = (props: ModalProps) => {
 
   return (
     <Portal>
-      <div className={classNames(cls.modal, { [cls.isOpen]: isOpen }, [...additionalClasses])}>
+      <div
+        className={classNames(cls.modal, { [cls.isOpen]: isOpen }, [
+          ...additionalClasses,
+        ])}
+      >
         <div
           className={cls.container}
           role="button"
@@ -40,10 +46,7 @@ export const Modal = (props: ModalProps) => {
           onMouseDown={onModalClose}
         >
           <div className={cls.body}>
-            <div
-              className={cls.wrapper}
-              onMouseDown={onModalContentClick}
-            >
+            <div className={cls.wrapper} onMouseDown={onModalContentClick}>
               {children}
             </div>
           </div>

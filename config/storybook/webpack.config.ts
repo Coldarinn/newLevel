@@ -4,7 +4,7 @@ import { Configuration, DefinePlugin, RuleSetRule } from 'webpack';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { BuildPaths } from '../build/types/config';
 
-export default ({ config }: {config: Configuration}) => {
+export default ({ config }: { config: Configuration }) => {
   const paths: BuildPaths = {
     build: '',
     html: '',
@@ -32,32 +32,36 @@ export default ({ config }: {config: Configuration}) => {
     });
   }
 
-  config.module?.rules?.push(...[
-    {
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    },
-    {
-      test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-      use: [
-        {
-          loader: 'file-loader',
-        },
-      ],
-    },
-    buildCssLoader(true),
-  ]);
+  config.module?.rules?.push(
+    ...[
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
+      {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      buildCssLoader(true),
+    ],
+  );
 
   const mode = process.env.mode || 'development';
   const apiUrl = process.env.apiUrl || 'http://localhost:8000';
   const isDev = mode === 'development';
   const project = 'storybook';
 
-  config.plugins?.push(new DefinePlugin({
-    __IS_DEV__: JSON.stringify(isDev),
-    __API_URL__: JSON.stringify(apiUrl),
-    __PROJECT__: JSON.stringify(project),
-  }));
+  config.plugins?.push(
+    new DefinePlugin({
+      __IS_DEV__: JSON.stringify(isDev),
+      __API_URL__: JSON.stringify(apiUrl),
+      __PROJECT__: JSON.stringify(project),
+    }),
+  );
 
   return config;
 };

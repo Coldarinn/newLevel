@@ -3,12 +3,16 @@ import { Meta, StoryObj } from '@storybook/react';
 import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
 import { Errors } from '@/shared/const/errors';
 
-import { ArticleCommentsList as ArticleCommentsListComponent, ArticleCommentsListProps } from './ArticleCommentsList';
+import {
+  ArticleCommentsList as ArticleCommentsListComponent,
+  ArticleCommentsListProps,
+} from './ArticleCommentsList';
 
 const RenderComponent = (args: ArticleCommentsListProps) => (
-  <div style={{
-    width: '700px',
-  }}
+  <div
+    style={{
+      width: '700px',
+    }}
   >
     <ArticleCommentsListComponent {...args} />
   </div>
@@ -36,7 +40,8 @@ const entities = {
       username: 'user1',
       password: '123',
       roles: ['admin'],
-      avatar: 'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
+      avatar:
+        'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
     },
   },
   2: {
@@ -48,7 +53,8 @@ const entities = {
       username: 'user2',
       password: '123',
       roles: ['user'],
-      avatar: 'https://iphoneswallpapers.com/wp-content/uploads/2021/02/Hacker-Nation-iPhone-Wallpaper.jpg',
+      avatar:
+        'https://iphoneswallpapers.com/wp-content/uploads/2021/02/Hacker-Nation-iPhone-Wallpaper.jpg',
     },
   },
   3: {
@@ -60,7 +66,8 @@ const entities = {
       username: 'user3',
       password: '123',
       roles: ['user'],
-      avatar: 'https://pic.rutubelist.ru/user/f1/07/f1078786104bb3e02b7b16dd058b0a57.jpg',
+      avatar:
+        'https://pic.rutubelist.ru/user/f1/07/f1078786104bb3e02b7b16dd058b0a57.jpg',
     },
   },
 };

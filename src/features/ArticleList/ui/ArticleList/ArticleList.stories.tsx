@@ -25,9 +25,7 @@ const articles = [
     views: 1022,
     createdAt: '26.04.2022',
     userId: '1',
-    type: [
-      'Айти',
-    ],
+    type: ['Айти'],
   },
   {
     id: '2',
@@ -37,9 +35,7 @@ const articles = [
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
-    type: [
-      'Экономика',
-    ],
+    type: ['Экономика'],
   },
   {
     id: '3',
@@ -49,9 +45,7 @@ const articles = [
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
-    type: [
-      'Наука',
-    ],
+    type: ['Наука'],
   },
   {
     id: '4',
@@ -61,9 +55,7 @@ const articles = [
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
-    type: [
-      'Наука',
-    ],
+    type: ['Наука'],
   },
 ];
 

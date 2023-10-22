@@ -6,12 +6,13 @@ import { Errors } from '@/shared/const/errors';
 import LoginFormComponent, { LoginFormProps } from './LoginForm';
 
 const RenderComponent = (args: LoginFormProps) => (
-  <div style={{
-    width: '500px',
-    background: 'var(--bg-default-color)',
-    padding: '20px 50px',
-    borderRadius: '8px',
-  }}
+  <div
+    style={{
+      width: '500px',
+      background: 'var(--bg-default-color)',
+      padding: '20px 50px',
+      borderRadius: '8px',
+    }}
   >
     <LoginFormComponent {...args} />
   </div>
@@ -41,7 +42,9 @@ export const IsLoading: StoryObj = {
 
 export const WithError: StoryObj = {
   args: {
-    initialState: { loginForm: { username: 'user1', password: '123', error: Errors.NO_USER } },
+    initialState: {
+      loginForm: { username: 'user1', password: '123', error: Errors.NO_USER },
+    },
   },
 };
 

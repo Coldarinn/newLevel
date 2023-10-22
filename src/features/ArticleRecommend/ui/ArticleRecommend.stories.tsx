@@ -15,7 +15,6 @@ const meta = {
 } satisfies Meta<typeof ArticleRecommendComponent>;
 
 const articles = [
-
   {
     id: '1',
     title: 'Javascript news СВЕЖАЯ',
@@ -24,9 +23,7 @@ const articles = [
     views: 1022,
     createdAt: '26.04.2022',
     userId: '1',
-    type: [
-      'Айти',
-    ],
+    type: ['Айти'],
   },
   {
     id: '2',
@@ -36,9 +33,7 @@ const articles = [
     views: 5204,
     createdAt: '26.02.2022',
     userId: '1',
-    type: [
-      'Айти',
-    ],
+    type: ['Айти'],
   },
   {
     id: '3',
@@ -48,9 +43,7 @@ const articles = [
     views: 94002,
     createdAt: '26.02.2019',
     userId: '1',
-    type: [
-      'Айти',
-    ],
+    type: ['Айти'],
   },
   {
     id: '4',
@@ -60,9 +53,7 @@ const articles = [
     views: 10222,
     createdAt: '24.01.2022',
     userId: '1',
-    type: [
-      'Айти',
-    ],
+    type: ['Айти'],
   },
 ];
 

@@ -1,4 +1,8 @@
-import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {
+  createEntityAdapter,
+  createSlice,
+  PayloadAction,
+} from '@reduxjs/toolkit';
 
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { Comment } from '@/entities/Comment';
@@ -10,12 +14,13 @@ const articleCommentsAdapter = createEntityAdapter<Comment>({
   selectId: (comment) => comment.id,
 });
 
-const initialState = articleCommentsAdapter.getInitialState<ArticleCommentsSchema>({
-  error: undefined,
-  isLoading: false,
-  ids: [],
-  entities: {},
-});
+const initialState =
+  articleCommentsAdapter.getInitialState<ArticleCommentsSchema>({
+    error: undefined,
+    isLoading: false,
+    ids: [],
+    entities: {},
+  });
 
 const articleCommentsSlice = createSlice({
   name: 'articleComments',
@@ -27,10 +32,13 @@ const articleCommentsSlice = createSlice({
         state.isLoading = true;
         state.error = undefined;
       })
-      .addCase(fetchArticleComments.fulfilled, (state, action: PayloadAction<Comment[]>) => {
-        state.isLoading = false;
-        articleCommentsAdapter.setAll(state, action.payload);
-      })
+      .addCase(
+        fetchArticleComments.fulfilled,
+        (state, action: PayloadAction<Comment[]>) => {
+          state.isLoading = false;
+          articleCommentsAdapter.setAll(state, action.payload);
+        },
+      )
       .addCase(fetchArticleComments.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
@@ -38,9 +46,10 @@ const articleCommentsSlice = createSlice({
   },
 });
 
-export const getArticleComments = articleCommentsAdapter.getSelectors<StateSchema>(
-  (state) => state.articleComments || initialState,
-);
+export const getArticleComments =
+  articleCommentsAdapter.getSelectors<StateSchema>(
+    (state) => state.articleComments || initialState,
+  );
 
 export const { actions: articleCommentsActions } = articleCommentsSlice;
 export const { reducer: articleCommentsReducer } = articleCommentsSlice;

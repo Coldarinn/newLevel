@@ -7,18 +7,19 @@ import { Select } from '@/shared/ui/Select';
 import { Country } from '../model/types/country';
 
 export interface CountrySelectProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
   selectedValue?: string;
   onChange?: (value: string) => void;
   readonly?: boolean;
 }
 
-const options = Object.entries(Country).map(([key, value]) => ({ id: key, value }));
+const options = Object.entries(Country).map(([key, value]) => ({
+  id: key,
+  value,
+}));
 
 export const CountrySelect = memo((props: CountrySelectProps) => {
-  const {
-    additionalClasses = [], selectedValue, onChange, readonly,
-  } = props;
+  const { additionalClasses = [], selectedValue, onChange, readonly } = props;
 
   const { t } = useTranslation();
 

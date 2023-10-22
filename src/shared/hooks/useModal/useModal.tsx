@@ -1,7 +1,4 @@
-import {
-  MouseEventHandler,
-  useCallback, useEffect, useState,
-} from 'react';
+import { MouseEventHandler, useCallback, useEffect, useState } from 'react';
 
 interface UseModalProps {
   isOpening: boolean;
@@ -30,11 +27,14 @@ export const useModal = (props: UseModalProps) => {
     }
   }, [isOpen, isOpening, onModalClose]);
 
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      onModalClose();
-    }
-  }, [onModalClose]);
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onModalClose();
+      }
+    },
+    [onModalClose],
+  );
 
   const onModalContentClick: MouseEventHandler<HTMLDivElement> = (e) => {
     e.stopPropagation();

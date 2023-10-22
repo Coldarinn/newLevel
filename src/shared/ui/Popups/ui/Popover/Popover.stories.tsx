@@ -5,14 +5,13 @@ import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
 import { Button } from '../../../Button';
 import { Popover as PopoverComponent } from './Popover';
 
-const trigger = () => (
-  <Button>popover trigger</Button>
-);
+const trigger = () => <Button>popover trigger</Button>;
 
 const content = () => (
   <div style={{ width: 200 }}>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    Enim repellendus minus consequatur dolor autem maiores neque? Delectus iure reprehenderit nostrum!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim repellendus
+    minus consequatur dolor autem maiores neque? Delectus iure reprehenderit
+    nostrum!
   </div>
 );
 
@@ -32,7 +31,6 @@ export const BottomLeft: StoryObj = {
     direction: 'bottom left',
     trigger,
     children: content,
-
   },
 };
 

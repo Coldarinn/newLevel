@@ -5,7 +5,7 @@ import { Text } from '@/shared/ui/Text';
 import { Page } from '@/widgets/Page';
 
 export interface MainPageProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
 }
 
 const MainPage = memo((props: MainPageProps) => {

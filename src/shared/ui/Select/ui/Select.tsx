@@ -1,6 +1,4 @@
-import {
-  useEffect, useMemo, useRef, useState,
-} from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import ArrowIcon from '@/shared/assets/icons/arrow.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -14,7 +12,7 @@ export interface SelectOption<T> {
 }
 
 interface SelectProps<T> {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
   options?: SelectOption<T>[];
   placeholder?: string;
   selectedValue?: T;
@@ -24,10 +22,18 @@ interface SelectProps<T> {
 
 export const Select = <T extends string>(props: SelectProps<T>) => {
   const {
-    additionalClasses = [], options = [], placeholder, selectedValue, onChange, readonly,
+    additionalClasses = [],
+    options = [],
+    placeholder,
+    selectedValue,
+    onChange,
+    readonly,
   } = props;
 
-  const foundValue = useMemo(() => options.find((item) => item.id === selectedValue)?.value, [options, selectedValue]);
+  const foundValue = useMemo(
+    () => options.find((item) => item.id === selectedValue)?.value,
+    [options, selectedValue],
+  );
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -44,7 +50,10 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (selectRef.current && !selectRef.current.contains(event.target as Node)) {
+      if (
+        selectRef.current &&
+        !selectRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -72,9 +81,7 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
         onClick={toggleDropdown}
         disabled={readonly}
       >
-        <span className={cls.placeholder}>
-          {foundValue || placeholder}
-        </span>
+        <span className={cls.placeholder}>{foundValue || placeholder}</span>
         <span className={cls.icon}>
           <ArrowIcon />
         </span>

@@ -5,10 +5,13 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './SearchInput.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'value' | 'onChange'
+>;
 
 export interface SearchInputProps extends HTMLInputProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
   value?: string | number;
   onChange?: (value: string) => void;
 }
@@ -29,7 +32,10 @@ export const SearchInput = (props: SearchInputProps) => {
   };
 
   return (
-    <label htmlFor="seacrh" className={classNames(cls.searchInput, {}, [...additionalClasses])}>
+    <label
+      htmlFor="seacrh"
+      className={classNames(cls.searchInput, {}, [...additionalClasses])}
+    >
       <SearchIcon className={cls.icon} />
       <input
         id="seacrh"

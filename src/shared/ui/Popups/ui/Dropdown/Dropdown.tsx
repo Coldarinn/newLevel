@@ -26,18 +26,23 @@ interface DropdownProps {
 
 export function Dropdown(props: DropdownProps) {
   const {
-    additionalClasses = [], initialStatus, trigger, items, direction = 'bottom right',
+    additionalClasses = [],
+    initialStatus,
+    trigger,
+    items,
+    direction = 'bottom right',
   } = props;
 
   const menuClasses = [mapDirectionClass[direction]];
 
   return (
-    <Menu as="div" className={classNames(cls.dropdown, {}, [...additionalClasses])}>
+    <Menu
+      as="div"
+      className={classNames(cls.dropdown, {}, [...additionalClasses])}
+    >
       {({ open }) => (
         <>
-          <Menu.Button className={cls.btn}>
-            {trigger}
-          </Menu.Button>
+          <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
           <Transition
             show={initialStatus ?? open}
             as={Fragment}
@@ -58,7 +63,9 @@ export function Dropdown(props: DropdownProps) {
                           href={item.href}
                           target="_blank"
                           rel="noreferrer"
-                          className={classNames(cls.item, { [popupCls.active]: active })}
+                          className={classNames(cls.item, {
+                            [popupCls.active]: active,
+                          })}
                         >
                           {item.content}
                         </a>
@@ -74,7 +81,9 @@ export function Dropdown(props: DropdownProps) {
                         type="button"
                         onClick={item.onClick}
                         disabled={item.disabled}
-                        className={classNames(cls.item, { [popupCls.active]: active })}
+                        className={classNames(cls.item, {
+                          [popupCls.active]: active,
+                        })}
                       >
                         {item.content}
                       </button>

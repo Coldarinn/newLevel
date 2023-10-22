@@ -11,13 +11,13 @@ import { Text } from '@/shared/ui/Text';
 import cls from './Rating.module.scss';
 
 export interface RatingProps {
- additionalClasses?: string[];
- feedbackTitle?: string;
- title?: string;
- hasFeedback?: boolean;
- onCancel?: (starsCount: number) => void;
- onAccept?: (starsCount: number, feedback?: string) => void;
- rate?: number;
+  additionalClasses?: string[];
+  feedbackTitle?: string;
+  title?: string;
+  hasFeedback?: boolean;
+  onCancel?: (starsCount: number) => void;
+  onAccept?: (starsCount: number, feedback?: string) => void;
+  rate?: number;
 }
 
 export const Rating = memo((props: RatingProps) => {

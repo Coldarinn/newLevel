@@ -3,8 +3,14 @@ import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 
 import {
-  ArticleList, articleListReducer, fetchNextPage, getArticleList,
-  getArticleListError, getArticleListIsLoading, getArticleListView, initArticlesList,
+  ArticleList,
+  articleListReducer,
+  fetchNextPage,
+  getArticleList,
+  getArticleListError,
+  getArticleListIsLoading,
+  getArticleListView,
+  initArticlesList,
 } from '@/features/ArticleList';
 import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
@@ -18,7 +24,7 @@ import { Page } from '@/widgets/Page';
 import cls from './ArticlesPage.module.scss';
 
 export interface ArticlesPageProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
 }
 
 const reducers = {
@@ -48,14 +54,17 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   }, [dispatch]);
 
   if (error) {
-    return (
-      <Text theme={TextTheme.DANGER} title={t(error)} />
-    );
+    return <Text theme={TextTheme.DANGER} title={t(error)} />;
   }
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <Page additionalClasses={[classNames(cls.articlesPage, {}, [...additionalClasses])]} onScrollEnd={onLoadNextPart}>
+      <Page
+        additionalClasses={[
+          classNames(cls.articlesPage, {}, [...additionalClasses]),
+        ]}
+        onScrollEnd={onLoadNextPart}
+      >
         <Text title={t('Статьи')} />
         <ArticleFilters />
         <ArticleList articles={articles} view={view} isLoading={isLoading} />

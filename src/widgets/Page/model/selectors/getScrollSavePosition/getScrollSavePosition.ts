@@ -6,6 +6,6 @@ export const getScrollSave = (state: StateSchema) => state.scrollSave.scroll;
 
 export const getScrollSavePosition = createSelector(
   getScrollSave,
-  (state: StateSchema, path:string) => path,
+  (state: StateSchema, path: string) => path,
   (scroll, path) => scroll[path || 0],
 );

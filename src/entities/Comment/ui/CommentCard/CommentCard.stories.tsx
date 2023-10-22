@@ -2,12 +2,16 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
 
-import { CommentCard as CommentCardComponent, CommentCardProps } from './CommentCard';
+import {
+  CommentCard as CommentCardComponent,
+  CommentCardProps,
+} from './CommentCard';
 
 const RenderComponent = (args: CommentCardProps) => (
-  <div style={{
-    width: '700px',
-  }}
+  <div
+    style={{
+      width: '700px',
+    }}
   >
     <CommentCardComponent {...args} />
   </div>
@@ -32,7 +36,8 @@ const comment = {
     username: 'user1',
     password: '123',
     roles: ['admin'],
-    avatar: 'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
+    avatar:
+      'https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg',
   },
 };
 

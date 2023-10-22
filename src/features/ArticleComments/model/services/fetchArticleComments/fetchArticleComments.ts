@@ -4,7 +4,11 @@ import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { Comment } from '@/entities/Comment';
 import { Errors } from '@/shared/const/errors';
 
-export const fetchArticleComments = createAsyncThunk<Comment[], string | undefined, ThunkConfig<string>>(
+export const fetchArticleComments = createAsyncThunk<
+  Comment[],
+  string | undefined,
+  ThunkConfig<string>
+>(
   'articleComments/fetchArticleComments',
   async (articleId, { extra, rejectWithValue }) => {
     try {

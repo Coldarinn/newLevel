@@ -8,7 +8,7 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 import cls from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
 }
 
 export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {

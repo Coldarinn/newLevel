@@ -9,8 +9,8 @@ import { ArticleCommentsForm } from '../ArticleCommentsForm/ArticleCommentsForm'
 import { ArticleCommentsList } from '../ArticleCommentsList/ArticleCommentsList';
 
 export interface ArticleCommentsProps {
- additionalClasses?: string[];
- id?: string;
+  additionalClasses?: string[];
+  id?: string;
 }
 
 export const ArticleComments = memo((props: ArticleCommentsProps) => {

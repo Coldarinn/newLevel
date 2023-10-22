@@ -4,14 +4,16 @@ import AboutIcon from '@/shared/assets/icons/about.svg';
 import ArticleIcon from '@/shared/assets/icons/article.svg';
 import MainIcon from '@/shared/assets/icons/main.svg';
 import {
-  getRouteAbout, getRouteArticles, getRouteMain,
+  getRouteAbout,
+  getRouteArticles,
+  getRouteMain,
 } from '@/shared/const/router';
 
 export interface SidebarItemType {
-    path: string;
-    text: string;
-    Icon: VFC<SVGProps<SVGSVGElement>>;
-    authOnly?: boolean;
+  path: string;
+  text: string;
+  Icon: VFC<SVGProps<SVGSVGElement>>;
+  authOnly?: boolean;
 }
 
 export const SidebarItemsList: SidebarItemType[] = [

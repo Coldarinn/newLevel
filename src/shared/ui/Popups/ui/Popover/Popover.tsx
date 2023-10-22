@@ -18,13 +18,20 @@ interface PopoverProps {
 
 export function Popover(props: PopoverProps) {
   const {
-    additionalClasses = [], initialStatus, trigger, children, direction = 'bottom right',
+    additionalClasses = [],
+    initialStatus,
+    trigger,
+    children,
+    direction = 'bottom right',
   } = props;
 
   const menuClasses = [mapDirectionClass[direction]];
 
   return (
-    <PopoverUI as="div" className={classNames(cls.popover, {}, [...additionalClasses])}>
+    <PopoverUI
+      as="div"
+      className={classNames(cls.popover, {}, [...additionalClasses])}
+    >
       {({ open }) => (
         <>
           <PopoverUI.Button as="div" className={cls.trigger}>

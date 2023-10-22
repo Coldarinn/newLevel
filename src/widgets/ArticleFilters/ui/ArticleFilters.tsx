@@ -23,7 +23,7 @@ import { SearchInput } from '@/shared/ui/SearchInput';
 import cls from './ArticleFilters.module.scss';
 
 export interface ArticleFiltersProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
 }
 
 export const ArticleFilters = (props: ArticleFiltersProps) => {
@@ -43,33 +43,48 @@ export const ArticleFilters = (props: ArticleFiltersProps) => {
   const sort = useAppSelector(getArticleListSort);
   const order = useAppSelector(getArticleListOrder);
 
-  const onChangeView = useCallback((view: ArticleView) => {
-    dispatch(articleListActions.setView(view));
-  }, [dispatch]);
+  const onChangeView = useCallback(
+    (view: ArticleView) => {
+      dispatch(articleListActions.setView(view));
+    },
+    [dispatch],
+  );
 
-  const onChangeSearch = useCallback((search: string) => {
-    dispatch(articleListActions.setSearch(search));
-    dispatch(articleListActions.setPage(1));
-    debouncedFetchData();
-  }, [dispatch, debouncedFetchData]);
+  const onChangeSearch = useCallback(
+    (search: string) => {
+      dispatch(articleListActions.setSearch(search));
+      dispatch(articleListActions.setPage(1));
+      debouncedFetchData();
+    },
+    [dispatch, debouncedFetchData],
+  );
 
-  const onChangeType = useCallback((value: ArticleType) => {
-    dispatch(articleListActions.setType(value));
-    dispatch(articleListActions.setPage(1));
-    debouncedFetchData();
-  }, [dispatch, debouncedFetchData]);
+  const onChangeType = useCallback(
+    (value: ArticleType) => {
+      dispatch(articleListActions.setType(value));
+      dispatch(articleListActions.setPage(1));
+      debouncedFetchData();
+    },
+    [dispatch, debouncedFetchData],
+  );
 
-  const onChangeSort = useCallback((newSort: ArticleSort) => {
-    dispatch(articleListActions.setSort(newSort));
-    dispatch(articleListActions.setPage(1));
-    fetchData();
-  }, [dispatch, fetchData]);
+  const onChangeSort = useCallback(
+    (newSort: ArticleSort) => {
+      dispatch(articleListActions.setSort(newSort));
+      dispatch(articleListActions.setPage(1));
+      fetchData();
+    },
+    [dispatch, fetchData],
+  );
 
-  const onChangeOrder = useCallback((newOrder: SortOrder) => {
-    dispatch(articleListActions.setOrder(newOrder));
-    dispatch(articleListActions.setPage(1));
-    fetchData();
-  }, [dispatch, fetchData]);
+  const onChangeOrder = useCallback(
+    (newOrder: SortOrder) => {
+      dispatch(articleListActions.setOrder(newOrder));
+      dispatch(articleListActions.setPage(1));
+      fetchData();
+    },
+    [dispatch, fetchData],
+  );
 
   return (
     <div className={classNames('', {}, [...additionalClasses])}>

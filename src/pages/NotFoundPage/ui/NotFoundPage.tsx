@@ -8,7 +8,7 @@ import { Page } from '@/widgets/Page';
 import cls from './NotFoundPage.module.scss';
 
 interface NotFoundPageProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
 }
 
 export const NotFoundPage: FC<NotFoundPageProps> = (props) => {
@@ -17,7 +17,12 @@ export const NotFoundPage: FC<NotFoundPageProps> = (props) => {
   const { t } = useTranslation('notFound');
 
   return (
-    <Page additionalClasses={[classNames(cls.notFoundPage, {}, [...additionalClasses])]} dataTestid="NotFoundPage">
+    <Page
+      additionalClasses={[
+        classNames(cls.notFoundPage, {}, [...additionalClasses]),
+      ]}
+      dataTestid="NotFoundPage"
+    >
       <Text title={t('Страница не найдена')} />
     </Page>
   );

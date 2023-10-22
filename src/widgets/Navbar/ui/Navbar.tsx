@@ -1,9 +1,7 @@
 import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import {
-  getUserAuthData, isUserAdmin, userActions,
-} from '@/entities/User';
+import { getUserAuthData, isUserAdmin, userActions } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { Notifications } from '@/features/Notifications';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
@@ -17,7 +15,7 @@ import { Dropdown } from '@/shared/ui/Popups';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
 }
 
 export const Navbar = memo((props: NavbarProps) => {
@@ -51,11 +49,15 @@ export const Navbar = memo((props: NavbarProps) => {
         <Dropdown
           direction="bottom left"
           items={[
-            ...(isAdmin ? [{
-              id: 1,
-              content: t('Админка'),
-              href: getRouteAdmin(),
-            }] : []),
+            ...(isAdmin
+              ? [
+                  {
+                    id: 1,
+                    content: t('Админка'),
+                    href: getRouteAdmin(),
+                  },
+                ]
+              : []),
             {
               id: 2,
               content: t('Профиль'),

@@ -12,7 +12,7 @@ import { commentFormActions } from '../../model/slices/commentFormSlice';
 import cls from './CommentForm.module.scss';
 
 export interface CommentFormProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
   onSend: (text: string) => void;
 }
 
@@ -22,19 +22,28 @@ export const CommentForm = memo((props: CommentFormProps) => {
   const text = useAppSelector(getCommentFormText);
   const dispatch = useAppDispatch();
 
-  const changeHandler = useCallback((value: string) => {
-    dispatch(commentFormActions.setText(value));
-  }, [dispatch]);
+  const changeHandler = useCallback(
+    (value: string) => {
+      dispatch(commentFormActions.setText(value));
+    },
+    [dispatch],
+  );
 
-  const submitHandler = useCallback((event: FormEvent) => {
-    event.preventDefault();
-    onSend(text);
-    changeHandler('');
-  }, [changeHandler, onSend, text]);
+  const submitHandler = useCallback(
+    (event: FormEvent) => {
+      event.preventDefault();
+      onSend(text);
+      changeHandler('');
+    },
+    [changeHandler, onSend, text],
+  );
 
   return (
     <div className={classNames(cls.CommentForm, {}, [...additionalClasses])}>
-      <form className={classNames(cls.form, {}, [...additionalClasses])} onSubmit={submitHandler}>
+      <form
+        className={classNames(cls.form, {}, [...additionalClasses])}
+        onSubmit={submitHandler}
+      >
         <Input value={text} onChange={changeHandler} />
         <Button type="submit" additionalClasses={[cls.button]}>
           <ArrowIcon />

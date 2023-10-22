@@ -11,37 +11,41 @@ import { Select, SelectOption } from '@/shared/ui/Select';
 import cls from './ArticleSortSelector.module.scss';
 
 interface ArticleSortSelectorProps {
-  sort: ArticleSort,
-  order: SortOrder,
+  sort: ArticleSort;
+  order: SortOrder;
   onChangeSort: (view: ArticleSort) => void;
   onChangeOrder: (view: SortOrder) => void;
 }
 
 export const ArticleSortSelector = (props: ArticleSortSelectorProps) => {
-  const {
-    sort, order, onChangeSort, onChangeOrder,
-  } = props;
+  const { sort, order, onChangeSort, onChangeOrder } = props;
 
   const { t } = useTranslation();
 
-  const sortOptions = useMemo<SelectOption<ArticleSort>[]>(() => [
-    {
-      id: ArticleSort.CREATED,
-      value: t('дате создания'),
-    },
-    {
-      id: ArticleSort.TITLE,
-      value: t('названию'),
-    },
-    {
-      id: ArticleSort.VIEWS,
-      value: t('просмотрам'),
-    },
-  ], [t]);
+  const sortOptions = useMemo<SelectOption<ArticleSort>[]>(
+    () => [
+      {
+        id: ArticleSort.CREATED,
+        value: t('дате создания'),
+      },
+      {
+        id: ArticleSort.TITLE,
+        value: t('названию'),
+      },
+      {
+        id: ArticleSort.VIEWS,
+        value: t('просмотрам'),
+      },
+    ],
+    [t],
+  );
 
-  const changeSortHandler = useCallback((newSort: ArticleSort) => {
-    onChangeSort(newSort);
-  }, [onChangeSort]);
+  const changeSortHandler = useCallback(
+    (newSort: ArticleSort) => {
+      onChangeSort(newSort);
+    },
+    [onChangeSort],
+  );
 
   const changeOrderHandler = useCallback(() => {
     onChangeOrder(order === 'asc' ? 'desc' : 'asc');
@@ -50,7 +54,13 @@ export const ArticleSortSelector = (props: ArticleSortSelectorProps) => {
   return (
     <div className={cls.articleSort}>
       <Button onClick={changeOrderHandler} additionalClasses={[cls.button]}>
-        <DirectionIcon className={classNames(cls.icon, { [cls.rotate]: order === 'asc' }, [])} />
+        <DirectionIcon
+          className={classNames(
+            cls.icon,
+            { [cls.rotate]: order === 'asc' },
+            [],
+          )}
+        />
       </Button>
       <div className={cls.select}>
         <Select

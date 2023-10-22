@@ -10,14 +10,20 @@ import { MainPage } from '@/pages/MainPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
 import {
-  AppRoutes, getRouteAbout, getRouteAdmin,
-  getRouteArticle, getRouteArticles, getRouteForbidden, getRouteMain, getRouteProfile,
+  AppRoutes,
+  getRouteAbout,
+  getRouteAdmin,
+  getRouteArticle,
+  getRouteArticles,
+  getRouteForbidden,
+  getRouteMain,
+  getRouteProfile,
 } from '@/shared/const/router';
 
 export type AppRoutesProps = RouteProps & {
   authOnly?: boolean;
   roles?: UserRole[];
-}
+};
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.MAIN]: {

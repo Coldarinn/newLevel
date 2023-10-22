@@ -2,13 +2,17 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
 
-import { CommentList as CommentListComponent, CommentListProps } from './CommentList';
+import {
+  CommentList as CommentListComponent,
+  CommentListProps,
+} from './CommentList';
 import ImgItem from './storybook.jpg';
 
 const RenderComponent = (args: CommentListProps) => (
-  <div style={{
-    width: '700px',
-  }}
+  <div
+    style={{
+      width: '700px',
+    }}
   >
     <CommentListComponent {...args} />
   </div>

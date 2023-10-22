@@ -3,7 +3,10 @@ import { useTranslation } from 'react-i18next';
 
 import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { Text, TextTheme } from '@/shared/ui/Text';
 
@@ -39,29 +42,14 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
-    case ArticleBlockType.CODE:
-      return (
-        <ArticleCodeBlockComponent
-          key={block.id}
-          block={block}
-        />
-      );
-    case ArticleBlockType.IMAGE:
-      return (
-        <ArticleImageBlockComponent
-          key={block.id}
-          block={block}
-        />
-      );
-    case ArticleBlockType.TEXT:
-      return (
-        <ArticleTextBlockComponent
-          key={block.id}
-          block={block}
-        />
-      );
-    default:
-      return null;
+      case ArticleBlockType.CODE:
+        return <ArticleCodeBlockComponent key={block.id} block={block} />;
+      case ArticleBlockType.IMAGE:
+        return <ArticleImageBlockComponent key={block.id} block={block} />;
+      case ArticleBlockType.TEXT:
+        return <ArticleTextBlockComponent key={block.id} block={block} />;
+      default:
+        return null;
     }
   }, []);
 
@@ -89,28 +77,18 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       </div>
     );
   } else if (error) {
-    content = (
-      <Text theme={TextTheme.DANGER} title={t(error)} />
-    );
+    content = <Text theme={TextTheme.DANGER} title={t(error)} />;
   } else {
     content = (
       <>
-        <Text
-          additionalClasses={[cls.title]}
-          title={data?.title}
-        />
+        <Text additionalClasses={[cls.title]} title={data?.title} />
         <img className={cls.image} src={data?.img} alt={data?.subtitle} />
-        <Text
-          additionalClasses={[cls.subtitle]}
-          text={data?.subtitle}
-        />
+        <Text additionalClasses={[cls.subtitle]} text={data?.subtitle} />
         <div className={cls.flex}>
           <Text text={`${String(data?.views)} просмотров`} />
           <Text text={data?.createdAt} />
         </div>
-        <div className={cls.content}>
-          {data?.blocks.map(renderBlock)}
-        </div>
+        <div className={cls.content}>{data?.blocks.map(renderBlock)}</div>
       </>
     );
   }

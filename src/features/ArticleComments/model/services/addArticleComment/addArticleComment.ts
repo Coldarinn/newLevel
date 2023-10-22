@@ -8,11 +8,13 @@ import { Errors } from '@/shared/const/errors';
 
 import { fetchArticleComments } from '../fetchArticleComments/fetchArticleComments';
 
-export const addArticleComment = createAsyncThunk<Comment, string | undefined, ThunkConfig<string>>(
+export const addArticleComment = createAsyncThunk<
+  Comment,
+  string | undefined,
+  ThunkConfig<string>
+>(
   'articleComments/addArticleComment',
-  async (text, {
-    extra, dispatch, rejectWithValue, getState,
-  }) => {
+  async (text, { extra, dispatch, rejectWithValue, getState }) => {
     try {
       const userData = getUserAuthData(getState());
       const article = getArticleData(getState());

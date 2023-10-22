@@ -3,12 +3,15 @@ import { ReactNode, useCallback, useEffect } from 'react';
 
 import { useModal } from '@/shared/hooks/useModal/useModal';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import {
+  AnimationProvider,
+  useAnimationLibs,
+} from '@/shared/lib/components/AnimationProvider';
 
 import cls from './Drawer.module.scss';
 
 export interface DrawerProps {
-  additionalClasses?: string[],
+  additionalClasses?: string[];
   children: ReactNode;
   isOpening: boolean;
   onClose: () => void;
@@ -19,19 +22,34 @@ const height = window.innerHeight * 0.8;
 
 const DrawerContent = (props: DrawerProps) => {
   const {
-    additionalClasses = [], children, isOpening, onClose, lazy = false,
+    additionalClasses = [],
+    children,
+    isOpening,
+    onClose,
+    lazy = false,
   } = props;
 
   const { Spring, Gesture } = useAnimationLibs();
 
   const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
 
-  const open = useCallback(({ canceled }: any) => {
-    api.start({ y: 0, immediate: false, config: canceled ? Spring.config.wobbly : Spring.config.stiff });
-  }, [Spring.config.stiff, Spring.config.wobbly, api]);
+  const open = useCallback(
+    ({ canceled }: any) => {
+      api.start({
+        y: 0,
+        immediate: false,
+        config: canceled ? Spring.config.wobbly : Spring.config.stiff,
+      });
+    },
+    [Spring.config.stiff, Spring.config.wobbly, api],
+  );
 
   const close = (velocity = 0) => {
-    api.start({ y: height, immediate: false, config: { ...Spring.config.stiff, velocity } });
+    api.start({
+      y: height,
+      immediate: false,
+      config: { ...Spring.config.stiff, velocity },
+    });
   };
 
   const closeHandler = () => {
@@ -39,15 +57,19 @@ const DrawerContent = (props: DrawerProps) => {
     onClose();
   };
 
-  const {
-    isOpen,
-    isMounted,
-    onModalClose,
-  } = useModal({ isOpening, onClose: closeHandler });
+  const { isOpen, isMounted, onModalClose } = useModal({
+    isOpening,
+    onClose: closeHandler,
+  });
 
   const bind = Gesture.useDrag(
     ({
-      last, velocity: [, vy], direction: [, dy], offset: [, oy], cancel, canceled,
+      last,
+      velocity: [, vy],
+      direction: [, dy],
+      offset: [, oy],
+      cancel,
+      canceled,
     }) => {
       if (oy < -70) cancel();
 
@@ -62,7 +84,10 @@ const DrawerContent = (props: DrawerProps) => {
       }
     },
     {
-      from: () => [0, y.get()], filterTaps: true, bounds: { top: 0 }, rubberband: true,
+      from: () => [0, y.get()],
+      filterTaps: true,
+      bounds: { top: 0 },
+      rubberband: true,
     },
   );
 
@@ -81,7 +106,9 @@ const DrawerContent = (props: DrawerProps) => {
   return (
     <Portal>
       <div
-        className={classNames(cls.overlay, { [cls.isOpen]: isOpen }, [...additionalClasses])}
+        className={classNames(cls.overlay, { [cls.isOpen]: isOpen }, [
+          ...additionalClasses,
+        ])}
         onClick={() => onModalClose()}
         onKeyDown={() => onModalClose()}
       />
@@ -103,9 +130,7 @@ export const DrawerAsync = (props: DrawerProps) => {
     return null;
   }
 
-  return (
-    <DrawerContent {...props} />
-  );
+  return <DrawerContent {...props} />;
 };
 
 export const Drawer = (props: DrawerProps) => (

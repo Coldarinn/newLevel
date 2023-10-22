@@ -1,6 +1,4 @@
-import {
-  MutableRefObject, ReactNode, UIEvent, useRef,
-} from 'react';
+import { MutableRefObject, ReactNode, UIEvent, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
@@ -15,16 +13,14 @@ import { scrollSaveActions } from '../model/slice/scrollSaveSlice';
 import cls from './Page.module.scss';
 
 interface PageProps {
-  additionalClasses?: string[],
-  children: ReactNode,
-  onScrollEnd?: () => void,
-  dataTestid?: string,
+  additionalClasses?: string[];
+  children: ReactNode;
+  onScrollEnd?: () => void;
+  dataTestid?: string;
 }
 
 export const Page = (props: PageProps) => {
-  const {
-    additionalClasses = [], children, onScrollEnd, dataTestid,
-  } = props;
+  const { additionalClasses = [], children, onScrollEnd, dataTestid } = props;
 
   const dispatch = useAppDispatch();
 
@@ -33,7 +29,9 @@ export const Page = (props: PageProps) => {
   const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
 
-  const scrollPosition = useAppSelector((state) => getScrollSavePosition(state, pathname));
+  const scrollPosition = useAppSelector((state) =>
+    getScrollSavePosition(state, pathname),
+  );
 
   useInfiniteScroll({
     wrapperRef,
@@ -46,10 +44,14 @@ export const Page = (props: PageProps) => {
   });
 
   const onScroll = useDebounce((event: UIEvent<HTMLDivElement>) => {
-    dispatch(scrollSaveActions.setScrollPosition({
-      path: pathname,
-      position: event.currentTarget?.scrollTop ?? (event.target as HTMLElement).scrollTop,
-    }));
+    dispatch(
+      scrollSaveActions.setScrollPosition({
+        path: pathname,
+        position:
+          event.currentTarget?.scrollTop ??
+          (event.target as HTMLElement).scrollTop,
+      }),
+    );
   }, 200);
 
   return (
@@ -60,9 +62,7 @@ export const Page = (props: PageProps) => {
       data-testid={dataTestid ?? 'Page'}
     >
       {children}
-      {onScrollEnd ? (
-        <div className={cls.trigger} ref={triggerRef} />
-      ) : null}
+      {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
     </main>
   );
 };

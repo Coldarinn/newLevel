@@ -18,9 +18,9 @@ export enum ButtonPadding {
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  additionalClasses?: string[],
-  theme?: ButtonTheme,
-  padding?: ButtonPadding,
+  additionalClasses?: string[];
+  theme?: ButtonTheme;
+  padding?: ButtonPadding;
   disabled?: boolean;
 }
 
@@ -47,7 +47,7 @@ export const Button = memo((props: ButtonProps) => {
       disabled={disabled}
       {...otherProps}
     >
-      { children }
+      {children}
     </button>
   );
 });

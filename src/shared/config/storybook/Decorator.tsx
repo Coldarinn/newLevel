@@ -27,7 +27,10 @@ const initialAsyncReducers: ReducersList = {
   commentForm: commentFormReducer,
 };
 
-export const DecoratedComponent = (Story: StoryFn, { globals, args }: StoryContext) => {
+export const DecoratedComponent = (
+  Story: StoryFn,
+  { globals, args }: StoryContext,
+) => {
   const { theme } = globals;
 
   useEffect(() => {
@@ -35,16 +38,25 @@ export const DecoratedComponent = (Story: StoryFn, { globals, args }: StoryConte
   }, [theme, args]);
 
   return (
-    <StoreProvider initialState={args?.initialState ?? {}} asyncReducers={initialAsyncReducers}>
+    <StoreProvider
+      initialState={args?.initialState ?? {}}
+      asyncReducers={initialAsyncReducers}
+    >
       <BrowserRouter>
         <ThemeProvider>
           <Suspense fallback>
             <I18nextProvider i18n={i18n}>
               <div
                 className="app"
-                style={args?.notCentered ? {} : {
-                  display: 'flex', justifyContent: 'center', alignItems: 'center',
-                }}
+                style={
+                  args?.notCentered
+                    ? {}
+                    : {
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }
+                }
               >
                 <Story />
               </div>

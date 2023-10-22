@@ -5,10 +5,12 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 import cls from './ArticleListItemSkeleton.module.scss';
 
 interface ArticleListItemSkeletonProps {
-  view: ArticleView
+  view: ArticleView;
 }
 
-export const ArticleListItemSkeleton = (props: ArticleListItemSkeletonProps) => {
+export const ArticleListItemSkeleton = (
+  props: ArticleListItemSkeletonProps,
+) => {
   const { view = ArticleView.SMALL } = props;
 
   return (

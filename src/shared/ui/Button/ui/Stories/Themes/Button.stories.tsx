@@ -2,7 +2,11 @@ import { type Meta, type StoryObj } from '@storybook/react';
 
 import { DecoratedComponent } from '@/shared/config/storybook/Decorator';
 
-import { Button as ButtonComponent, ButtonPadding, ButtonTheme } from '../../Button';
+import {
+  Button as ButtonComponent,
+  ButtonPadding,
+  ButtonTheme,
+} from '../../Button';
 
 const meta = {
   title: 'shared/Button/Themes',

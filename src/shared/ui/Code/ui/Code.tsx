@@ -5,8 +5,8 @@ import { Button } from '../../Button';
 import cls from './Code.module.scss';
 
 export interface CodeProps {
-  additionalClasses?: string[],
-  text: string
+  additionalClasses?: string[];
+  text: string;
 }
 
 const onCopy = (text: string) => {
