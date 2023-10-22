@@ -9,6 +9,7 @@ module.exports = {
     'airbnb',
     'plugin:i18next/recommended',
     'plugin:storybook/recommended',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -28,9 +29,9 @@ module.exports = {
     'unused-imports',
   ],
   rules: {
-    'react/jsx-indent': [1, 2],
-    'react/jsx-indent-props': [1, 2],
-    indent: [1, 2],
+    // 'react/jsx-indent': [1, 2],
+    // 'react/jsx-indent-props': [1, 2],
+    // indent: [1, 2],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
@@ -80,6 +81,7 @@ module.exports = {
     ],
     'imports-fsd/public-api-imports': ['error', { alias: '@' }],
     'unused-imports/no-unused-imports': 'error',
+    'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
   },
   globals: {
     __IS_DEV__: true,

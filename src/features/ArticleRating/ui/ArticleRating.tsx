@@ -9,8 +9,8 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 import { useGetArticleRating, useRateArticle } from '../api/articleRatingApi';
 
 export interface ArticleRatingProps {
- additionalClasses?: string[];
- articleId?: string;
+  additionalClasses?: string[];
+  articleId?: string;
 }
 
 const ArticleRating = memo((props: ArticleRatingProps) => {
