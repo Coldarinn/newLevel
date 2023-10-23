@@ -1,7 +1,12 @@
 import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { getUserAuthData, isUserAdmin, userActions } from '@/entities/User';
+import {
+  getUserAuthData,
+  isUserAdmin,
+  userActions,
+  useUserIsLoading,
+} from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { Notifications } from '@/features/Notifications';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
@@ -11,6 +16,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button } from '@/shared/ui/Button';
 import { Dropdown } from '@/shared/ui/Popups';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 import cls from './Navbar.module.scss';
 
@@ -24,6 +30,7 @@ export const Navbar = memo((props: NavbarProps) => {
   const dispatch = useAppDispatch();
 
   const authData = useAppSelector(getUserAuthData);
+  const isLoading = useUserIsLoading();
   const isAdmin = useAppSelector(isUserAdmin);
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -41,6 +48,10 @@ export const Navbar = memo((props: NavbarProps) => {
   const onLogout = () => {
     dispatch(userActions.logout());
   };
+
+  if (isLoading) {
+    return <Skeleton additionalClasses={[cls.navbar]} />;
+  }
 
   if (authData) {
     return (

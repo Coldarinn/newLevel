@@ -1,6 +1,6 @@
 import { Suspense, useEffect } from 'react';
 
-import { getUserInited, userActions } from '@/entities/User';
+import { getUserInited, initAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispatch';
 import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -15,8 +15,10 @@ const App = () => {
   const inited = useAppSelector(getUserInited);
 
   useEffect(() => {
-    dispatch(userActions.initAuthData());
-  }, [dispatch]);
+    if (!inited) {
+      dispatch(initAuthData());
+    }
+  }, [dispatch, inited]);
 
   return (
     <div className={classNames('app', {}, [])}>

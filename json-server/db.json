@@ -688,6 +688,10 @@
         "isArticleRatingEnabled": true,
         "isCommentsEnabled": true
       },
+      "jsonSettings": {
+        "isArticlesPageWasOpened": false,
+        "theme": "app_dark_theme"
+      },
       "avatar": "https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg"
     },
     {
@@ -700,6 +704,10 @@
       "features": {
         "isArticleRatingEnabled": true,
         "isCommentsEnabled": false
+      },
+      "jsonSettings": {
+        "isArticlesPageWasOpened": false,
+        "theme": "app_light_theme"
       },
       "avatar": "https://iphoneswallpapers.com/wp-content/uploads/2021/02/Hacker-Nation-iPhone-Wallpaper.jpg"
     },
@@ -714,6 +722,10 @@
         "isArticleRatingEnabled": false,
         "isCommentsEnabled": false
       },
+      "jsonSettings": {
+        "isArticlesPageWasOpened": false,
+        "theme": "app_dark_theme"
+      },
       "avatar": "https://i.yapx.cc/RcBeT.jpg"
     },
     {
@@ -726,6 +738,10 @@
       "features": {
         "isArticleRatingEnabled": true,
         "isCommentsEnabled": true
+      },
+      "jsonSettings": {
+        "isArticlesPageWasOpened": false,
+        "theme": "app_dark_theme"
       },
       "avatar": "https://s1.1zoom.ru/big3/992/367659-alexfas01.jpg"
     }

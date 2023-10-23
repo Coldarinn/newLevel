@@ -3,7 +3,11 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { User, userActions } from '@/entities/User';
 import { Errors } from '@/shared/const/errors';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
+import {
+  LOCAL_STORAGE_THEME_KEY,
+  USER_LOCALSTORAGE_KEY,
+} from '@/shared/const/localstorage';
+import { Theme } from '@/shared/const/theme';
 import { setFeatureFlags } from '@/shared/lib/features';
 
 interface LoginByUsernameProps {
@@ -25,13 +29,14 @@ export const loginByUsername = createAsyncThunk<
         throw new Error();
       }
 
+      localStorage.setItem(USER_LOCALSTORAGE_KEY, response.data.id);
       localStorage.setItem(
-        USER_LOCALSTORAGE_KEY,
-        JSON.stringify(response.data),
+        LOCAL_STORAGE_THEME_KEY,
+        response.data.jsonSettings?.theme ?? Theme.LIGHT,
       );
       dispatch(userActions.setAuthData(response.data));
       setFeatureFlags(response.data.features);
-      //
+
       return response.data;
     } catch (e) {
       return rejectWithValue(Errors.NO_USER);
