@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
@@ -12,7 +13,7 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader';
-import { getFeatureFlag } from '@/shared/lib/features';
+import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { Page } from '@/widgets/Page';
 
@@ -33,8 +34,23 @@ const ArticlePage = (props: ArticlePageProps) => {
 
   const { t } = useTranslation('article');
 
-  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
-  const isCommentsEnabled = getFeatureFlag('isCommentsEnabled');
+  const articleRating = toggleFeatures({
+    name: 'isArticleRatingEnabled',
+    on: useCallback(
+      () => <ArticleRating articleId={id} additionalClasses={[cls.rate]} />,
+      [id],
+    ),
+    off: useCallback(
+      () => <div>{t('Оценка статей скоро появится!')}</div>,
+      [t],
+    ),
+  });
+
+  const articleComments = toggleFeatures({
+    name: 'isCommentsEnabled',
+    on: useCallback(() => <ArticleComments id={id} />, [id]),
+    off: useCallback(() => <div>{t('Комментарии скоро появятся!')}</div>, [t]),
+  });
 
   if (__PROJECT__ !== 'storybook') {
     if (!id) {
@@ -52,10 +68,8 @@ const ArticlePage = (props: ArticlePageProps) => {
       <Page additionalClasses={[...additionalClasses]}>
         <ArticleDetails id={id} />
         <ArticleRecommend />
-        {isArticleRatingEnabled && (
-          <ArticleRating articleId={id} additionalClasses={[cls.rate]} />
-        )}
-        {isCommentsEnabled && <ArticleComments id={id} />}
+        {articleRating}
+        {articleComments}
       </Page>
     </DynamicModuleLoader>
   );
