@@ -684,6 +684,10 @@
       "roles": [
         "admin"
       ],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCommentsEnabled": true
+      },
       "avatar": "https://i.pinimg.com/originals/b8/2a/fa/b82afac37b6d2405585c69ccf13ee921.jpg"
     },
     {
@@ -693,6 +697,10 @@
       "roles": [
         "user"
       ],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCommentsEnabled": false
+      },
       "avatar": "https://iphoneswallpapers.com/wp-content/uploads/2021/02/Hacker-Nation-iPhone-Wallpaper.jpg"
     },
     {
@@ -702,7 +710,24 @@
       "roles": [
         "manager"
       ],
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCommentsEnabled": false
+      },
       "avatar": "https://i.yapx.cc/RcBeT.jpg"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "admin"
+      ],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCommentsEnabled": true
+      },
+      "avatar": "https://s1.1zoom.ru/big3/992/367659-alexfas01.jpg"
     }
   ],
   "profile": [
@@ -738,6 +763,17 @@
       "city": "Moscow",
       "username": "manager",
       "avatar": "https://i.yapx.cc/RcBeT.jpg"
+    },
+    {
+      "id": "4",
+      "firstname": "test",
+      "lastname": "user",
+      "age": 465,
+      "currency": "EUR",
+      "country": "Россия",
+      "city": "Moscow",
+      "username": "testuser",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
   "article-ratings": [
