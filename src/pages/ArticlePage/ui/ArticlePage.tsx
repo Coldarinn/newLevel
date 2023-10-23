@@ -12,6 +12,7 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader';
+import { getFeatureFlag } from '@/shared/lib/features';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { Page } from '@/widgets/Page';
 
@@ -32,6 +33,9 @@ const ArticlePage = (props: ArticlePageProps) => {
 
   const { t } = useTranslation('article');
 
+  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
+  const isCommentsEnabled = getFeatureFlag('isCommentsEnabled');
+
   if (__PROJECT__ !== 'storybook') {
     if (!id) {
       return (
@@ -48,8 +52,10 @@ const ArticlePage = (props: ArticlePageProps) => {
       <Page additionalClasses={[...additionalClasses]}>
         <ArticleDetails id={id} />
         <ArticleRecommend />
-        <ArticleRating articleId={id} additionalClasses={[cls.rate]} />
-        <ArticleComments id={id} />
+        {isArticleRatingEnabled && (
+          <ArticleRating articleId={id} additionalClasses={[cls.rate]} />
+        )}
+        {isCommentsEnabled && <ArticleComments id={id} />}
       </Page>
     </DynamicModuleLoader>
   );

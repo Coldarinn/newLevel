@@ -17,7 +17,7 @@ import { useAppDispatch } from '@/shared/hooks/store/useAppDispatch/useAppDispat
 import { useAppSelector } from '@/shared/hooks/store/useAppSelector/useAppSelector';
 import { useDebounce } from '@/shared/hooks/useDebounce/useDebounce';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 import { SearchInput } from '@/shared/ui/SearchInput';
 
 import cls from './ArticleFilters.module.scss';

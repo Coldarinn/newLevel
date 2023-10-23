@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { ArticleSort, ArticleType } from '@/entities/Article';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 
 import { getArticleListInited } from '../../selectors/getArticleListInited/getArticleListInited';
 import { articleListActions } from '../../slice/articleListSlice';

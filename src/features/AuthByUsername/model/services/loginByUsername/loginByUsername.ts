@@ -4,6 +4,7 @@ import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { User, userActions } from '@/entities/User';
 import { Errors } from '@/shared/const/errors';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
+import { setFeatureFlags } from '@/shared/lib/features';
 
 interface LoginByUsernameProps {
   username: string;
@@ -29,6 +30,7 @@ export const loginByUsername = createAsyncThunk<
         JSON.stringify(response.data),
       );
       dispatch(userActions.setAuthData(response.data));
+      setFeatureFlags(response.data.features);
       //
       return response.data;
     } catch (e) {
